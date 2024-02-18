@@ -38,16 +38,6 @@ a {
     margin-bottom: 0;
 }
 
-.ad-banner {
-      width: 200px;
-      height: 200px;
-      border: 2px solid gray;
-    }
-
-.ad-banner img {
-      width: 100%;
-      height: auto;
-    }
 
 .vertcentered {
     position: absolute;
@@ -56,8 +46,4 @@ a {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-}
-
-a.inlined {
-    display: inline;
 }
