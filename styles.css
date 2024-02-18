@@ -1,0 +1,63 @@
+@font-face {
+	font-family: "segoeUI";
+	src: url("./fonts/segoeui.ttf");
+}
+
+body {
+    background-color: black;
+    color: white;
+	font-family: "segoeUI"
+}
+
+a {
+    color: gray;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-style: bold;
+}
+
+.lightcol {
+    color: lightgray;
+}
+
+.nospace {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.notopmargin {
+    margin-top: 0;
+}
+
+.nobottommargin {
+    margin-bottom: 0;
+}
+
+.ad-banner {
+      width: 200px;
+      height: 200px;
+      border: 2px solid gray;
+    }
+
+.ad-banner img {
+      width: 100%;
+      height: auto;
+    }
+
+.vertcentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+a.inlined {
+    display: inline;
+}
