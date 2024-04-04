@@ -10,7 +10,7 @@ class Header extends HTMLElement {
           <img class="decorativeImage" src="./assets/logo.jpg" alt="logo - Shuu Maiko from Niskeoi">
           <h1>Adrian Victor</h1>
           <p>@tenkuma</p>
-          <p>Studying computing on <a href="http://ifc.edu.br/">IFC</a>, interessed in programming, hacking e and security.</p>
+          <p>Studying computing at <a href="http://ifc.edu.br/">IFC</a>, interessed in programming, hacking and security.</p>
       </nav> 
 
       <div id="links" class="centerText box">
