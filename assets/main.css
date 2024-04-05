@@ -121,10 +121,7 @@ main {
 
 .menuEntry {
     display: inline-block;
-    width: 200;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    gap: 10px;
+    width: 220px;
 }
 
 .menuEntryHelper {
@@ -132,12 +129,12 @@ main {
     height: 200px;
     background-color: black;
     border: 2px solid white;
+    display: flex;
+    justify-content: center;
 }
 
 .menuEntryIlustration {
     background-color: black;
-    margin: auto;
-    display: block;
 }
 
 .menuEntryImage {
