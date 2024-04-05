@@ -15,7 +15,7 @@ class Header extends HTMLElement {
 
       <div id="links" class="centerText box">
           <p>Links</p>
-          <p><a href="index.html">Home</a> - <a href="http://gallery.adrian.rf.gd/">Gallery</a> - <a href="https://github.com/adrianvic/">GitHub</a></p>
+          <p><a href="index.html">Home</a> - <a href="http://gallery.adrian.rf.gd/">Gallery</a> - <a href="http://vicc.rf.gd/gh">GitHub</a></p>
       </div>
       
       <div id="footer" class="box">
