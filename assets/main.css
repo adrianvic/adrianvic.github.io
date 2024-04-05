@@ -116,19 +116,23 @@ main {
     animation-fill-mode: forwards;
 }
 
-.bnwOnHover:hover {
-    transition-duration: .4s;
-    filter: grayscale(100%);
-}
-
 .menuEntry {
+    display: inline-block;
+    width: 200;
     margin-bottom: 10px;
     margin-top: 10px;
+    gap: 10px;
+}
+
+.menuEntry > img {
+    background-color: black;
 }
 
 .menuEntry:hover {
-    transition-duration: 0.4s;
-    background-color: #070707;
+    animation: alternate .4s fly;
+    animation-fill-mode: forwards;
+    background-color: #171717;
+    gap: 4px;
 }
 
 .menuEntryColor {
@@ -140,8 +144,8 @@ main {
 }
 
 .menuEntry:hover > img {
-    animation: alternate .4s fly;
-    animation-fill-mode: forwards;
+    filter: grayscale(100%) invert();
+    border-color: gray;
 }
 
 
