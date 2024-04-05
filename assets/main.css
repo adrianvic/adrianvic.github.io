@@ -130,12 +130,22 @@ main {
 .menuEntryHelper {
     width: 200px;
     height: 200px;
+    background-color: black;
     border: 2px solid white;
 }
 
-.menuEntryImage {
+.menuEntryIlustration {
     background-color: black;
+    margin: auto;
+    display: block;
+}
+
+.menuEntryImage {
     width: 100%;
+}
+
+.menuEntrySVG {
+    width: 70%;
 }
 
 .menuEntry:hover {
@@ -143,6 +153,7 @@ main {
     animation-fill-mode: forwards;
     background-color: #171717;
     gap: 4px;
+    filter: invert();
 }
 
 .menuEntryColor {
@@ -154,10 +165,9 @@ main {
 }
 
 .menuEntry:hover img {
-    filter: grayscale(100%) invert();
+    filter: grayscale(100%);
     border-color: gray;
 }
-
 
 /* Keyframes */
 @keyframes fly {
