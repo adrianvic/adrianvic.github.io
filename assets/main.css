@@ -28,6 +28,7 @@ aside {
     width: 400px;
     border: 2px solid white;
     background-color: #111;
+    margin-left: 20px;
 }
 
 nav.profile img {
