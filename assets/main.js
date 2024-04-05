@@ -14,8 +14,15 @@ class Header extends HTMLElement {
       </nav> 
 
       <div id="links" class="centerText box">
+        <blockquote id="random-quote">
+          The quote man is not working...
+        </blockquote>
+        <p id="random-quote-author">- Quote man</p>
+      </div>
+
+      <div id="links" class="centerText box">
           <p>Links</p>
-          <p><a href="index.html">Home</a> - <a href="http://gallery.adrian.rf.gd/">Gallery</a> - <a href="http://vicc.rf.gd/gh">GitHub</a></p>
+          <p><a href="index.html">Home</a> - <a href="http://gallery.adrian.rf.gd/">Gallery</a> - <a href="http://vicc.rf.gd/gh">GitHub</a> - <a href="http://vicc.rf.gd/twitter">Twitter</a></p>
       </div>
       
       <div id="footer" class="box">
@@ -27,6 +34,6 @@ class Header extends HTMLElement {
       `;
     }
   }
-  
+
   customElements.define('header-component', Header);
   
