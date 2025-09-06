@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrian Victor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/static/main.css?fixcache=1">
+    <script src="/static/scripts/ccd.js"></script>
+    <script src="/static/scripts/main.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+</head>
+<body>
+    <style>
+        .bg {
+            opacity: .4!important;
+        }
+    </style>
+    <div id="everythingHelper">
+    <img src="/static/images/redes.jpg" class="bg">
+        <header>
+    <div>
+        <h1>Adrian Victor:Blog</h1>
+        <a id="headerSubtitle"><i>Fanasy is not a crime, find your castle in the sky.</i></a>
+    </div>
+    <div id="linksHelper">
+        <div id="soundDiv" data-title="Stan LePard - Velkommen" data-source="welcome.mp3"></div>
+        <ul id="headerLinks">
+            <a href="/en/">home</a>
+            <a href="/en/blog/">blog</a>
+        </ul>
+    </div>
+</header>
+        <div id="mainHelper">
+            <main>
+    <article>
+        <div id="postHeader">
+            <h1>Telnet</h1>
+            <p>Adrian Victor &amp; Arthur Borges - Tue Aug 26 2025 21:00:00 GMT-0300 (Brasilia Standard Time)</p>
+        </div>
+            <script src="/static/scripts/telnetSimulator.js" defer></script>
+                    <h2>What the protocol is, its function and history</h2>
+                    <p>Telnet (from <b>TEL</b>ecommunication <b>NET</b>work) is a TCP/IP stack network protocol that allows remote text-mode communication between computers. Its main function is to provide an interactive session where a user can access and control another device as if they were on a local terminal.</p>
+                    <p>Created in 1969, Telnet was one of the first protocols developed for ARPANET (the network that gave rise to the Internet) and became fundamental for system and device administration in the 1970s, 1980s, and 1990s. Over time, it fell out of use due to lack of security, being replaced by more modern alternatives such as SSH (Secure Shell).</p>
+                    <h2>Implementation</h2>
+                    <p><b>Default port:</b> 23/TCP.<br>
+Works at the application layer of the OSI model.<br>
+<b>Format:</b> Based on ASCII character exchange, without encryption.<br>
+<b>RFC:</b> Defined by RFC 854 (1983).<br>
+<b>Architecture:</b> Follows the client-server model</p>
+                    <h2>How it works</h2>
+                    <p>In practice, Telnet works relatively simply. The process starts when the client establishes a TCP connection to the server via port 23. Then a remote terminal session is initiated and the user must provide credentials such as username and password. After authentication, commands typed on the client are transmitted in plain text to the server, which processes them and returns the corresponding output. The session remains active as long as the user wants, normally ending with commands like <i>exit</i> or <i>logout</i></p>
+                    <h2>Use cases</h2>
+                    <p>For many years, Telnet was widely used for remote access to Unix, Linux, and Windows servers, especially older versions of these systems. It also became common in network device administration, such as routers and switches, until SSH became the standard. Additionally, mainframes and some legacy devices still use Telnet today. Another practical application is in educational environments and network diagnostics, where it is used to test open ports and check service connectivity, such as running “telnet server.com 80” to see if a web server port is operational.</p>
+                    <h2>Encryption: the inherent problem</h2>
+                    <p>Telnet has no native encryption, which makes it extremely vulnerable. To solve this problem, more secure alternatives were developed. The main one is SSH (Secure Shell), created in the 1990s as a direct Telnet replacement. SSH offers the same functionality while ensuring data protection through strong authentication and full traffic encryption. Another, less common approach is using SSL/TLS to tunnel Telnet sessions, but in practice this is rarely used.</p>
+                    <h2>Advantages and disadvantages</h2>
+                    <p>Telnet’s advantages include simplicity, low resource usage, and compatibility with various older systems, which facilitated its adoption over the years. However, these benefits are outweighed by its disadvantages. The main one is the lack of encryption, exposing all transmitted data—including passwords—in plain text. This makes it vulnerable to attacks such as sniffing, which captures network packets, and hijacking, which takes over active sessions. For this reason, Telnet is considered obsolete and unsafe for use on open networks like the Internet.</p>
+                    <h2>Relation to other protocols</h2>
+                    <p>Telnet is part of the TCP/IP protocol family and uses TCP to ensure reliable communication. Like other protocols in this stack, such as HTTP, FTP, and SMTP, it relies on stable connections to perform its functions, but its distinguishing feature has always been terminal-mode interactivity. Due to security flaws, it was replaced by its natural successor, SSH, which retained Telnet’s conceptual base but added robust protection layers.</p>
+                    <h2>Functional example</h2>
+                    <p>Below is a Telnet connection simulator written in JavaScript.</p>
+                    <div id="telnetSimulationLoadingHolder">
+                        <p id="telnetSimulationLoadingText">Loading...</p>
+                        <div class="ellipsis-loader" aria-role="alert" aria-label="Loading. Please wait">
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                        </div>
+                    </div>
+                    <div id="telnetSimulation">
+                        <div id="telnetSimulationServer">
+                            <h3>Server</h3>
+                            <textarea name="" id="telnetSimulationServerScreen" readonly>Welcome to Zubuntu 30.1!
+Running startup script: start_telnet_server.sh
+Telnet Server started on localhost:23
+Ready to receive commands.
+----
+</textarea>
+                            <button id="telnetSimulationServerClean">Clear</button>
+                        </div>
+                        <div id="telnetSimulationClient">
+                            <h3>Client</h3>
+                            <textarea name="" id="telnetSimulationClientScreen" readonly>Send help to see the list of commands supported by the server!
+----
+</textarea>
+                            <div id="telnetSimulationInput">
+                                <input type="text" id="telnetSimulationInputBox">
+                                <button id="telnetSimulationClientSend">Send</button>
+                            </div>
+                        </div>
+                    </div>
+    </article>
+</main>
+        </div>
+    </div>
+</body>
+</html>

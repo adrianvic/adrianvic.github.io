@@ -1,0 +1,13 @@
+<header>
+    <div>
+        <h1>{{ title or "Adrian Victor" }}</h1>
+        <a id="headerSubtitle"><i>{{ subtitle or "Fanasy is not a crime, find your castle in the sky." }}</i></a>
+    </div>
+    <div id="linksHelper">
+        <div id="soundDiv" data-title="Stan LePard - Velkommen" data-source="welcome.mp3"></div>
+        <ul id="headerLinks">
+            <a href="/{{ langKey }}/">{{ i18n[langKey].home }}</a>
+            <a href="/{{ langKey }}/blog/">blog</a>
+        </ul>
+    </div>
+</header>

@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Adrian Victor:Blog
+---
+<main>
+    <article>
+        <div id="postHeader">
+            <h1>{{ postTitle }}</h1>
+            <p>{{ authors or "Adrian Victor" }} - {{ date }}</p>
+        </div>
+        {{ content | safe }}
+    </article>
+</main>

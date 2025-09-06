@@ -1,0 +1,50 @@
+---
+postTitle: "On the Recent Changes to App Distribution Requirements in the Android System by Google."
+langKey: en
+layout: post.njk
+date: 2025-08-30
+background: android-jellybean.jpg
+backgroundOpacity: .35
+---
+<h2>Recap</h2>
+
+<p>Android is that open-source operating system that works well for users and is loved by developers. Always known for breaking barriers and being open, expandable, versatile, and even friendly to power users-something not every system dares to be (iOS, Windows Phone). For a long time, Android was seen this way compared to its competitors: a breath of fresh air against the abusive practices of companies like Apple. But it seems the Android we've nurtured for two decades no longer fits in the pockets of Google executives; it is too free, creating ethical and technical barriers to the profitable exploitation path adopted by its developer.</p>
+
+<h2>What happened with Android?</h2>
+
+<p>At the end of this month (August 2025), Google announced that starting September 2026, all apps installed on certified devices (those with Google Android and locked bootloader) will need to undergo a developer verification process. This process involves collecting personal data from the individual distributing the app, so they can be identified and held accountable for potential malicious activities related to their software. The same applies to companies, which must also pay a $25 USD fee. This process is mandatory even if the app is distributed outside Google's official stores, raising obvious concerns about user privacy and freedom.</p>
+
+<h2>Implications, Justifications, and Motivations of the New Policy</h2>
+
+<p>It is important to examine Google's justification and try to understand its true motivation behind this distribution policy. Let's start by analyzing Google's statement:</p>
+
+<blockquote cite="https://developer.android.com/developer-verification">"By making Android safer, we're protecting the open environment that allows developers and users to confidently create and connect. Android's new developer verification is an extra layer of security that deters bad actors and makes it harder for them to spread harm."</blockquote>
+
+<p>They argue that the new rules are intended to improve user security, preventing malicious software from being installed on certified Android devices. Again, we see "security" used to justify controversial practices that limit the end user's control over their device. This was also the justification given for the proven abusive sideloading restrictions that led Google to lose a lawsuit against Epic Games-a more sophisticated version of the same issue is happening here.</p>
+
+<p>It is easy to sympathize with the company when the words are well-phrased, but as a user who loves alternative software outside the big tech ecosystem, I have seen enough examples of authority abuse to conclude that Google's recent actions are simply an attempt to regain part, if not all, of the control it had over Android devices before the previously mentioned case.</p>
+
+<p>One example is the kio-gdrive software, widely used to integrate Google Drive with the KDE file manager on Linux systems. The software was blocked from asking users if they authorized access to their Google Drive account. Instead of the permission popup, Google displayed a warning implying that the legitimate software could be malicious. Developers reported:</p>
+
+<blockquote cite="https://bugs.kde.org/show_bug.cgi?id=480779#c54">"Google blocked us from using this back in June because we weren't able
+justify our API usage to their satisfaction. As such, the permission is now blocked [...] mamaking 25% of the KAccounts KCM non-functional. Remove the gdrive permissions [...] for now so at least other Google things can work (at least in theory)."</blockquote>
+
+<blockquote cite="https://bugs.kde.org/show_bug.cgi?id=480779#c54">"It's beyond stupid (IMHO) if individual users can't indicate that they're fine with a particular piece of software accessing their supposedly sensitive data!"</blockquote>
+
+<p>Although I couldn't find the exact internal conversations between developers-and I'm giving Google the benefit of the doubt-it is at least suspicious that Google did not agree that software performing its primary functions within Google Drive should have a valid reason to access it. This was not an isolated case; Google operates behind the scenes to control what happens on Android. For example, apps compiled for older system versions would show alarming security warnings because recent changes introduced more permission barriers, even though old apps didn't support them. A reasonable warning would emphasize that permissions must be granted to support optional features, but the actual messages were vague, conveniently scaring users attempting sideloading and helping maintain the Play Store monopoly.</p>
+
+<p>Speaking of alarming warnings, let's discuss Play Protect, software embedded in the Google Play Store that scans installed sideloaded apps and reports the results back to Google. At first glance, this is a good idea, assuming the user opts in. The problem arises when the difference between malware detection messages and warnings triggered by outdated software is unclear, causing two serious effects: it renders Google's protection service almost useless while maintaining the Play Store monopoly.</p>
+
+<p>Imagine sideloading for the first time: you try to install an old version of a favored software. You receive exaggerated warnings about the supposed dangers, abandon the installation, and install the latest version from the Play Store. Google thus indirectly forces more users to use its store, ensuring the lucrative 30% transaction fee.</p>
+
+<p>Now consider a second scenario: you're an advanced Android user who understands sideloading and loves installing open-source apps outside the Play Store. You click a suspicious link and download a malicious APK. Play Protect warns you during installation, but the warnings are so frequent and exaggerated-even when no malware is detected-that you ignore them out of habit. The result: malware on your device, and Play Protect was ineffective.</p>
+
+<p>Sometimes, downloading software outside the Play Store is the only option, because developers may not want to publish apps there-either for privacy reasons (developers must disclose personal data when publishing) or because of publishing fees, which may discourage donation-supported developers. Users must have the freedom to choose what runs on their devices.</p>
+
+<p>According to current information, developers don't have to make their data public if they avoid distributing apps via the Play Store. This is the least Google could do to make the new distribution policies fairer. Google also claims the verification isn't meant to inspect app content or purpose; it is supposedly only to block malware distribution. Whether this holds up remains to be seen, given it could also serve as a convenient tool for abuse of power.</p>
+
+<h2>Next Steps</h2>
+
+<p>We must watch how these policies are applied and how they affect the Android ecosystem. An inevitable consequence is that countless abandoned apps, perfectly functional without the new requirements, will disappear overnight. Not all old software connects to the internet, and not all represents a constant threat. Google is taking away the option for experienced users to take responsibility and say: "I know what I'm doing!", treating us like children, as if they know what's best for everyone.</p>
+
+<p>The commercial Android on phones is based on the <abbr title="Android Open Source Project">AOSP</abbr>, meaning Android's core remains open, and Google hasn't taken that from users yet. I plan to write another post explaining how to regain control of your device through system modifications, from the simplest, safest, most stable methods to advanced approaches, if you feel confident.</p>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrian Victor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/static/main.css?fixcache=1">
+    <script src="/static/scripts/ccd.js"></script>
+    <script src="/static/scripts/main.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+</head>
+<body>
+    <style>
+        .bg {
+            opacity: 0.35!important;
+        }
+    </style>
+    <div id="everythingHelper">
+    <img src="/static/images/android-jellybean.jpg" class="bg">
+        <header>
+    <div>
+        <h1>Adrian Victor:Blog</h1>
+        <a id="headerSubtitle"><i>Fanasy is not a crime, find your castle in the sky.</i></a>
+    </div>
+    <div id="linksHelper">
+        <div id="soundDiv" data-title="Stan LePard - Velkommen" data-source="welcome.mp3"></div>
+        <ul id="headerLinks">
+            <a href="/pt/">início</a>
+            <a href="/pt/blog/">blog</a>
+        </ul>
+    </div>
+</header>
+        <div id="mainHelper">
+            <main>
+    <article>
+        <div id="postHeader">
+            <h1>Sobre as recentes mudanças nos requisitos de distribuição de apps no sistema Android feitas pela Google.</h1>
+            <p>Adrian Victor - Fri Aug 29 2025 21:00:00 GMT-0300 (Brasilia Standard Time)</p>
+        </div>
+        <h2>Recapitulando</h2>
+
+<p>Android é aquele sistema operacional open-source que funciona bem para os usuários, e que os desenvolvedores amam. Sempre conhecido por quebrar barreiras e por ser aberto, expansível, versátil e até amigável com os mais nerds, coisa que nem todo sistema tem a cara e coragem de ser (iOS, Windows Phone). É assim que, por muito tempo, o Android foi visto em relação aos seus concorrentes: Um suspiro de ar puro em relação às práticas abusivas de empresas como a Apple. Mas parece que o Android que cultivamos por duas décadas não cabe mais no bolso dos executivos da Google, é livre demais, e isso criou barreiras éticas e técnicas no lucrativo caminho de exploração adotado pela sua desenvolvedora.</p>
+
+<h2>O que aconteceu com o Android?</h2>
+
+<p>A Google anunciou no final deste mês (Agosto de 2025) que a partir de Setembro de 2026 todos os apps instalados em dispositivos certificados (aqueles com o Android da Google e de bootloader bloqueado) precisarão passar pelo processo de verificação de desenvolvedor, processo cujo consiste da coleta de dados pessoais do indivíduo que vai distribuir a aplicação para que o mesmo possa ser identificado e atribuído a possíveis atividades maliciosas relacionadas ao seu software, o mesmo vale para empresas, que além disso precisam pagar uma taxa de 25 USD. O processo é forçado e necessário mesmo com a distribuição do app sendo feita fora das lojas oficiais da Google, o que trouxe óbvias preocupações sobre privacidade e liberdade dos usuários do sistema.</p>
+
+<h2>As implicações, justificativas e motivações da nova política</h2>
+
+<p>É importante analisar a justificativa e tentar entender a real motivação que a Google teve ao criar tal política de distribuição. Portanto começamos analisando a fala da Google:</p>
+
+<blockquote cite="https://developer.android.com/developer-verification">"Para tornar o Android mais seguro, estamos protegendo o ambiente aberto que permite que desenvolvedores e usuários criem e se conectem com confiança. A nova verificação de desenvolvedor do Android é uma camada que detém atores maliciosos e faz com que seja mais difícil para que eles espalhem o mau."</blockquote>
+
+<p>Ela argumenta que as novas regras do sistema foram feitas com a intenção de aprimorar a segurança do usuário, evitando que software malicioso seja instalado em dispositivos Android certificados. Outra vez vemos segurança sendo usada como forma de justificar práticas controversas que limitam o poder do usuário final no seu próprio dispositivo. Essa também era a justificativa dada para a prática comprovadamente abusiva de bloqueio de sideloading de apps que levou a Google a perder seu caso no tribunal contra a empresa Epic Games, aqui vemos uma versão mais sofisticada da mesma.</p>
+
+<p>É fácil simpatizar com a empresa quando as palavras são bem colocadas, mas como usuário ávido de softwares alternativos aos das big-techs, eu já vi exemplos de abuso de autoridade suficientes para concluir que as recentes ações da Google não passam de uma forma de recuperar parte, se não todo o controle que ela tinha sobre os dispositivos Android antes do caso mencionado anteriormente.</p>
+
+<p>Um exemplo desses abusos é o caso do software kio-gdrive, que era amplamente utilizado para integrar o Google Drive ao explorador de arquivos do KDE, um ambiente para sistemas Linux. O software foi bloqueado de perguntar para os usuários se eles autorizavam o acesso a sua conta do Google Drive, no lugar do popup de permissão, a Google colocou um aviso informando os usuários que o software legítimo poderia ser malicioso, seguem os relatos dos desenvolvedores:</p>
+
+<blockquote cite="https://bugs.kde.org/show_bug.cgi?id=480779#c54">"Google bloqueou o nosso acesso a essa função em junho porque não conseguimos explicar o nosso uso da API de forma que eles julgam satisfatória. Por causa disso o sistema de permissões agora está bloqueado [...] tornando 25% das KAccounts KCM não funcionais. Remova as permissões [...] para que pelo menos o restante das integrações funcione (pelo menos em teoria)."</blockquote>
+
+<blockquote cite="https://bugs.kde.org/show_bug.cgi?id=480779#c54">"É mais que estúpido (na minha humilde opinião) usuários individuais não poderem indicar que eles concordam com um software específico acessando seus dados supostamente sensíveis!"</blockquote>
+
+<p>Por mais que durante minhas pesquisas eu não tenha achado exatamente quais conversas foram trocadas pelo time de desenvolvedores - e com isso estou dando um grande benefício da dúvida para a Google -, é no mínimo suspeito que a Google não tenha concordado que um software que exerce suas funções primárias dentro do ambiente do Google Drive tem um motivo válido para usufruir do mesmo. Esse não foi um caso único, a Google age nas entrelinhas para controlar o que acontece ou não no Android, como quando apps compilados para versões mais antigas do sistema mostravam um aviso assustador sobre segurança pois mudanças recentes haviam colocado mais barreiras no sistema de permissões, porém os apps antigos não tinham suporte a elas. Um aviso sobre as permissões que seriam dadas ao aplicativo instalado, enfatizando que elas teriam que ser dadas ao aplicativo por ele não suportar as permissões opcionais é razoável, entretanto a mensagem exibida foi bem mais vaga do que deveria ser, o que convenientemente serviu para assustar os usuários que experimentavam sideloading e ajudou a manter o monopólio da Google Play Store.</p>
+
+<p>Falando em avisos assustadores, chegou a hora de falar do Play Protect, um software embutido na Google Play Store que escaneia os apps instalados no seu dispositivo via sideloading e retorna o resultado para a base de dados da Google, uma ideia boa a primeira vista, levando em conta que a empresa respeita a escolha do usuário com o modelo <i>opt-in</i>, questionando o mesmo se ele gostaria de enviar seus apps instalados para a análise. O grande problema aparece quando a diferença entre as mensagens de detecção de malware e as que são acionadas pelo simples fato do software estar desatualizado é tão turva que causa dois efeitos graves, que juntos tornam o serviço de proteção da Google praticamente inútil para o usuário, enquanto mantém o monopólio da Google.</p>
+
+<p>Suponhamos que você está experimentando sideloading pela primeira vez: você tenta instalar uma versão antiga de um software que você gosta. Você recebe a mensagem exacerbada sobre os supostos perigos de instalar o software desatualizado, desiste da instalação e instala a versão atual pela Google Play Store. Assim a Google força, mesmo que indiretamente, mais um usuário a usar sua loja, garantindo os lucrativos 30% de taxa nas transações dos apps.</p>
+
+<p>Agora apresento um segundo cenário hipotético: você é um usuário mais avançado do sistema Android que tem total noção do que se trata o sideloading e adora instalar seus aplicativos de código aberto por fora da Play Store. Porém você clica em um link duvidoso e baixa um arquivo APK malicioso. Na hora de instalar você recebe o aviso do Play Protect, mas ele é tão frequente e exagerado - até mesmo quando nenhum malware foi detectado - que você acaba dispensando-o por já estar acostumado a ter que fazer isso (isso quando o usuário já não desativou ele nas configurações da Play Store). Agora o usuário tem um malware em seu dispositivo, o Play Protect foi inútil.</p>
+
+<p>Em certas situações baixar um software por fora da loja da Google é a única opção, pois existem casos onde o desenvolvedor não quer publicar seu app na Play Store, tanto por questões de privacidade - já que os desenvolvedores são forçados a revelar certos dados pessoais para o público quando publicam seus apps -, quanto pela taxa imposta na publicação e vendas internas do aplicativo, que pode afastar desenvolvedores sustentados puramente por doações dos usuários. Pouco importa o motivo, os usuários devem ser livres para escolher o que roda em seus dispositivos.</p>
+
+<p>De acordo com as informações disponibilizadas até agora, os desenvolvedores não precisarão tornar seus dados públicos caso optem por não distribuir sua aplicação na Play Store, e isso é o mínimo que a Google poderia fazer para tornar as novas políticas de distribuição mais justas para os desenvolvedores. A empresa também afirma que essa verificação não tem o objetivo de verificar o que há dentro da aplicação ou sua finalidade, portanto estaria sendo imposta puramente para barrar a distribuição contínua de malwares, resta ver se a afirmação se sustenta, tendo em vista que isso também pode ser uma ferramenta de abuso de poder conveniente para a Google, como outras serviram nos exemplos citados acima.</p>
+
+<h2>Próximos passos</h2>
+
+<p>Devemos ficar atentos a como essas novas políticas vão ser aplicadas, e como as mesmas afetarão o ecossistema do Android. Uma consequência inevitável das mudanças é que um número inestimável de aplicações abandonadas pelos desenvolvedores, que - se não fosse pelos novos requisitos - seriam perfeitamente funcionais serão perdidas de um dia para o outro. Nem todo software antigo se conecta à internet, nem todo software antigo representa um perigo constante ao usuário. A Google está tirando do usuário experiente a opção de assumir a responsabilidade e dizer: "Eu sei o que estou fazendo!", nos segurando como crianças, como se soubessem o que é melhor para todos.</p>
+
+<p>O Android comercializado nos celulares é baseado no <abbr title="Android Open Source Project">AOSP</abbr>, o que significa que a força vital do Android é aberta, e isso a Google ainda não tirou dos usuários. Portanto pretendo fazer um outro post explicando como você pode recuperar o controle do seu dispositivo por meio de modificações no sistema, da forma mais simples, segura e estável possível, até as formas mais avançadas, caso você se sinta confiante.</p>
+    </article>
+</main>
+        </div>
+    </div>
+</body>
+</html>

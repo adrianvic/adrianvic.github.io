@@ -1,0 +1,25 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/blog/index.html"
+layout: base.njk
+title: Adrian Victor:Blog
+---
+
+<main>
+  <p><b>{{ i18n[langKey].blogTitle | smartTitle }}</b></p>
+  <ul>
+    {% for post in collections.post %}
+      {% if post.data.langKey == langKey %}
+        <li>
+          <p>
+            <a href="{{ post.url }}">{{ post.data.postTitle }}</a><br>
+            {{ post.data.date }}
+          </p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</main>

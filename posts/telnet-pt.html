@@ -1,0 +1,102 @@
+---
+postTitle: "Telnet"
+layout: post.njk
+date: 2025-08-27
+background: redes.jpg
+authors: Adrian Victor & Arthur Borges
+langKey: pt
+---
+    <script src="/static/scripts/telnetSimulator.js" defer></script>
+                    <h2>O que é o protocolo, sua função e histórico</h2>
+                    <p>O Telnet (do inglês <b>TEL</b>ecommunication <b>NET</b>work) é um protocolo de rede da pilha
+TCP/IP que permite a comunicação remota entre computadores em modo texto. Sua
+função principal é proporcionar uma sessão interativa, em que um usuário pode
+acessar e controlar outro dispositivo como se estivesse em um terminal local.</p>
+                    <p>Criado em 1969, o Telnet foi um dos primeiros protocolos desenvolvidos para a
+ARPANET (a rede que deu origem à Internet) e tornou-se fundamental para a
+administração de sistemas e dispositivos nas décadas de 1970, 1980 e 1990. Com o
+tempo, caiu em desuso devido à falta de segurança, sendo substituído por
+alternativas mais modernas, como o SSH (Secure Shell).</p>
+                    <h2>Implementação</h2>
+                    <p><b>Porta padrão:</b> 23/TCP.<br>
+Funciona na camada de aplicação do modelo OSI.<br>
+<b>Formato:</b> Baseado em troca de caracteres ASCII, sem criptografia.<br>
+<b>RFC:</b> Definido pela RFC 854 (1983).<br>
+<b>Arquitetura:</b> Segue o modelo cliente-servidor</p>
+                    <h2>Funcionamento</h2>
+                    <p>Na prática, o Telnet funciona de maneira relativamente simples. O processo começa
+quando o cliente estabelece uma conexão TCP com o servidor por meio da porta 23.
+Em seguida, uma sessão de terminal remoto é iniciada e o usuário deve fornecer
+suas credenciais, como nome de usuário e senha. Após a autenticação, os
+comandos digitados no cliente são transmitidos em texto puro ao servidor, que os
+processa e retorna a saída correspondente. A sessão permanece ativa enquanto o
+usuário desejar, sendo encerrada normalmente com comandos como <i>exit</i> ou <i>logout</i></p>
+                    <h2>Cenários de uso</h2>
+                    <p>Durante muitos anos, o Telnet foi amplamente utilizado para acesso remoto a
+servidores Unix, Linux e Windows, especialmente em versões mais antigas desses
+sistemas. Também se tornou bastante comum na administração de dispositivos de
+rede, como roteadores e switches, até que o SSH passou a ser adotado como
+padrão. Além disso, grandes computadores centrais, conhecidos como mainframes,
+e alguns dispositivos legados ainda utilizam Telnet até hoje. Outra aplicação prática
+do protocolo está em ambientes educacionais e no diagnóstico de redes, onde é
+usado para testar portas abertas e verificar conectividade de serviços, como ao
+executar “telnet servidor.com 80” para checar se a porta de um servidor web está em
+funcionamento.</p>
+                    <h2>Criptografia: o problema inerente</h2>
+                    <p>O Telnet não possui criptografia nativa, o que o torna extremamente vulnerável. Para
+solucionar esse problema, surgiram alternativas mais seguras. A principal delas é o
+SSH (Secure Shell), desenvolvido nos anos 1990 como um substituto direto do
+Telnet. O SSH oferece as mesmas funcionalidades, mas garante a proteção dos
+dados por meio de autenticação forte e criptografia de todo o tráfego. Outra
+possibilidade, embora menos comum, é o uso de SSL/TLS para tunelar sessões
+Telnet, mas na prática essa abordagem raramente é utilizada.</p>
+                    <h2>Vantagens e desvantagens</h2>
+                    <p>Entre as vantagens do Telnet, destacam-se sua simplicidade, baixo consumo de
+recursos e compatibilidade com diferentes sistemas antigos, o que facilitou sua
+adoção ao longo dos anos. Contudo, essas qualidades são superadas por suas
+desvantagens. A principal é a ausência de criptografia, que expõe todos os dados
+transmitidos, incluindo senhas, em texto puro. Isso o torna vulnerável a ataques
+como o sniffing, que captura pacotes de rede, e o hijacking, que sequestra sessões
+ativas. Por esse motivo, o Telnet é considerado obsoleto e inseguro para uso em
+redes abertas, como a própria Internet.</p>
+                    <h2>Relação com outros protocolos</h2>
+                    <p>O Telnet faz parte da família de protocolos da pilha TCP/IP e utiliza o TCP para
+garantir a confiabilidade na comunicação. Assim como outros protocolos dessa pilha,
+como HTTP, FTP e SMTP, ele se baseia em conexões estáveis para realizar suas
+funções, mas seu diferencial sempre foi a interatividade em modo terminal. No
+entanto, devido às falhas de segurança, acabou sendo substituído por seu sucessor
+natural, o SSH, que manteve a mesma base conceitual do Telnet, mas adicionou
+camadas robustas de proteção.</p>
+                    <h2>Exemplo funcional</h2>
+                    <p>Abaixo há um simulador de conexão Telnet feito em JavaScript.</p>
+                    <div id="telnetSimulationLoadingHolder">
+                        <p id="telnetSimulationLoadingText">Loading...</p>
+                        <div class="ellipsis-loader" aria-role="alert" aria-label="Loading. Please wait">
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                            <div class="ellipsis-loader__dot"></div>
+                        </div>
+                    </div>
+                    <div id="telnetSimulation">
+                        <div id="telnetSimulationServer">
+                            <h3>Servidor</h3>
+                            <textarea name="" id="telnetSimulationServerScreen" readonly>Bem vindo ao Zubuntu 30.1!
+Rodando script de inicialização: start_telnet_server.sh
+Servidor Telnet iniciado em localhost:23
+Pronto para receber comandos.
+----
+</textarea>
+                            <button id="telnetSimulationServerClean">Limpar</button>
+                        </div>
+                        <div id="telnetSimulationClient">
+                            <h3>Cliente</h3>
+                            <textarea name="" id="telnetSimulationClientScreen" readonly>Envie help para ver a lista de comandos suportados pelo servidor!
+----
+</textarea>
+                            <div id="telnetSimulationInput">
+                                <input type="text" id="telnetSimulationInputBox">
+                                <button id="telnetSimulationClientSend">Enviar</button>
+                            </div>
+                        </div>
+                    </div>

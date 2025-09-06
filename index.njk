@@ -1,0 +1,49 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/index.html"
+layout: base.njk
+---
+
+<div id="homeSquares">
+</div>
+<main>
+    <script src="/static/scripts/home.js" defer></script>
+    <noscript><style>
+        .hs {
+            display: unset!important;
+        }
+        #homeSquares {
+            display: none;
+        }
+    </style></noscript>
+    <div class="hs" id="hsDefault">
+        <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
+        <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>
+        <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h2>
+        <p>{{ i18n[langKey].homeSocialsAndContactParagraph | safe }}</p>
+        <p>{{ i18n[langKey].homeSocialsAndContactParagraphTwo | safe }}</p>
+    </div>
+    <div class="hs" id="hsMusic">
+        <h1>{{ i18n[langKey].myMusic | smartTitle }}</h1>
+        <p>{{ i18n[langKey].homeMyMusicParagraph | safe }}</p>
+        <p>{{ i18n[langKey].homeMyMusicParagraphTwo | safe }}</p>
+    </div>
+    <div class="hs" id="hsVideo">
+        <h1>{{ i18n[langKey].myVideos | smartTitle }}</h1>
+        <p>{{ i18n[langKey].homeMyVideoParagraph | safe }}</p>
+        <p>{{ i18n[langKey].homeMyVideoRandomVideoParagraph | safe }}</p>
+        <a href="https://youtu.be/tZLoSxzsfpM" id="youtubeVideo">
+            <img src="/static/images/youtube_video.jpg" alt="" id="youtubeVideoImage">
+            <p>{{ i18n[langKey].homeVideoTitle | safe }}</p>
+        </a>
+    </div>
+    <div class="hs" id="hsCode">
+        <h1>{{ i18n[langKey].mySoftware | smartTitle }}</h1>
+        <p>{{ i18n[langKey].homeMySoftwareParagraph | safe }}</p>
+        <p>{{ i18n[langKey].homeMySoftwareNotableProjects | safe }}</p>
+        <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt="{{ i18n[langKey].pestoWikiLogoAlt }}"></a>
+    </div>
+</main>
