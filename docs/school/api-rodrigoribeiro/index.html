@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrian Victor - Demonstração da API do Prof. Rodrigo Ribeiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/static/main.css?fixcache=1">
+    <script src="/static/scripts/ccd.js"></script>
+    <script src="/static/scripts/main.js" defer></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+</head>
+<body>
+    <style>
+        .bg {
+            opacity: .4!important;
+        }
+    </style>
+    <div id="everythingHelper">
+    <img src="/static/images/bear.jpg" class="bg">
+        <header>
+    <div>
+        <h1>Adrian Victor:Trabalhos</h1>
+        <a id="headerSubtitle"><i>Fanasy is not a crime, find your castle in the sky.</i></a>
+    </div>
+    <div id="linksHelper">
+        <div id="soundDiv" data-title="Stan LePard - Velkommen" data-source="welcome.mp3"></div>
+        <ul id="headerLinks">
+            <a href="/pt/">início</a>
+            <a href="/pt/blog/">blog</a>
+        </ul>
+    </div>
+</header>
+        <div id="mainHelper">
+            
+<div style="display: flex; gap: 1em; flex-direction: column;">
+    <h1>Demonstração da API do Prof. Rodrigo Ribeiro</h1>
+    <div style="display: flex; flex-direction: column; gap: .6em;">
+        <input type="text" id="username" placeholder="E-mail">
+        <input type="text" id="password" placeholder="Senha">
+        <div>
+            <button id="submit">Logar</button>
+            <button id="submitb">Criar Usuário</button>
+        </div>
+    </div>
+    <div id="token">Token: Ausente</div>
+</div>
+<script>
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const tokenLabel = document.getElementById('token');
+    const submitButton = document.getElementById('submit');
+    const cuButton = document.getElementById('submitb');
+
+    let token = '';
+
+    async function api(endpoint, data) {
+        const info = {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+          body: JSON.stringify(data),
+        }
+        let res = await fetch(`https://api.rodrigoribeiro.net/${endpoint}`, info);
+        res = await res.json()
+        console.log(res)
+        return res;
+    }
+
+    function login(username, password, createAccount = false) {
+        return api(createAccount ? "registrar" : "login", { email: username, senha: password });
+    }
+
+    submitButton.addEventListener('click', async () => {
+        if (!usernameInput.value && !passwordInput.value) {
+            alert("Preencha os campos necessários.")
+            return;
+        }
+        res = await login(usernameInput.value, passwordInput.value);
+        const is_logged = (res.status_code == 200);
+        if (is_logged) token = res.response.token;
+        tokenLabel.innerHTML = `Token: ${is_logged ? 'Presente' : 'Ausente (erro de autenticação)'}`;
+    })
+
+    cuButton.addEventListener('click', async () => {
+        if (!usernameInput.value && !passwordInput.value) {
+            alert("Preencha os campos necessários.")
+            return;
+        }
+        res = await login(usernameInput.value, passwordInput.value, true);
+        const is_logged = (res.status_code == 201);
+        tokenLabel.innerHTML = `Token: ${is_logged ? 'Ausente (conta criada e pronta para logar)' : 'Ausente (erro ao criar usuário)'}`;
+    })
+</script>
+        </div>
+    </div>
+</body>
+</html>

@@ -380,6 +380,16 @@ div.hs.selected {
   animation: fadeOut .5s ease-out 1 forwards;
 }
 
+.oneLineClamp {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    /* height: 1em; */
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
 @keyframes ellipsis-loader {
     0%, 25% {
         transform: translateX(0);
