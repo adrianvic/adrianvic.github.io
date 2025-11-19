@@ -34,18 +34,40 @@
     </div>
 </header>
         <div id="mainHelper">
-            
+            <style>
+    #mainAPI, #login {
+        display: none;
+    }
+
+    #mainAPI.selected, #login.selected {
+        display: flex;
+    }
+</style>
 <div style="display: flex; gap: 1em; flex-direction: column;">
     <h1>Demonstração da API do Prof. Rodrigo Ribeiro</h1>
-    <div style="display: flex; flex-direction: column; gap: .6em;">
+    <p>A API do Prof. Rodrigo Ribeiro permite que o <i>client</i> envie uma imagem, assim retornando o resultado de uma leitura óptica realizada sobre a mesma com inteligência artificial. Esse client lê o resultado e o mostra de forma simples para o usuário.</p>
+    <p><a href="https://api.rodrigoribeiro.net/doc">Mais informações sobre a API podem ser encontradas no seu website.</a></p>
+    <div id="token">Token: Ausente</div>
+    <div id="login" class="selected" style="flex-direction: column; gap: .6em;">
         <input type="text" id="username" placeholder="E-mail">
-        <input type="text" id="password" placeholder="Senha">
+        <input type="password" id="password" placeholder="Senha">
         <div>
             <button id="submit">Logar</button>
             <button id="submitb">Criar Usuário</button>
         </div>
     </div>
-    <div id="token">Token: Ausente</div>
+    <div id="mainAPI" style="flex-direction: column; gap: 1em;">
+        <div style="display: flex; flex-direction: column; gap: .6em;">
+            <input type="file" id="file">
+            <div>
+                <button id="submitImage">Enviar imagem.</button>
+                <button id="logout">Deletar token</button>
+            </div>
+        </div>
+        <div id="imageResults">
+            <p>Resultados da leitura óptica:</p>
+        </div>
+    </div>
 </div>
 <script>
     const usernameInput = document.getElementById('username');
@@ -53,28 +75,34 @@
     const tokenLabel = document.getElementById('token');
     const submitButton = document.getElementById('submit');
     const cuButton = document.getElementById('submitb');
+    const fileEl = document.getElementById('file');
+    const submitImageButton = document.getElementById('submitImage');
+    const imageResults = document.getElementById("imageResults");
+    const loginDiv = document.getElementById("login");
+    const apiDiv = document.getElementById("mainAPI");
+    const logoutButton = document.getElementById("logout");
 
     let token = '';
-
+    
     async function api(endpoint, data) {
         const info = {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-          body: JSON.stringify(data),
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data),
         }
         let res = await fetch(`https://api.rodrigoribeiro.net/${endpoint}`, info);
         res = await res.json()
         console.log(res)
         return res;
     }
-
+    
     function login(username, password, createAccount = false) {
         return api(createAccount ? "registrar" : "login", { email: username, senha: password });
     }
-
+    
     submitButton.addEventListener('click', async () => {
         if (!usernameInput.value && !passwordInput.value) {
             alert("Preencha os campos necessários.")
@@ -82,10 +110,13 @@
         }
         res = await login(usernameInput.value, passwordInput.value);
         const is_logged = (res.status_code == 200);
-        if (is_logged) token = res.response.token;
+        if (is_logged) { 
+            token = res.response.token;
+            toggleDivsVisibility();
+        }
         tokenLabel.innerHTML = `Token: ${is_logged ? 'Presente' : 'Ausente (erro de autenticação)'}`;
     })
-
+    
     cuButton.addEventListener('click', async () => {
         if (!usernameInput.value && !passwordInput.value) {
             alert("Preencha os campos necessários.")
@@ -95,6 +126,41 @@
         const is_logged = (res.status_code == 201);
         tokenLabel.innerHTML = `Token: ${is_logged ? 'Ausente (conta criada e pronta para logar)' : 'Ausente (erro ao criar usuário)'}`;
     })
+    
+    submitImageButton.addEventListener('click', async () => {
+        const file = fileEl.files[0];
+        if (!file) return;
+        
+        const fr = new FileReader();
+        fr.onload = async () => {
+            const dataUrl = fr.result;
+            const base64 = dataUrl.split(',')[1];
+            const res = await api('detectar', {
+                "image": base64,
+                "preview": true
+            })
+
+            imageResults.innerHTML = "";
+            
+            res.response.objects.forEach(object => {
+                let resultsEntry = document.createElement("p");
+                resultsEntry.innerHTML = `<i>${object.class}</i> detectado com confiança de ${object.score * 100}%`
+                imageResults.appendChild(resultsEntry);
+            });
+        };
+        fr.readAsDataURL(file);
+    });
+
+    logout.addEventListener('click', () => {
+        token = "";
+        toggleDivsVisibility();
+        tokenLabel.innerText = "Token: Ausente"
+    })
+
+    function toggleDivsVisibility() {
+        apiDiv.classList.toggle('selected');
+        loginDiv.classList.toggle('selected');
+    }
 </script>
         </div>
     </div>

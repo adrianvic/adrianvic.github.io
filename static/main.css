@@ -136,10 +136,10 @@ h2 {
 }
 
 textarea, input, button {
-    border: thick solid var(--theme-color-lighter);
+    border: medium solid var(--theme-color-lighter);
     background-color: black;
     color: white;
-    padding: 4px;
+    padding: .6em;
 }
 
 #sound {
