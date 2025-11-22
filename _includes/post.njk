@@ -7,6 +7,13 @@ title: Adrian Victor:Blog
         <div id="postHeader">
             <h1>{{ postTitle }}</h1>
             <p>{{ authors or "Adrian Victor" }} - {{ date }}</p>
+            {% if tags %}
+            <div class="postMiniTagContainer">
+              {% for tag in tags %}
+                <div class="postMiniTag pmt-{{tag}}">{{tag}}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
         </div>
         {{ content | safe }}
     </article>

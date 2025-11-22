@@ -14,5 +14,8 @@
   "type": "commonjs",
   "devDependencies": {
     "eleventy-plugin-citations": "^0.1.10"
+  },
+  "dependencies": {
+    "elasticlunr": "^0.9.5"
   }
 }

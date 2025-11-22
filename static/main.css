@@ -390,6 +390,38 @@ div.hs.selected {
     -webkit-box-orient: vertical
 }
 
+.postMiniTagContainer {
+    display: flex;
+    gap: .2em;
+}
+
+.postMiniTagContainer div {
+    transition: .4s;
+    padding: .3em;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: .8;
+}
+
+.postMiniTagContainer div:hover {
+    opacity: 1;
+}
+
+.postListEntry {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+.postListEntry .postInfo {
+    margin: 0;
+}
+
+.postMiniTag.pmt-android {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
 @keyframes ellipsis-loader {
     0%, 25% {
         transform: translateX(0);

@@ -13,11 +13,18 @@ title: Adrian Victor:Blog
   <ul>
     {% for post in collections.post %}
       {% if post.data.langKey == langKey %}
-        <li>
-          <p>
+        <li class="postListEntry">
+          <p class="postInfo">
             <a href="{{ post.url }}">{{ post.data.postTitle }}</a><br>
             {{ post.data.date }}
           </p>
+          {% if post.data.tags %}
+            <div class="postMiniTagContainer">
+              {% for tag in post.data.tags %}
+                <div class="postMiniTag pmt-{{tag}}">{{tag}}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
         </li>
       {% endif %}
     {% endfor %}
