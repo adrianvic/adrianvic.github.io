@@ -42,7 +42,11 @@ module.exports = {
     homeMySoftwareParagraph: `I am studying computing at IFC (SC, Brazil) but in my free time I have some projects like computer applications, Minecraft plugins, Minecraft servers, etc... Anything that is public should be in my <a href="${globalValues.github.url}">GitHub profile</a>.`,
     pestoWikiLogoAlt: "A digital drawing of the top of a fork with a black outline, in the right a text in white says 'Pesto Wiki'",
     homeMySoftwareNotableProjects: "These are my most notable projects:",
-    blogTitle: "Listing blog posts:"
+    blogTitle: "Listing blog posts:",
+    eyeofnemesisProjectDesctiption: "Eye of Nemesis is a plugin that allows server admins to write policies that will deny or allow (black/whitelist) players to do specific things based on the value of nodes.",
+    jamfishProjectDesctiption: "Native music player for Android devices that connects to Jellyfin media servers. The code is based on Gelli's archived repository, which is based on an old version of Phonograph.",
+    pestoProjectDesctiption: "Multi-platform customizable client for wikis written in Python using PySide6 (QT).",
+    itemeconomyProjectDesctiption: "This PaperMC plugin integrates with VaultUnlocked to provide a unique, item-based economy system for your Minecraft server. Instead of relying solely on virtual balances, players use in-game items as physical currency, adding a layer of immersion and realism to your economy."
   },
   pt: {
     home: "início",
@@ -72,6 +76,10 @@ module.exports = {
     homeMySoftwareParagraph: `Estou estudando informática no IFC (SC, Brazil) mas no meu tempo livre tenho projetos como programas de computador, plugins para Minecraft, servidores Minecraft, etc... Todos meus projetos públicos estão disponíveis no meu <a href="${globalValues.github.url}">perfil do GitHub</a>.`,
     pestoWikiLogoAlt: "Um desenho digital do topo de um garfo com uma borda preta, à direita um texto branco diz 'Pesto Wiki'",
     homeMySoftwareNotableProjects: "Esses são meus projetos mais notáveis:",
-    blogTitle: "Listando postagens do blog:"
+    blogTitle: "Listando postagens do blog:",
+    eyeofnemesisProjectDesctiption: "Eye of Nemesis é um plugin que permite aos administradores de servidores escrever políticas que negarão ou permitirão (lista negra/branca) que os jogadores façam coisas específicas com base no valor dos nós.",
+    jamfishProjectDesctiption: "Reprodutor de música nativo para dispositivos Android que se conecta a servidores de mídia Jellyfin. O código é baseado no repositório arquivado do Gelli, que por sua vez se baseia em uma versão antiga do Phonograph.",
+    pestoProjectDesctiption: "Cliente personalizável multiplataforma para wikis escrito em Python usando PySide6 (QT).",
+    itemeconomyProjectDesctiption: "Este plugin PaperMC integra-se ao VaultUnlocked para fornecer um sistema de economia único baseado em itens para o seu servidor Minecraft. Em vez de depender apenas de saldos virtuais, os jogadores usam itens do jogo como moeda física, adicionando uma camada de imersão e realismo à sua economia."
   }
 };
