@@ -289,11 +289,13 @@ div.hs.selected {
 }
 
 .hsProjectHeaderIcon {
+    transition: .2s;
     fill: white;
     stroke: white;
     height: 50%;
     width: auto;
     margin: auto 0;
+    opacity: .6;
 }
 
 .hsProjectHeaderIcon img {
@@ -306,6 +308,10 @@ div.hs.selected {
 
 .hsProject:hover .hsProjectHeader {
     border-color: white;
+}
+
+.hsProject:hover .hsProjectHeaderIcon {
+    opacity: 1;
 }
 
 .hsProjectImage {
