@@ -8,6 +8,7 @@ const savedTime = localStorage.getItem("audioTime");
 const wasPlaying = localStorage.getItem("audioPlaying") === 'true'
 
 if (savedTime) audio.currentTime = parseFloat(savedTime);
+
 if (wasPlaying) {
     play();
 } else {
@@ -15,6 +16,7 @@ if (wasPlaying) {
 }
 
 function play() {
+    audio.volume = 0.8;
     audio.play();
     localStorage.setItem("audioPlaying", "true")
     toggleIMG.src = "/static/images/sound-on.png"
