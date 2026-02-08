@@ -1,11 +1,14 @@
 // This script handles the playback of music in the header's miniplayer ;)
 const body = document.querySelector("body");
 
-document.getElementById("music").innerHTML = `
+const musicdiv = document.getElementById("music");
+musicdiv.innerHTML = `
 <img src="/static/images/gears.svg" class="optionsToggle invertedc">
 <img src="/static/images/sound-on.png" id="sound">
 <select name="song" id="songSelection"></select>
 `
+const linksHelper = document.getElementById("linksHelper");
+linksHelper.insertBefore(document.createElement("hs"), document.getElementById("headerLinks"));
 
 const songs = [
     { file: "Velkommen.mp3", name: 'Velkommen', artwork: "velkommen.jpg" },

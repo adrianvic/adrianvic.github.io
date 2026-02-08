@@ -45,6 +45,11 @@ select {
     inline-size: fit-content;
     height: 1.4em;
     margin-top: auto;
+    opacity: .6;
+}
+
+#music:hover {
+    opacity: 1;
 }
 
 header {
@@ -174,8 +179,16 @@ textarea, input, button {
     gap: .2em;
 }
 
+#linksHelper:hover {
+    opacity: 1;
+}
+
 #headerLinks {
     user-select: none;
+}
+
+#headerLinks a {
+    color: white;
 }
 
 #headerLinks a {
@@ -560,6 +573,7 @@ input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-ra
     width: 5em;
     height: 100%;
     object-fit: cover;
+    object-position: left top;
     opacity: .4;
     filter: grayscale(1);
 }
@@ -579,6 +593,11 @@ input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-ra
 
 .drawerSong.selected img {
     filter: none;
+    /* width: auto; */
+}
+
+.drawerSong.selected {
+    width: 10em;
 }
 
 .playlistTitle {
@@ -604,6 +623,19 @@ input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-ra
 
 .playingSong {
     font-size: larger;
+}
+
+hs {
+    border-bottom: thin solid white;
+}
+
+#linksHelper hs {
+    margin: .2em 0;
+    opacity: .6;
+}
+
+#linkshelper:hover hs {
+    opacity: 1;
 }
 
 .hidden {
