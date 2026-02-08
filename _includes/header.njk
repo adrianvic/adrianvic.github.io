@@ -2,9 +2,19 @@
     <div>
         <h1>{{ title or "Adrian Victor" }}</h1>
         <a id="headerSubtitle"><i>{{ subtitle or "Fanasy is not a crime, find your castle in the sky." }}</i></a>
+        <script>
+            const headeri18n =
+                {
+                    by: "{{ i18n[langKey].by | safe }}",
+                    options: "{{ i18n[langKey].options | safe }}",
+                    hideBackground: "{{ i18n[langKey].hideBackground | safe }}",
+                    back: "{{ i18n[langKey].back | safe }}"
+                }
+        </script>
     </div>
     <div id="linksHelper">
-        <div id="soundDiv" data-title="tenkuma - Velkommen" data-source="Velkommen.mp3"></div>
+        <div id="music">
+        </div>
         <ul id="headerLinks">
             <a href="/{{ langKey }}/">{{ i18n[langKey].home }}</a>
             <a href="/{{ langKey }}/blog/">blog</a>

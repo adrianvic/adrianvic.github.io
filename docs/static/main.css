@@ -31,6 +31,22 @@ li {
     list-style-type: none;
 }
 
+select {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1em;
+}
+
+#music {
+    padding: 0;
+    display: flex;
+    gap: .4em;
+    inline-size: fit-content;
+    height: 1.4em;
+    margin-top: auto;
+}
+
 header {
     display: flex;
     border-bottom: thick solid rgba(255, 255, 255, 0.1);
@@ -64,6 +80,7 @@ header div {
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
     user-select: none;
+    transition: .4s;
 }
 
 header ul {
@@ -96,7 +113,7 @@ header ul:hover {
 }
 
 main {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
 }
 
 h1, h2, h3 {
@@ -143,7 +160,6 @@ textarea, input, button {
 }
 
 #sound {
-    height: 1.5em;
     filter: invert();
 }
 
@@ -153,20 +169,9 @@ textarea, input, button {
 
 #linksHelper {
     margin: auto 1em auto auto;
-    padding-top: 0;
-}
-
-#soundDiv {
-    margin-left: auto;
-    inline-size: fit-content;
-    padding: 0;
-    padding-top: 1rem;
     display: flex;
-    gap: 10px;
-}
-
-#soundDiv p {
-    margin: 0 auto 0 auto;
+    flex-direction: column;
+    gap: .2em;
 }
 
 #headerLinks {
@@ -456,6 +461,163 @@ div.hs.selected {
     -webkit-box-orient: vertical
 }
 
+aside.metromenu {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    background-color: black;
+    height: 100vh;
+    transition: .2s;
+    transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 0.955);
+    padding: 2em;
+}
+
+aside.metromenu.closed {
+    transform: translateX(100%);
+}
+
+aside.metromenu h2 {
+    font-size: xx-large;
+}
+
+aside.metromenu p {
+    margin-bottom: .4em;
+}
+
+aside.metromenu .optionsToggle {
+    margin-bottom: 1em;
+}
+
+.optionsToggle {
+    cursor: pointer;
+}
+
+aside.metromenu .optionsToggle  {
+    opacity: .6;
+    width: fit-content;
+}
+
+aside.metromenu #content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.checkbox {
+    display: flex;
+}
+
+.checkbox p {
+    flex-grow: 1;
+}
+
+input[type="checkbox"] {
+    border: thick solid white;
+}
+
+input[type="range"] {
+    width: 100%;
+    border: none;
+    padding: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-range-thumb {
+    background-color: black;
+    transition: .2s;
+    border-radius: 0;
+    border: medium solid white;
+    height: 1.2em;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb, input[type="range"]:hover::-moz-range-thumb {
+    height: 2em;
+    background-color: white;
+    border-width: thin;
+}
+
+input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-range-track {
+    background-color: white;
+    height: 1em;
+}
+
+#songDrawer {
+    display: flex;
+    height: 10em;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: .2em;
+}
+
+.drawerSong {
+    position: relative;
+    overflow: hidden;
+}
+
+.drawerSong img {
+    transition: .4s;
+    width: 5em;
+    height: 100%;
+    object-fit: cover;
+    opacity: .4;
+    filter: grayscale(1);
+}
+
+.drawerSong p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline;
+}
+
+.drawerSong:hover img, .drawerSong.selected img {
+    opacity: 1;
+    overflow: hidden;
+    width: 10em;
+}
+
+.drawerSong.selected img {
+    filter: none;
+}
+
+.playlistTitle {
+    background-color: white;
+    color: black;
+}
+
+#playlist {
+    transition: .2s;
+    max-height: 10em;
+    overflow: auto;
+    border: medium solid white;
+}
+
+#playlist p {
+    cursor: pointer;
+    padding: 0 .4em;
+}
+
+#playlist p:first-child {
+    padding-bottom: .2em;
+}
+
+.playingSong {
+    font-size: larger;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.bg.invisible {
+    opacity: 0!important;
+}
+
 @keyframes ellipsis-loader {
     0%, 25% {
         transform: translateX(0);
@@ -508,6 +670,7 @@ div.hs.selected {
 
     #headerLinks {
         text-align: center;
+        width: 100%;
     }
 
     #homeTitle {
@@ -571,11 +734,19 @@ div.hs.selected {
     .hsProjectHeaderIcon {
         margin: auto;
     }
+
+    aside.metromenu {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 800px) {
     #homeSquares {
         width: 60vw;
+    }
+    
+    aside.metromenu {
+        width: 100%;
     }
 }
 

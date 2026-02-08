@@ -46,7 +46,11 @@ module.exports = {
     eyeofnemesisProjectDesctiption: "Eye of Nemesis is a plugin that allows server admins to write policies that will deny or allow (black/whitelist) players to do specific things based on the value of nodes.",
     jamfishProjectDesctiption: "Native music player for Android devices that connects to Jellyfin media servers. The code is based on Gelli's archived repository, which is based on an old version of Phonograph.",
     pestoProjectDesctiption: "Multi-platform customizable client for wikis written in Python using PySide6 (QT).",
-    itemeconomyProjectDesctiption: "This PaperMC plugin integrates with VaultUnlocked to provide a unique, item-based economy system for your Minecraft server. Instead of relying solely on virtual balances, players use in-game items as physical currency, adding a layer of immersion and realism to your economy."
+    itemeconomyProjectDesctiption: "This PaperMC plugin integrates with VaultUnlocked to provide a unique, item-based economy system for your Minecraft server. Instead of relying solely on virtual balances, players use in-game items as physical currency, adding a layer of immersion and realism to your economy.",
+    by: "by",
+    back: "back",
+    hideBackground: "Hide background",
+    options: "Options"
   },
   pt: {
     home: "início",
@@ -80,6 +84,10 @@ module.exports = {
     eyeofnemesisProjectDesctiption: "Eye of Nemesis é um plugin que permite aos administradores de servidores escrever políticas que negarão ou permitirão (lista negra/branca) que os jogadores façam coisas específicas com base no valor dos nós.",
     jamfishProjectDesctiption: "Reprodutor de música nativo para dispositivos Android que se conecta a servidores de mídia Jellyfin. O código é baseado no repositório arquivado do Gelli, que por sua vez se baseia em uma versão antiga do Phonograph.",
     pestoProjectDesctiption: "Cliente personalizável multiplataforma para wikis escrito em Python usando PySide6 (QT).",
-    itemeconomyProjectDesctiption: "Este plugin PaperMC integra-se ao VaultUnlocked para fornecer um sistema de economia único baseado em itens para o seu servidor Minecraft. Em vez de depender apenas de saldos virtuais, os jogadores usam itens do jogo como moeda física, adicionando uma camada de imersão e realismo à sua economia."
+    itemeconomyProjectDesctiption: "Este plugin PaperMC integra-se ao VaultUnlocked para fornecer um sistema de economia único baseado em itens para o seu servidor Minecraft. Em vez de depender apenas de saldos virtuais, os jogadores usam itens do jogo como moeda física, adicionando uma camada de imersão e realismo à sua economia.",
+    by: "por",
+    back: "voltar",
+    hideBackground: "Esconder imagem de fundo",
+    options: "Options"
   }
 };
