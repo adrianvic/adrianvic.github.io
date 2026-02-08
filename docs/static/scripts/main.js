@@ -197,7 +197,11 @@ audioSelect.addEventListener('change', () => {
 // Set initial playback state and volume based on saved preferences
 if (savedTime) audio.currentTime = parseFloat(savedTime);
 
-if (savedVolume) document.getElementById("volume").value = savedVolume * 100;
+if (savedVolume) { 
+    document.getElementById("volume").value = savedVolume * 100;
+} else {
+    document.getElementById("volume").value = 100;
+}
 
 if (wasPlaying) {
     play();
