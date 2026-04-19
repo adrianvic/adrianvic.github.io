@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [24.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -33,5 +33,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          publish_dir: ./_site
+          publish_dir: ./docs
           github_token: ${{ secrets.GITHUB_TOKEN }}
