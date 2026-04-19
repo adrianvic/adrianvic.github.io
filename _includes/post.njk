@@ -2,11 +2,22 @@
 layout: base.njk
 title: Adrian Victor:Blog
 ---
+{% set altLanguages = collections.post | alternateLanguages(postId, langKey) %}
 <main>
     <article>
         <div id="postHeader">
             <h1>{{ postTitle }}</h1>
             <p>{{ authors or "Adrian Victor" }} - {{ date }}</p>
+            {% if altLanguages.length > 0 %}
+            {{ i18n[langKey].availableInOtherLanguages }}:
+            {% for alt in altLanguages %}
+                <li class="inlineList">
+                    <a href="{{ alt.url }}" hreflang="{{ alt.lang }}">
+                    {{ i18n[alt.lang].language }}
+                    </a>
+                </li>
+            {% endfor %}
+            {% endif %}
         </div>
         {{ content | safe }}
     </article>

@@ -15,6 +15,10 @@ const globalValues = {
 module.exports = {
   // global: globalValues,
   en: {
+    language: "english",
+    availableInOtherLanguages: "Also available in other languages",
+    pt: "portuguese",
+    en: "english",
     home: "home",
     welcome: "welcome",
     homeWelcomeParagraph: "It seems that you have found my website! Hi, I am <b>Adrian Victor</b> (or <b>tenkuma</b>), a Brazilian guy who likes to mess around with computers, computer programs and <i>enimatpyrtlyhtemids</i>.",
@@ -53,6 +57,10 @@ module.exports = {
     options: "Options"
   },
   pt: {
+    language: "português",
+    availableInOtherLanguages: "Também disponível em outros idiomas",
+    pt: "português",
+    en: "inglês",
     home: "início",
     welcome: "bem-vindo",
     homeWelcomeParagraph: "Parece que você encontrou meu website! Olá, sou <b>Adrian Victor</b> (ou <b>tenkuma</b>), um cara brasileiro que gosta de mexer com computadores, programas de computadores e <i>enimatpirtlitemídios</i>.",

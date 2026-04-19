@@ -5,6 +5,17 @@ module.exports = function(eleventyConfig) {
 
 eleventyConfig.addPassthroughCopy("static");
 
+eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, postId, currentLanguageKey) {
+  return collection.filter(post => 
+    post.data.postId === postId && post.data.langKey !== currentLanguageKey
+  )
+  .map(post => ({
+    lang: post.data.langKey,
+    url: post.url,
+    title: post.data.title
+  }))
+});
+
 eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
   if (!str) return "";
   const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",
