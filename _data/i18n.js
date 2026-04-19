@@ -78,7 +78,7 @@ module.exports = {
       Modrinth <a href='${globalValues.modrinth.url}'>(${globalValues.modrinth.username})</a>
       e XMPP <a href='${globalValues.xmpp.url}'>(${globalValues.xmpp.username})</a>.
     `,
-    homeSocialsAndContactParagraphTwo: `Você pode me enviar um correio eletrônico para <a href="mailto:${globalValues.email}">(${globalValues.email})</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).</p>
+    homeSocialsAndContactParagraphTwo: `Você pode enviar um correio eletrônico para <a href="mailto:${globalValues.email}">(${globalValues.email})</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).</p>
         <p><i><b>Por favor, evite me contactar por meios não citados acima :)</b></i>`,
     homeMyMusicParagraph: `Eu e meus amigos temos uma gravadora de música amadora chamada <span class="margarinaColor">Margarina Records</span>, as coisas andam devagar com meus projetos musicais, geralmente por causa da escola ou falta de conhecimento no campo, mas eu estou dando um jeito.`,
     homeMyMusicParagraphTwo: `Você pode conferir minhas músicas mais recentes no <a href="${globalValues.margarinaRecordsWebsite}">site da gravadora</a> e no <a href="${globalValues.genius.url}">Genius</a>. Você provavelmente vai gostar do trabalho dos outros membros, então dê uma olhada nas outras tracks da MGR.`,
@@ -96,6 +96,6 @@ module.exports = {
     by: "por",
     back: "voltar",
     hideBackground: "Esconder imagem de fundo",
-    options: "Options"
+    options: "Opções"
   }
 };
