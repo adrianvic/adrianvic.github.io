@@ -35,6 +35,18 @@ li.inlineList {
     display: inline;
 }
 
+dt::before {
+    content: "-> ";
+}
+
+dd {
+    margin-inline-start: 2em;
+}
+
+dl {
+    margin-bottom: 1em;
+}
+
 select {
     background-color: transparent;
     color: white;
@@ -652,6 +664,100 @@ hs {
 
 .bg.invisible {
     opacity: 0!important;
+}
+
+.blogpostYoutubeVideo {
+    user-select: none;
+    box-shadow: 
+    2px 7px 5px rgba(0,0,0,0.3),
+    0px -4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    border: medium solid var(--theme-color-lighter);
+    transition: .2s;
+}
+
+.blogpostYoutubeVideo .goLabel {
+    transition: .2s;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 4em;
+    background-color: var(--theme-color);
+    padding: .2em;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.blogpostYoutubeVideo:hover .goLabel {
+    opacity: 1;
+}
+
+.blogpostYoutubeVideo:hover {
+    border-color: var(--theme-color);
+}
+
+.blogpostYoutubeVideo img {
+    width: 100%;
+    display: block;
+    opacity: .8;
+    transition: .2s;
+}
+
+.blogpostYoutubeVideo .videoHeader {
+    transition: .2s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: .4em 1em;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 1em;
+}
+
+.blogpostYoutubeVideo * {
+    margin: 0;
+}
+
+/* .blogpostYoutubeVideo::after {
+    transition: .2s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, transparent 0%, var(--theme-color) 6em, transparent 0%);
+    pointer-events: none;
+} */
+
+.blogpostYoutubeVideo:hover::after {
+    opacity: 0;
+}
+
+.blogpostYoutubeVideo:hover .videoHeader {
+    opacity: 0;
+}
+
+.blogpostYoutubeVideo .videoHeader .alsoAvailable {
+    font-weight: bold;
+}
+
+.blogpostYoutubeVideo:hover img {
+    opacity: 1;
+}
+
+#postHeader * {
+    margin-bottom: 0;
+}
+
+#postHeader {
+    margin-bottom: 1em;
 }
 
 @keyframes ellipsis-loader {

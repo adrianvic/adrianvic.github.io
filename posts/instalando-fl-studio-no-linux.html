@@ -1,0 +1,64 @@
+---
+postTitle: "Instalando FL Studio no Linux."
+postId: fl-linux-install
+postVideoLink: "https://www.youtube.com/watch?v=6bnNAnSY9Uo"
+postVideoTitle: "Como instalar o FL Studio no Linux?"
+postVideoImage: "fl_studio_linux.png"
+postVideoWebsite: "YouTube"
+postVideoDuration: "5:53"
+langKey: pt
+layout: post.njk
+date: 2026-04-20
+background: fl_screenshot_no_text.png
+backgroundOpacity: .35
+---
+<h2>Prólogo</h2>
+<p>Desde que mudei permanentemente para o Linux em 2024, venho me impressionando com a capacidade inabalável da comunidade open-source de trazer a vida no Linux softwares complexos feitos originalmente para Windows. Entretanto, um dos programas amaldiçoados com os mais ímpetos e abstratos erros na velha guarda do Wine é o FL Studio, caracteristica essa que fez com que eu, por muito tempo, achasse que a DAW da Image-Line não iria rodar de jeito nenhum no sistema do penguim.</p>
+<p>Acontece que o FL roda no Linux, e roda muito bem, considerando a sua complexidade. Descartando uns problemas visuais, algumas VSTs que simplesmente não rodam e uma gambiarra para rodar plugins 32-bits, a experiência de usar o FL Studio no Linux é bem sólida. Parece que a Valve, Wine e comunidade open-source não estão para brincadeira mesmo.</p>
+<p>Antes de ir às formalidades, gostaria de definir o escopo desse tutorial. Faço ele com tudo o que cabe na minha memória recente trabalhando com o FL no Linux. Mas também não é uma postagem estática; se estiver faltando alguma coisa me mande um e-mail e eu atualizo.</p>
+
+<h2>Preparativos</h2>
+<p>O tutorial vai ser feito usando o Arch Linux em um computador com o conjunto de Intel i5-1235U + 16gb de RAM. Porém, vale ressaltar que, pela natureza do flatpak, o tutorial se aplica a qualquer máquina com o gerenciador de pacotes instalado.</p>
+<p>O primeiro passo é instalar o software Bottles, que está disponível com o nome de <a href="https://flathub.org/en/apps/com.usebottles.bottles"><code>com.usebottles.bottles</code> no Flathub</a>. O comando mais simples para instalar o app em um sistema com acesso ao Flathub (habilitado por padrão na maioria das distros, como na minha) é <code>flatpak install bottles</code>. Se você não é muito fã de rodar comandos, a maioria das lojas de apps no Linux baixam flatpaks e já vem com o Flathub habilitado—e saiba que essa é a última vez que vamos rodar comandos.</p>
+<p>Se você não é fã do Flatpak, há um <a href="https://aur.archlinux.org/packages/bottles">pacote do bottles no AUR</a>. Pelo que eu entendi tem até uns desenvolvedores do Bottles envolvidos na manutenção desse pacote.</p>
+<p>Depois disso, crie uma nova garrafa no Bottles. Eu recomendo criar uma no preset de jogos, já que o FL é meio visualmente complexo.</p>
+<p>Por fim, antes da instalação, vamos instalar as dependências, que ficam acessíveis por um botão de mesmo nome nas opções da garrafa. O FL Studio possui apenas duas dependências opcionais:</p>
+<dl>
+    <dt><code>allfonts</code></dt>
+    <dd>Fontes da Microsoft e Adobe, ajuda com alguns problemas relacionados a exibição de texto no FL. Eu geralmente não preciso instalar, mas já experienciei as teclas do piano roll sem legenda pela falta dessa dependência.</dd>
+    <dt><code>webview2</code></dt>
+    <dd>Necessário para o funcionamento do FL Cloud, Gopher (IA), Help Manual e talvez mais alguma outra função do FL que puxa um webview. Recomendo não instalar essa dependência se você não usa nenhuma dessas funções, porque sem ela reparei em um ganho de performance.</dd>
+</dl>
+<p>Estamos prontos para partir para a instalação da DAW.</p>
+
+<h2>Instalando o FL Studio</h2>
+<p>O Bottles já oferece um pacote de instalação do FL na página da garrafa, basta clicar em <i>Instalar Programas</i> e pesquisar por FL Studio. Porém, esse método de instalação não funcionou para mim, o instalador travou nas dependências. Creio que, se você tiver sucesso na sua instalação, o resultado vai ser o mesmo que fazendo o que eu vou descrever abaixo.</p>
+<p>Primeiro, obtenha um instalado do FL Studio, caso já não tenha. A Image-Line oferece um instalador <a href="https://www.image-line.com/fl-studio/download/">em seu website</a>.</p>
+<p>Com o instalador em mãos, basta usar o botão "Iniciar executável..." na página da garrafa e selecionar o seu instalador. Em alguns instantes você deve estar na instalação do FL Studio.</p>
+<p>Se tudo ocorrer direito, a DAW recém instalada deve aparecer na lista de aplicativos com o nome "FL64". Você já pode iniciar ela.</p>
+
+<h2>Configuração Inicial</h2>
+<p>Ao abrir o FL Studio pela primeira vez, você provavelmente vai se deparar com uma tela de erro dizendo "The MIDI input device is already allocated. It may be in use by another application.", ignore os erros, e no menu de baixo escrito "Input", desabilite as entradas que tem a etiqueta <i>FAIL</i>.</p>
+<p>Por mais que eu adoraria dizer que o FL Studio funciona perfeitamente no Linux, estamos trabalhando em um ambiente não suportado pela Image-Line e certamente mais instável do que seus sistemas nativos. Portanto, recomendo que habilite a opção de salvamento automático no modo mais agressivo.</p>
+
+<h2>Trabalhando com <abbr title="Virtual Studio Technology">VST</abbr>s</h2>
+<p>Os plug-ins de produção musical são a maior fonte de incompatibilidades no nosso ambiente, mas isso não significa que a <i>maioria</i> não funciona fora da caixa.</p>
+<p>Além dos que não funcionam, e, potencialmente, travam o seu FL Studio, há os plugins que não se comportam direito, como é o exemplo do <i>Antares Auto-Tune Pro</i> que funciona perfeitamente—dada a excessão de que a interface e animações ficam estranhas e travadas. Acho que isso se dá e repete em tantos plugins porque os frameworks usados para fazer suas interfaces funcionam de alguma forma bizarra que o Soda não é otimizado para rodar.</p>
+<p>De qualquer forma, quanto a esses plugins teimosos, as únicas recomendações que eu tenho para mitigar o problema são evitar ao máximo deixá-los abertos enquanto faz outras coisas, e—se possível—usar alternativas que tem mais bom senso no quesito interface.</p>
+<h3>VSTs 32bits</h3>
+<p>Agora que o FL Studio está funcionando, você pode tentar abrir alguma VST de 32bits, e, fazendo isso, ver que ela provavelmente vai congelar a DAW.</p>
+<p>Se você por acaso congelar sem o devido backup em um projeto importante, ao invés de fechar o FL Studio, você pode usar seu gerenciador de tarefas para matar o processo <code>ILBridge.exe</code>. Esse é o processo que trava a DAW quando você tenta carregar um plugin de 32bits, é a ponte que faz ele funcionar no FL Studio de 64bits—quando interrompido, a DAW exibe um erro sobre não conseguir carregar o plugin e volta ao normal.</p>
+<p>Mas existe sim uma forma de rodar plugins 32bits. Adicione um <i>Fruity Wrapper</i> no lugar do plugin que você quer adicionar, mude para a aba de opções do mesmo e deixe ele assim. Agora clique com o botão direito no gerador/efeito que você acabou de adicionar e substitua-o pelo plugin desejado. A página de opções deve carregar. Clique no botão escrito "Processing" e marque "External window".</p>
+<p>Pronto, o plugin deve aparecer em uma janela separada do FL Studio e estar funcionando como esperado.</p>
+
+<h2>Menções Honrosas</h2>
+<p>Abaixo estão alguns ressaltes que vale a pena saber:</p>
+<h3>Discos Virtuais</h3>
+<p>O Bottles usa uma versão própria do Wine chamada Soda, mas no fundo, no fundo mesmo, ainda é o Wine. Portanto, você pode se beneficiar das configurações de discos virtuais do Wine. Nas opções da garrafa, ao expandir o submenu "Ferramentas Legado do Wine", você encontra a opção "Configuração". Ao clicar nessa, um menu de aparência pré-histórica vai aparecer, no topo você pode ver uma aba nomeada "Unidades". Aí você pode mapear diferentes unidades do Windows para locais do seu sistema Linux, e eles vão aparecer no explorador de arquivos do Wine e estarão acessíveis para os aplicativos.</p>
+<h3>Aceleração de Hardware</h3>
+<p>Se o seu FL Studio estiver rodando terrivelmente mal, recomendo que dê uma olhada na opção "Use placa gráfica dedicada" da sua garrafa, com ela desativada a minha DAW trava incessantemente.</p>
+
+<h2>Conclusões</h2>
+<p>Não sou a pessoa mais apta para dizer até onde a usabilidade da DAW se extende no Linux; não sou nem de longe um usuário avançado do FL. Mas, a título de informação, consegui produzir a faixa <a href="https://margarina.bandcamp.com/album/velkommen">Velkommen</a> inteiramente no sistema do penguim e não tenho a intenção de voltar para o Windows.</p>
+<p>É mesmo inconveniente quando um plugin ou outro não funciona, quando eu tenho que criar um Fruity Wrapper antes de usar um plugin 32bits, ou quando eu penso que talvez a DAW possa performar um pouco melhor nativamente no Windows. Porém, para mim, é um preço muito justo a se pagar para misturar nas minhas músicas um pouco desse suco de ideologia que é me desafiar a não usar o sistema da Microsoft.</p>
+<p>Espero que você também encontre esse conforto—não na conveniência, mas em desafiar o molde com intenção. Excentricidade digna de um artista.</p>

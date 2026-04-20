@@ -54,7 +54,8 @@ module.exports = {
     by: "by",
     back: "back",
     hideBackground: "Hide background",
-    options: "Options"
+    options: "Options",
+    alsoAvailableAsVideo: "Also available as video"
   },
   pt: {
     language: "português",
@@ -96,6 +97,7 @@ module.exports = {
     by: "por",
     back: "voltar",
     hideBackground: "Esconder imagem de fundo",
-    options: "Opções"
+    options: "Opções",
+    alsoAvailableAsVideo: "Também disponível em vídeo"
   }
 };
