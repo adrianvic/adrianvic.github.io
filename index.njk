@@ -35,9 +35,14 @@ layout: base.njk
         <h1>{{ i18n[langKey].myVideos | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeMyVideoParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeMyVideoRandomVideoParagraph | safe }}</p>
-        <a href="https://youtu.be/tZLoSxzsfpM" id="youtubeVideo">
-            <img src="/static/images/youtube_video.jpg" alt="" id="youtubeVideoImage">
-            <p>{{ i18n[langKey].homeVideoTitle | safe }}</p>
+        <a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
+            <div class="blogpostYoutubeVideo">
+                <img src="/static/images/thumbnails/fl_studio_linux.png">
+                <div class="videoHeader">
+                    <h2 class="videoTitle">{{ i18n[langKey].homeVideoTitle | safe }}</h2>
+                    <p>YouTube (5:53)</p>
+                </div>
+            </div>
         </a>
     </div>
     <div class="hs" id="hsCode">
@@ -45,51 +50,51 @@ layout: base.njk
         <p>{{ i18n[langKey].homeMySoftwareParagraph | safe }}</p>
         {# <p>{{ i18n[langKey].homeMySoftwareNotableProjects | safe }}</p> #}
         <div class="hsProjects">
-        <div class="hsProject">
-            <div class="hsProjectHeader">
-                <div class="hsProjectImage"><img src="/static/images/jamfish-wide.png" alt="{{ i18n[langKey].pestoWikiLogoAlt | safe }}"></div>
-                <a href="https://github.com/adrianvic/jamfish" class="hsProjectHeaderIcon">
-                    <img src="/static/visual/github.svg" class="invertedc">
-                </a>
+            <div class="hsProject">
+                <div class="hsProjectHeader">
+                    <div class="hsProjectImage"><img src="/static/images/jamfish-wide.png" alt="{{ i18n[langKey].pestoWikiLogoAlt | safe }}"></div>
+                    <a href="https://github.com/adrianvic/jamfish" class="hsProjectHeaderIcon">
+                        <img src="/static/visual/github.svg" class="invertedc">
+                    </a>
+                </div>
+                <div class="hsProjectContent">
+                    <p>{{ i18n[langKey].jamfishProjectDesctiption | safe }}</p>
+                </div>
             </div>
-            <div class="hsProjectContent">
-                <p>{{ i18n[langKey].jamfishProjectDesctiption | safe }}</p>
+            <div class="hsProject">
+                <div class="hsProjectHeader">
+                    <div class="hsProjectImage"><img src="/static/images/eye_of_nemesis.png" alt="{{ i18n[langKey].eyeofnemesisLogoAlt | safe }}"></div>
+                    <a href="https://github.com/adrianvic/NemesisEye" class="hsProjectHeaderIcon">
+                        <img src="/static/visual/github.svg" class="invertedc">
+                    </a>
+                </div>
+                <div class="hsProjectContent">
+                    <p>{{ i18n[langKey].eyeofnemesisProjectDesctiption | safe }}</p>
+                </div>
             </div>
-        </div>
-        <div class="hsProject">
-            <div class="hsProjectHeader">
-                <div class="hsProjectImage"><img src="/static/images/eye_of_nemesis.png" alt="{{ i18n[langKey].eyeofnemesisLogoAlt | safe }}"></div>
-                <a href="https://github.com/adrianvic/NemesisEye" class="hsProjectHeaderIcon">
-                    <img src="/static/visual/github.svg" class="invertedc">
-                </a>
+            
+            <div class="hsProject">
+                <div class="hsProjectHeader">
+                    <div class="hsProjectImage"><img src="/static/images/itemeconomy2-wide.png" alt="{{ i18n[langKey].itemeconomyLogoAlt | safe }}"></div>
+                    <a href="https://github.com/adrianvic/ItemEconomy" class="hsProjectHeaderIcon">
+                        <img src="/static/visual/github.svg" class="invertedc">
+                    </a>
+                </div>
+                <div class="hsProjectContent">
+                    <p>{{ i18n[langKey].itemeconomyProjectDesctiption | safe }}</p>
+                </div>
             </div>
-            <div class="hsProjectContent">
-                <p>{{ i18n[langKey].eyeofnemesisProjectDesctiption | safe }}</p>
+            <div class="hsProject">
+                <div class="hsProjectHeader">
+                    <div class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt="{{ i18n[langKey].jamfishLogoAlt | safe }}"></div>
+                    <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectHeaderIcon">
+                        <img src="/static/visual/github.svg" class="invertedc">
+                    </a>
+                </div>
+                <div class="hsProjectContent">
+                    <p>{{ i18n[langKey].pestoProjectDesctiption | safe }}</p>
+                </div>
             </div>
-        </div>
-
-        <div class="hsProject">
-            <div class="hsProjectHeader">
-                <div class="hsProjectImage"><img src="/static/images/itemeconomy2-wide.png" alt="{{ i18n[langKey].itemeconomyLogoAlt | safe }}"></div>
-                <a href="https://github.com/adrianvic/ItemEconomy" class="hsProjectHeaderIcon">
-                    <img src="/static/visual/github.svg" class="invertedc">
-                </a>
-            </div>
-            <div class="hsProjectContent">
-                <p>{{ i18n[langKey].itemeconomyProjectDesctiption | safe }}</p>
-            </div>
-        </div>
-        <div class="hsProject">
-            <div class="hsProjectHeader">
-                <div class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt="{{ i18n[langKey].jamfishLogoAlt | safe }}"></div>
-                <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectHeaderIcon">
-                    <img src="/static/visual/github.svg" class="invertedc">
-                </a>
-            </div>
-            <div class="hsProjectContent">
-                <p>{{ i18n[langKey].pestoProjectDesctiption | safe }}</p>
-            </div>
-        </div>
         </div>
     </div>
 </main>
