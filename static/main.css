@@ -880,6 +880,10 @@ hs {
     aside.metromenu {
         width: 50%;
     }
+
+    .blogpostYoutubeVideo .videoHeader {
+        font-size: small;
+    }
 }
 
 @media screen and (max-width: 800px) {
