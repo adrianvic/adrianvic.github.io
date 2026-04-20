@@ -16,6 +16,11 @@ eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, post
   }))
 });
 
+  eleventyConfig.addFilter("absoluteUrl", function(path) {
+    const base = "https://adrianvic.github.io";
+    return base + path;
+  });
+
 eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
   if (!str) return "";
   const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",
