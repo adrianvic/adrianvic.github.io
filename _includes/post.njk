@@ -3,6 +3,8 @@ layout: base.njk
 title: Adrian Victor:Blog
 ---
 {% set altLanguages = collections.post | alternateLanguages(postId, langKey) %}
+{% from "macros.njk" import videoCard with context %}
+
 <main>
     <article>
         <div id="postHeader">
@@ -20,18 +22,9 @@ title: Adrian Victor:Blog
             {% endif %}
         </div>
         {% if postVideoLink and postVideoImage and postVideoTitle and postVideoWebsite %}
-        <a href="{{ postVideoLink }}">
-            <div class="blogpostYoutubeVideo">
-                <img src="/static/images/thumbnails/{{ postVideoImage }}">
-                <div class="videoHeader">
-                    <p class="alsoAvailable">{{ i18n[langKey].alsoAvailableAsVideo }}:</p>
-                    <h2 class="videoTitle">{{ postVideoTitle }}</h2>
-                    <p>{{ postVideoWebsite }}{% if postVideoDuration %} ({{ postVideoDuration }}){% endif %}</p>
-                </div>
-                <!-- <p class="goLabel">ir</p> -->
-            </div>
-        </a>
+        {{ videoCard(postVideoLink, postVideoTitle, postVideoImage, postVideoWebsite, postVideoDuration) }}
         {% endif %}
+            
         {{ content | safe }}
     </article>
 </main>

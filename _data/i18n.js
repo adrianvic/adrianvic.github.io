@@ -9,11 +9,21 @@ const globalValues = {
   xmpp: { url: "xmpp:adrianvictor@disroot.org", username: "adrianvictor@disroot.org" },
   email: "adrianvictor@disroot.org",
   margarinaRecordsWebsite: "https://margarina-records.rf.gd",
-  genius: { url: "https://genius.com/tenkuma", username: "tenkuma" }
+  genius: { url: "https://genius.com/tenkuma", username: "tenkuma" },
+  homeVideoLink: "https://www.youtube.com/watch?v=6bnNAnSY9Uo",
+  homeVideoImage: "/thumbnails/fl_studio_linux.png",
+  homeVideoWebsite: "YouTube",
+  homeVideoDuration: "5:53",
+  homeSongTitle: "Velkommen",
+  homeSongLink: "https://margarina.bandcamp.com/album/velkommen",
+  homeSongImage: "/songs/velkommen.jpg",
+  homeSongWebsite: "Bandcamp",
+  homeSongDuration: "5:39",
+  homeSongAccent: "#482948"
 };
 
 module.exports = {
-  // global: globalValues,
+  global: globalValues,
   en: {
     language: "english",
     availableInOtherLanguages: "Also available in other languages",
@@ -23,9 +33,14 @@ module.exports = {
     welcome: "welcome",
     homeWelcomeParagraph: "It seems that you have found my website! Hi, I am <b>Adrian Victor</b> (or <b>tenkuma</b>), a Brazilian guy who likes to mess around with computers, computer programs and <i>enimatpyrtlyhtemids</i>.",
     socialsAndContact: "socials and contact",
+    aboutMe: "about me",
     myMusic: "my music",
     myVideos: "my videos",
     mySoftware: "my software",
+    homeAboutMeParagraph: `
+      My name is Adrian Victor, but I go by tenkuma on-line. I'm in high school's last year, also studying computing. My hobbies are music and music production, programming, selfhosting, Linux, and a lot more.
+    `,
+    homeAboutMeParagraphTwo: `Tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
     homeSocialsAndContactParagraph: `
       I'm publicly available at Mastodon <a href='${globalValues.mastodon.url}'>(${globalValues.mastodon.username})</a>,
       GitHub <a href='${globalValues.github.url}'>(${globalValues.github.username})</a>,
@@ -38,9 +53,9 @@ module.exports = {
     `,
     homeSocialsAndContactParagraphTwo: `You can message me on my E-mail <a href="mailto:${globalValues.email}">(${globalValues.email})</a> or feel free to get in touch through any of the other places mentioned above. For project-specific subjects, check for the project's contact field or if there's no such field add <i>+projectname</i> to my E-mail address (example: adrianvictor+coolproject@disroot.org).</p>
         <p><i><b>Please, avoid reaching me through ways not mentioned above :)</b></i>`,
-    homeMyMusicParagraph: `Me and my friends have an amateur record label called <span class="margarinaColor">Margarina Records</span>, things usually move slowly with my musical works, usually because of college and the lack of proper music production knowledge, but I'm working my way through it.`,
-    homeMyMusicParagraphTwo: `You can follow my latest songs at the <a href="${globalValues.margarinaRecordsWebsite}">label website</a> and on <a href="${globalValues.genius.url}">Genius</a>. You'd probably also like the other member's works as well, so take a look at all songs from MGR.`,
-    homeMyVideoParagraph: "I have a YouTube channel where I post mostly Minecraft videos, but I want to have other types of content in the future. There's no scedule for my videos because it takes a lot of editing time to put a video together, and I have little time to work on my own projects, you should subscribe if you want to know when I post something!",
+    homeMyMusicParagraph: `I've always loved music, and lately I've been finding music production very interesting. I publish my songs as <i>tenkuma</i>, and have founded an amateur label called <a href="${globalValues.margarinaRecordsWebsite}">Margarina Records</a> with my friends.`,
+    homeMyMusicParagraphTwo: `You can find my latest on songs <a href="${globalValues.genius.url}">Genius</a>.`,
+    homeMyVideoParagraph: "I make videos for my <a href='${globalValues.youtube.url}'>YouTube channel</a>. Videos do not come regularly, there's no schedule—just a guy wanting to show something.",
     homeMyVideoRandomVideoParagraph: "Here's a random video I'm proud of:",
     homeVideoTitle: "Installing FL Studio on linux.",
     homeMySoftwareParagraph: `I am studying computing at IFC (SC, Brazil) but in my free time I have some projects like computer applications, Minecraft plugins, Minecraft servers, etc... Anything that is public should be in my <a href="${globalValues.github.url}">GitHub profile</a>.`,
@@ -57,7 +72,8 @@ module.exports = {
     options: "Options",
     alsoAvailableAsVideo: "Also available as video",
     websiteDescription: "Personal website/blog of Adrian Victor.",
-    miscellaneous: "Miscellaneous"
+    miscellaneous: "Miscellaneous",
+    i88x31hover: "Click to expand"
   },
   pt: {
     language: "português",
@@ -68,9 +84,14 @@ module.exports = {
     welcome: "bem-vindo",
     homeWelcomeParagraph: "Parece que você encontrou meu website! Olá, sou <b>Adrian Victor</b> (ou <b>tenkuma</b>), um cara brasileiro que gosta de mexer com computadores, programas de computadores e <i>enimatpirtlitemídios</i>.",
     socialsAndContact: "redes sociais e contato",
+    aboutMe: "sobre mim",
     myMusic: "música",
     myVideos: "vídeos",
     mySoftware: "software",
+    homeAboutMeParagraph: `
+      Meu nome é Adrian Victor, mas on-line eu uso o nickname tenkuma. Estou no último ano do ensino médio e estudo informática. Meus hobbies são escutar e produzir música, programação, selfhosting, Linux, e muito mais.
+    `,
+    homeAboutMeParagraphTwo: `Tenkuma, ou 天くま em japonês, significa urso celestial e foi um nome dado a mim por um amigo que eu já perdi contato há muito tempo. Sakata se foi, mas o nome ficou e se tornou parte integral da personalidade do meu eu digital até hoje.`,
     homeSocialsAndContactParagraph: `
       Estou publicamente disponível no Mastodon <a href='${globalValues.mastodon.url}'>(${globalValues.mastodon.username})</a>,
       GitHub <a href='${globalValues.github.url}'>(${globalValues.github.username})</a>,
@@ -81,11 +102,10 @@ module.exports = {
       Modrinth <a href='${globalValues.modrinth.url}'>(${globalValues.modrinth.username})</a>
       e XMPP <a href='${globalValues.xmpp.url}'>(${globalValues.xmpp.username})</a>.
     `,
-    homeSocialsAndContactParagraphTwo: `Você pode enviar um correio eletrônico para <a href="mailto:${globalValues.email}">(${globalValues.email})</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).</p>
-        <p><i><b>Por favor, evite me contactar por meios não citados acima :)</b></i>`,
-    homeMyMusicParagraph: `Eu e meus amigos temos uma gravadora de música amadora chamada <span class="margarinaColor">Margarina Records</span>, as coisas andam devagar com meus projetos musicais, geralmente por causa da escola ou falta de conhecimento no campo, mas eu estou dando um jeito.`,
-    homeMyMusicParagraphTwo: `Você pode conferir minhas músicas mais recentes no <a href="${globalValues.margarinaRecordsWebsite}">site da gravadora</a> e no <a href="${globalValues.genius.url}">Genius</a>. Você provavelmente vai gostar do trabalho dos outros membros, então dê uma olhada nas outras tracks da MGR.`,
-    homeMyVideoParagraph: "Eu tenho um canal no YouTube em que na maioria das vezes eu posto vídeos de Minecraft, mas pretendo expandir a variedade de conteúdos no futuro. Não tenho nenhuma previsão de publicação no meu canal, pois editar os vídeos leva tempo e eu tenho pouco tempo para trabalhar nos meus projetos, você deveria se inscrever se quiser saber quando eu posto meus vídeos!",
+    homeSocialsAndContactParagraphTwo: `Você pode enviar um correio eletrônico para <a href="mailto:${globalValues.email}">(${globalValues.email})</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).`,
+    homeMyMusicParagraph: `Sempre amei música, e tenho achado produção musical algo muito interessante ultimamente. Publico minhas músicas como <i>tenkuma</i>, junto com meus amigos formei a <a href="${globalValues.margarinaRecordsWebsite}">Margarina Records</a>—uma label amadora.`,
+    homeMyMusicParagraphTwo: `Você pode conferir minhas músicas mais recentes no meu perfil do <a href="${globalValues.genius.url}">Genius</a>.`,
+    homeMyVideoParagraph: "Eu faço vídeos para o <a href='${globalValues.youtube.url}'>meu canal do YouTube</a>. Não posto regularmente; não tem calendário—apenas eu mostrando alguma coisa em vídeo.",
     homeMyVideoRandomVideoParagraph: "Aqui está um vídeo aleatório que eu me orgulho de ter postado:",
     homeVideoTitle: "Como instalar o FL Studio no Linux?",
     homeMySoftwareParagraph: `Estou estudando informática no IFC (SC, Brazil) mas no meu tempo livre tenho projetos como programas de computador, plugins para Minecraft, servidores Minecraft, etc... Todos meus projetos públicos estão disponíveis no meu <a href="${globalValues.github.url}">perfil do GitHub</a>.`,
@@ -102,6 +122,7 @@ module.exports = {
     options: "Opções",
     alsoAvailableAsVideo: "Também disponível em vídeo",
     websiteDescription: "Website/blog pessoal de Adrian Victor.",
-    miscellaneous: "Miscelâneo"
+    miscellaneous: "Miscelâneo",
+    i88x31hover: "Clique para expandir"
   }
 };

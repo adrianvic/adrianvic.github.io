@@ -6,6 +6,9 @@ pagination:
 permalink: "/{{ langKey }}/index.html"
 layout: base.njk
 ---
+{% from "macros.njk" import i88x31 with context %}
+{% from "macros.njk" import videoCard with context %}
+{% from "macros.njk" import projectCard %}
 
 <div id="homeSquares">
 </div>
@@ -19,90 +22,79 @@ layout: base.njk
             display: none;
         }
     </style></noscript>
+
     <div class="hs" id="hsDefault">
+        <div class="box pageHeaderBox">
         <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>
-        <img class="i88x31" src="/static/images/88x31/tenkuma.gif">
-        <img class="i88x31" src="/static/images/88x31/anybrowser6.gif">
-        <img class="i88x31" src="/static/images/88x31/ai.gif">
-        <img class="i88x31" src="/static/images/88x31/WEBP.gif">
-        <img class="i88x31" src="/static/images/88x31/rainbowrain.gif">
-        <img class="i88x31" src="/static/images/88x31/rave.gif">
-        <img class="i88x31" src="/static/images/88x31/blasphemy.gif">
-
+        {{ i88x31("tenkuma.gif") }}
+        {{ i88x31("anybrowser6.gif") }}
+        {{ i88x31("ai.gif") }}
+        {{ i88x31("WEBP.gif") }}
+        {{ i88x31("rainbowrain.gif") }}
+        {{ i88x31("blasphemy.gif") }}
+        </div>
+        <hr>
+        <h2>{{ i18n[langKey].aboutMe | smartTitle }}</h2>
+        <p>{{ i18n[langKey].homeAboutMeParagraph | safe }}</p>
+        <p>{{ i18n[langKey].homeAboutMeParagraphTwo | safe }}</p>
         <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h2>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraphTwo | safe }}</p>
     </div>
+
     <div class="hs" id="hsMusic">
+        <div class="box pageHeaderBox">
         <h1>{{ i18n[langKey].myMusic | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeMyMusicParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeMyMusicParagraphTwo | safe }}</p>
+        {{ i88x31("rave.gif") }}
+        {{ i88x31("happymix.gif") }}
+        </div>
+        <hr>
+        <div class="hsMusicCard">
+        {{
+            videoCard(
+                i18n["global"].homeSongLink,
+                i18n["global"].homeSongTitle,
+                i18n["global"].homeSongImage,
+                i18n["global"].homeSongWebsite,
+                i18n["global"].homeSongDuration,
+                i18n["global"].homeSongAccent
+                )
+        }}
+        </div>
     </div>
+
     <div class="hs" id="hsVideo">
+        <div class="box pageHeaderBox">
         <h1>{{ i18n[langKey].myVideos | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeMyVideoParagraph | safe }}</p>
-        <p>{{ i18n[langKey].homeMyVideoRandomVideoParagraph | safe }}</p>
-        <a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
-            <div style="margin-bottom: 1em;" class="blogpostYoutubeVideo">
-                <img src="/static/images/thumbnails/fl_studio_linux.png">
-                <div class="videoHeader">
-                    <h2 class="videoTitle">{{ i18n[langKey].homeVideoTitle | safe }}</h2>
-                    <p>YouTube (5:53)</p>
-                </div>
-            </div>
-        </a>
+        </div>
+        <hr>
+        {{
+            videoCard(
+                i18n["global"].homeVideoLink,
+                i18n[langKey].homeVideoTitle,
+                i18n["global"].homeVideoImage,
+                i18n["global"].homeVideoWebsite,
+                i18n["global"].homeVideoDuration
+                )
+        }}
     </div>
+    
     <div class="hs" id="hsCode">
+        <div class="box pageHeaderBox">
         <h1>{{ i18n[langKey].mySoftware | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeMySoftwareParagraph | safe }}</p>
         {# <p>{{ i18n[langKey].homeMySoftwareNotableProjects | safe }}</p> #}
+        </div>
+        <hr>
         <div class="hsProjects">
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/jamfish-wide.png" alt="{{ i18n[langKey].pestoWikiLogoAlt | safe }}"></div>
-                    <a href="https://github.com/adrianvic/jamfish" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>{{ i18n[langKey].jamfishProjectDesctiption | safe }}</p>
-                </div>
-            </div>
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/eye_of_nemesis.png" alt="{{ i18n[langKey].eyeofnemesisLogoAlt | safe }}"></div>
-                    <a href="https://github.com/adrianvic/NemesisEye" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>{{ i18n[langKey].eyeofnemesisProjectDesctiption | safe }}</p>
-                </div>
-            </div>
-            
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/itemeconomy2-wide.png" alt="{{ i18n[langKey].itemeconomyLogoAlt | safe }}"></div>
-                    <a href="https://github.com/adrianvic/ItemEconomy" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>{{ i18n[langKey].itemeconomyProjectDesctiption | safe }}</p>
-                </div>
-            </div>
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt="{{ i18n[langKey].jamfishLogoAlt | safe }}"></div>
-                    <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>{{ i18n[langKey].pestoProjectDesctiption | safe }}</p>
-                </div>
-            </div>
+            {{ projectCard("Jamfish", i18n[langKey].jamfishProjectDesctiption, "https://github.com/adrianvic/jamfish", "/static/images/jamfish-wide.png") }}
+            {{ projectCard("ItemEconomy", i18n[langKey].itemeconomyProjectDesctiption, "https://github.com/adrianvic/ItemEconomy", "/static/images/itemeconomy2-wide.png") }}
+            {{ projectCard("Eye of Nemesis", i18n[langKey].eyeofnemesisProjectDesctiption, "https://github.com/adrianvic/NemesisEye", "/static/images/eye_of_nemesis.png") }}
+            {{ projectCard("PestoWiki", i18n[langKey].pestoProjectDesctiption, "https://github.com/Margarina-not-butter/PestoWiki", "/static/images/pestowikifullwhite.png") }}            
         </div>
     </div>
 </main>

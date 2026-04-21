@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const i18n = require('./_data/i18n.js');
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("post", function(collectionApi) {
@@ -21,7 +22,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("88x31", () => {
     return fs.readdirSync("static/images/88x31")
     .map(file => ({
-      url: `/static/images/88x31/${file}`
+      url: `/static/images/88x31/${file}`,
+      fileSlug: file
     }));
   });
 

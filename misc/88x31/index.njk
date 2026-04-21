@@ -8,6 +8,7 @@ pagination:
 pageTitle: 88x31
 tags: misc
 ---
+{% from "macros.njk" import i88x31 with context %}
 
 <main>
   <div class="box pageHeaderBox">
@@ -16,11 +17,11 @@ tags: misc
   </div>
   <hr>
     <h2>{{ t.me }}</h2>
-    <img class="i88x31" src="/static/images/88x31/tenkuma.gif">
+    {{ i88x31("tenkuma.gif") }}
   <h2>{{ t.others }}</h2>
   <div class="">
     {% for image in collections.88x31 %}
-    <img class="i88x31" src="{{ image.url }}">
+    {{ i88x31(image.fileSlug) }}
     {% endfor %}
   </div>
 </main>
