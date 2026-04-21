@@ -56,7 +56,8 @@ module.exports = {
     hideBackground: "Hide background",
     options: "Options",
     alsoAvailableAsVideo: "Also available as video",
-    websiteDescription: "Personal website/blog of Adrian Victor."
+    websiteDescription: "Personal website/blog of Adrian Victor.",
+    miscellaneous: "Miscellaneous"
   },
   pt: {
     language: "português",
@@ -100,6 +101,7 @@ module.exports = {
     hideBackground: "Esconder imagem de fundo",
     options: "Opções",
     alsoAvailableAsVideo: "Também disponível em vídeo",
-    websiteDescription: "Website/blog pessoal de Adrian Victor."
+    websiteDescription: "Website/blog pessoal de Adrian Victor.",
+    miscellaneous: "Miscelâneo"
   }
 };

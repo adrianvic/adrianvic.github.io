@@ -1,0 +1,33 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/misc/index.html"
+layout: base.njk
+title: Adrian Victor:Misc
+---
+
+<main>
+  <h1>{{ i18n[langKey].miscellaneous }}</h1>
+  <ul>
+    <dl>
+      {% for page in collections.misc %}
+        {% set t = page | getTranslation(langKey) %}
+
+        <dt>
+          <a href="/{{ langKey }}/misc/{{ page.fileSlug }}/">
+            {{ page.data.pageTitle or t.pageTitle }}
+          </a>
+        </dt>
+
+        <dd>
+          {% if page.data["88x31"] %}
+            <img src="/static/images/88x31/{{ page.data["88x31"] }}"><br>
+          {% endif %}
+          {{ t.pageDescription }}
+        </dd>
+      {% endfor %}
+    </dl>
+  </ul>
+</main>

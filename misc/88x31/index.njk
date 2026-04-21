@@ -1,0 +1,26 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+<!-- 88x31: WEBP.gif -->
+pageTitle: 88x31
+tags: misc
+---
+
+<main>
+  <div class="box pageHeaderBox">
+    <h1>88x31</h1>
+    <p>{{ t.intro }}</p>
+  </div>
+  <hr>
+    <h2>{{ t.me }}</h2>
+    <img class="i88x31" src="/static/images/88x31/tenkuma.gif">
+  <h2>{{ t.others }}</h2>
+  <div class="">
+    {% for image in collections.88x31 %}
+    <img class="i88x31" src="{{ image.url }}">
+    {% endfor %}
+  </div>
+</main>

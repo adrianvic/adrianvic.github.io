@@ -1,0 +1,43 @@
+{
+    "links": {
+        "downloads": [
+            {
+                "name": "MalwareWatch",
+                "link": "https://malwarewatch.org/",
+                "description": {
+                    "pt": "Website do Enderman. Tem download de vários softwares úteis, imagens de sistemas operacionais e malware.",
+                    "en": "Enderman's website. Provides download to various useful softwares, operating system images and malware."
+                }
+            },
+            {
+                "name": "88x31",
+                "link": "https://88x31.nl/",
+                "description": {
+                    "pt": "Essa é uma coleção de mais de 6500 GIFs e PNGs no formato 88x31. No final dos anos 1990 e começo dos 2000 era muito comum usar essas imagens no seu site pessoal.",
+                    "en": "This website is a collection with over 6500 GIF's and PNG's in 88x31 format. In the late 1990 and begin of the 2000's it was very common to use these pictures on your personal website."
+                },
+                "88x31": [
+                    "WEBP.gif"
+                ]
+            }
+        ],
+        "profiles": [
+            {
+                "name": "Mr. Nando",
+                "link": "https://www.youtube.com/@mrnandokk",
+                "description": {
+                    "pt": "Meu amigo Fernando, ele faz músicas e vídeos de Minecraft e speedrun.",
+                    "en": "My friend Fernando, he makes music and YouTube videos of Minecraft and speedrun."
+                }
+            },
+            {
+                "name": "Endermanch",
+                "link": "https://enderman.ch/",
+                "description": {
+                    "pt": "Andrew é um engenheiro de software, entusiasta de malware e, mais importante, uma estranha e alta criatura. Cresci com os seus videos e ele é uma grande inspiração para mim.",
+                    "en": "Andrew is a software engineer, a malware enthusiast and most importantly, a weird tall creature. I've grown up with his videos and he's a great inspiration for me."
+                }
+            }
+        ]
+    }
+}

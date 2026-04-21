@@ -1,6 +1,28 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("post", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./posts/*").sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("misc", (api) =>
+    api.getFilteredByTag("misc")
+  );
+  eleventyConfig.addFilter("getTranslation", (page, lang) => {
+    const dir = path.dirname(page.inputPath);
+    const file = path.join(dir, `${lang}.json`);
+    
+    if (fs.existsSync(file)) {
+      return JSON.parse(fs.readFileSync(file, "utf-8"));
+    }
+  
+    return {};
+  });
+  eleventyConfig.addCollection("88x31", () => {
+    return fs.readdirSync("static/images/88x31")
+    .map(file => ({
+      url: `/static/images/88x31/${file}`
+    }));
   });
 
 eleventyConfig.addPassthroughCopy("static");
@@ -16,10 +38,10 @@ eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, post
   }))
 });
 
-  eleventyConfig.addFilter("absoluteUrl", function(path) {
-    const base = "https://adrianvic.github.io";
-    return base + path;
-  });
+eleventyConfig.addFilter("absoluteUrl", function(path) {
+  const base = "https://adrianvic.github.io";
+  return base + path;
+});
 
 eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
   if (!str) return "";
@@ -30,7 +52,7 @@ eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
       return smallWords.includes(word) ? word : word.charAt(0).toUpperCase() + word.slice(1);
     }).join(" ");
   });
-    return {
+  return {
     dir: {
       output: "docs"
     }

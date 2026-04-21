@@ -1,0 +1,36 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+tags: misc
+background: towers.jpg
+backgroundOpacity: .2
+---
+
+<main>
+  <div class="box pageHeaderBox">
+    <h1>{{ t.pageTitle }}</h1>
+    <p>{{ t.intro }}</p>
+    <img class="i88x31" src="/static/images/88x31/BOOKMARKthispageNOW.png" alt="">
+  </div>
+  <hr>
+  {% for sectionName, section in c.links %}
+  <h2>{{ t[sectionName] }}</h2>
+  <dl>
+    {% for link in section %}
+    <dt><a href="{{ link.link }}">{{ link.name }}</a></dt>
+    <dd>
+      {% if link.88x31 %}
+      {% for 88x31 in link.88x31 %}
+      <img class="i88x31" style="margin-top: .6em;" src="/static/images/88x31/{{ 88x31 }}">
+      {% endfor %}
+      <br>
+      {% endif %}
+      {{ link.description[langKey] }}
+    </dd>
+    {% endfor %}
+  </dl>
+  {% endfor %}
+</main>

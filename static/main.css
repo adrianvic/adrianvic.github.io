@@ -147,7 +147,7 @@ blockquote, main p {
 }
 
 main h1, main h2 {
-    margin-bottom: .5em;
+    /* margin-bottom: .2em; */
 }
 
 main h2 {
@@ -161,6 +161,28 @@ b {
 
 blockquote {
     margin-left: 2.8em;
+}
+
+hr {
+    border-bottom: thick solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+    2px 7px 5px rgba(0,0,0,0.3),
+    0px -4px 10px rgba(0,0,0,0.3);
+    /* margin: .5em 0; */
+}
+
+.box {
+    border: thick solid rgba(255, 255, 255, 0.1);
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.box *:last-child {
+    margin-bottom: 0;
+}
+
+.pageHeaderBox {
+    border-bottom: 0;
 }
 
 #headerSubtitle {
@@ -758,6 +780,15 @@ hs {
 
 #postHeader {
     margin-bottom: 1em;
+}
+
+.i88x31 {
+    transition: .2s;
+    image-rendering: pixelated;
+}
+
+.i88x31.selected {
+    transform: scale(2);
 }
 
 @keyframes ellipsis-loader {
