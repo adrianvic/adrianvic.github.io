@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="/static/main.css?fixcache=1">
     <script src="/static/scripts/ccd.js"></script>
-    <script src="/static/scripts/main.js" defer></script>
+    <script src="/static/scripts/music.js" defer></script>
     <script src="/static/scripts/88x31.js" defer></script>
+    <script src="/static/scripts/tips.js" defer></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
@@ -60,6 +61,8 @@
 </header>
         <div id="mainHelper">
             
+
+
 <main>
     <article>
         <div id="postHeader">
@@ -77,18 +80,25 @@
             
         </div>
         
-        <a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
-            <div class="blogpostYoutubeVideo">
-                <img src="/static/images/thumbnails/fl_studio_linux.png">
-                <div class="videoHeader">
-                    <p class="alsoAvailable">Também disponível em vídeo:</p>
-                    <h2 class="videoTitle">Como instalar o FL Studio no Linux?</h2>
-                    <p>YouTube (5:53)</p>
-                </div>
-                <!-- <p class="goLabel">ir</p> -->
-            </div>
-        </a>
         
+<div class="youtubeCardHolderHelper">
+<div class="youtubeCardHolder">
+<a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
+    <div class="blogpostYoutubeVideo" >
+        <img src="/static/imagesfl_studio_linux.png">
+        <div class="videoHeader">
+            <!-- <p class="alsoAvailable">Também disponível em vídeo:</p> -->
+            <h2 class="videoTitle" >Como instalar o FL Studio no Linux?</h2>
+            <p>YouTube (5:53)</p>
+        </div>
+        <!-- <p class="goLabel">ir</p> -->
+    </div>
+</a>
+</div>
+</div>
+
+        
+            
         <h2>Prólogo</h2>
 <p>Desde que mudei permanentemente para o Linux em 2024, venho me impressionando com a capacidade inabalável da comunidade open-source de trazer a vida no Linux softwares complexos feitos originalmente para Windows. Entretanto, um dos programas amaldiçoados com os mais ímpetos e abstratos erros na velha guarda do Wine é o FL Studio, caracteristica essa que fez com que eu, por muito tempo, achasse que a DAW da Image-Line não iria rodar de jeito nenhum no sistema do penguim.</p>
 <p>Acontece que o FL roda no Linux, e roda muito bem, considerando a sua complexidade. Descartando uns problemas visuais, algumas VSTs que simplesmente não rodam e uma gambiarra para rodar plugins 32-bits, a experiência de usar o FL Studio no Linux é bem sólida. Parece que a Valve, Wine e comunidade open-source não estão para brincadeira mesmo.</p>

@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="/static/main.css?fixcache=1">
     <script src="/static/scripts/ccd.js"></script>
-    <script src="/static/scripts/main.js" defer></script>
+    <script src="/static/scripts/music.js" defer></script>
     <script src="/static/scripts/88x31.js" defer></script>
+    <script src="/static/scripts/tips.js" defer></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
@@ -60,6 +61,9 @@
 </header>
         <div id="mainHelper">
             
+
+
+
 <div id="homeSquares">
 </div>
 <main>
@@ -72,17 +76,36 @@
             display: none;
         }
     </style></noscript>
+
     <div class="hs" id="hsDefault">
+        <div class="box pageHeaderBox">
         <h1 id="homeTitle">Bem-vindo</h1>
         <p>Parece que você encontrou meu website! Olá, sou <b>Adrian Victor</b> (ou <b>tenkuma</b>), um cara brasileiro que gosta de mexer com computadores, programas de computadores e <i>enimatpirtlitemídios</i>.</p>
-        <img class="i88x31" src="/static/images/88x31/tenkuma.gif">
-        <img class="i88x31" src="/static/images/88x31/anybrowser6.gif">
-        <img class="i88x31" src="/static/images/88x31/ai.gif">
-        <img class="i88x31" src="/static/images/88x31/WEBP.gif">
-        <img class="i88x31" src="/static/images/88x31/rainbowrain.gif">
-        <img class="i88x31" src="/static/images/88x31/rave.gif">
-        <img class="i88x31" src="/static/images/88x31/blasphemy.gif">
+        
+  <img class="i88x31" src="/static/images/88x31/tenkuma.gif" data-tip="<b>Clique para expandir</b> (tenkuma.gif)">
 
+        
+  <img class="i88x31" src="/static/images/88x31/anybrowser6.gif" data-tip="<b>Clique para expandir</b> (anybrowser6.gif)">
+
+        
+  <img class="i88x31" src="/static/images/88x31/ai.gif" data-tip="<b>Clique para expandir</b> (ai.gif)">
+
+        
+  <img class="i88x31" src="/static/images/88x31/WEBP.gif" data-tip="<b>Clique para expandir</b> (WEBP.gif)">
+
+        
+  <img class="i88x31" src="/static/images/88x31/rainbowrain.gif" data-tip="<b>Clique para expandir</b> (rainbowrain.gif)">
+
+        
+  <img class="i88x31" src="/static/images/88x31/blasphemy.gif" data-tip="<b>Clique para expandir</b> (blasphemy.gif)">
+
+        </div>
+        <hr>
+        <h2>Sobre Mim</h2>
+        <p>
+      Meu nome é Adrian Victor, mas on-line eu uso o nickname tenkuma. Estou no último ano do ensino médio e estudo informática. Meus hobbies são escutar e produzir música, programação, selfhosting, Linux, e muito mais.
+    </p>
+        <p>Tenkuma, ou 天くま em japonês, significa urso celestial e foi um nome dado a mim por um amigo que eu já perdi contato há muito tempo. Sakata se foi, mas o nome ficou e se tornou parte integral da personalidade do meu eu digital até hoje.</p>
         <h2>Redes Sociais e Contato</h2>
         <p>
       Estou publicamente disponível no Mastodon <a href='https://mstdn.social/@tenkuma'>(@tenkuma@mstdn.social)</a>,
@@ -95,77 +118,127 @@
       e XMPP <a href='xmpp:adrianvictor@disroot.org'>(adrianvictor@disroot.org)</a>.
     </p>
         <p>Você pode enviar um correio eletrônico para <a href="mailto:adrianvictor@disroot.org">(adrianvictor@disroot.org)</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).</p>
-        <p><i><b>Por favor, evite me contactar por meios não citados acima :)</b></i></p>
     </div>
+
     <div class="hs" id="hsMusic">
+        <div class="box pageHeaderBox">
         <h1>Música</h1>
-        <p>Eu e meus amigos temos uma gravadora de música amadora chamada <span class="margarinaColor">Margarina Records</span>, as coisas andam devagar com meus projetos musicais, geralmente por causa da escola ou falta de conhecimento no campo, mas eu estou dando um jeito.</p>
-        <p>Você pode conferir minhas músicas mais recentes no <a href="https://margarina-records.rf.gd">site da gravadora</a> e no <a href="https://genius.com/tenkuma">Genius</a>. Você provavelmente vai gostar do trabalho dos outros membros, então dê uma olhada nas outras tracks da MGR.</p>
+        <p>Sempre amei música, e tenho achado produção musical algo muito interessante ultimamente. Publico minhas músicas como <i>tenkuma</i>, junto com meus amigos formei a <a href="https://margarina-records.rf.gd">Margarina Records</a>—uma label amadora.</p>
+        <p>Você pode conferir minhas músicas mais recentes no meu perfil do <a href="https://genius.com/tenkuma">Genius</a>.</p>
+        
+  <img class="i88x31" src="/static/images/88x31/rave.gif" data-tip="<b>Clique para expandir</b> (rave.gif)">
+
+        
+  <img class="i88x31" src="/static/images/88x31/happymix.gif" data-tip="<b>Clique para expandir</b> (happymix.gif)">
+
+        </div>
+        <hr>
+        <div class="hsMusicCard">
+        
+<div class="youtubeCardHolderHelper">
+<div class="youtubeCardHolder">
+<a href="https://margarina.bandcamp.com/album/velkommen">
+    <div class="blogpostYoutubeVideo" style="border-color: #482948;">
+        <img src="/static/images/songs/velkommen.jpg">
+        <div class="videoHeader">
+            <!-- <p class="alsoAvailable">Também disponível em vídeo:</p> -->
+            <h2 class="videoTitle" style="color: #482948;">Velkommen</h2>
+            <p>Bandcamp (5:39)</p>
+        </div>
+        <!-- <p class="goLabel">ir</p> -->
     </div>
+</a>
+</div>
+</div>
+
+        </div>
+    </div>
+
     <div class="hs" id="hsVideo">
+        <div class="box pageHeaderBox">
         <h1>Vídeos</h1>
-        <p>Eu tenho um canal no YouTube em que na maioria das vezes eu posto vídeos de Minecraft, mas pretendo expandir a variedade de conteúdos no futuro. Não tenho nenhuma previsão de publicação no meu canal, pois editar os vídeos leva tempo e eu tenho pouco tempo para trabalhar nos meus projetos, você deveria se inscrever se quiser saber quando eu posto meus vídeos!</p>
-        <p>Aqui está um vídeo aleatório que eu me orgulho de ter postado:</p>
-        <a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
-            <div style="margin-bottom: 1em;" class="blogpostYoutubeVideo">
-                <img src="/static/images/thumbnails/fl_studio_linux.png">
-                <div class="videoHeader">
-                    <h2 class="videoTitle">Como instalar o FL Studio no Linux?</h2>
-                    <p>YouTube (5:53)</p>
-                </div>
-            </div>
-        </a>
+        <p>Eu faço vídeos para o <a href='${globalValues.youtube.url}'>meu canal do YouTube</a>. Não posto regularmente; não tem calendário—apenas eu mostrando alguma coisa em vídeo.</p>
+        </div>
+        <hr>
+        
+<div class="youtubeCardHolderHelper">
+<div class="youtubeCardHolder">
+<a href="https://www.youtube.com/watch?v=6bnNAnSY9Uo">
+    <div class="blogpostYoutubeVideo" >
+        <img src="/static/images/thumbnails/fl_studio_linux.png">
+        <div class="videoHeader">
+            <!-- <p class="alsoAvailable">Também disponível em vídeo:</p> -->
+            <h2 class="videoTitle" >Como instalar o FL Studio no Linux?</h2>
+            <p>YouTube (5:53)</p>
+        </div>
+        <!-- <p class="goLabel">ir</p> -->
     </div>
+</a>
+</div>
+</div>
+
+    </div>
+    
     <div class="hs" id="hsCode">
+        <div class="box pageHeaderBox">
         <h1>Software</h1>
         <p>Estou estudando informática no IFC (SC, Brazil) mas no meu tempo livre tenho projetos como programas de computador, plugins para Minecraft, servidores Minecraft, etc... Todos meus projetos públicos estão disponíveis no meu <a href="https://github.com/adrianvic">perfil do GitHub</a>.</p>
         
+        </div>
+        <hr>
         <div class="hsProjects">
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/jamfish-wide.png" alt="Um desenho digital do topo de um garfo com uma borda preta, à direita um texto branco diz 'Pesto Wiki'"></div>
-                    <a href="https://github.com/adrianvic/jamfish" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>Reprodutor de música nativo para dispositivos Android que se conecta a servidores de mídia Jellyfin. O código é baseado no repositório arquivado do Gelli, que por sua vez se baseia em uma versão antiga do Phonograph.</p>
-                </div>
-            </div>
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/eye_of_nemesis.png" alt=""></div>
-                    <a href="https://github.com/adrianvic/NemesisEye" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>Eye of Nemesis é um plugin que permite aos administradores de servidores escrever políticas que negarão ou permitirão (lista negra/branca) que os jogadores façam coisas específicas com base no valor dos nós.</p>
-                </div>
-            </div>
             
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/itemeconomy2-wide.png" alt=""></div>
-                    <a href="https://github.com/adrianvic/ItemEconomy" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>Este plugin PaperMC integra-se ao VaultUnlocked para fornecer um sistema de economia único baseado em itens para o seu servidor Minecraft. Em vez de depender apenas de saldos virtuais, os jogadores usam itens do jogo como moeda física, adicionando uma camada de imersão e realismo à sua economia.</p>
-                </div>
-            </div>
-            <div class="hsProject">
-                <div class="hsProjectHeader">
-                    <div class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt=""></div>
-                    <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectHeaderIcon">
-                        <img src="/static/visual/github.svg" class="invertedc">
-                    </a>
-                </div>
-                <div class="hsProjectContent">
-                    <p>Cliente personalizável multiplataforma para wikis escrito em Python usando PySide6 (QT).</p>
-                </div>
-            </div>
+<div class="hsProject">
+    <div class="hsProjectHeader">
+        <div class="hsProjectImage"><img src="/static/images/jamfish-wide.png" alt="Jamfish"></div>
+        <a href="https://github.com/adrianvic/jamfish" class="hsProjectHeaderIcon">
+            <img src="/static/visual/github.svg" class="invertedc">
+        </a>
+    </div>
+    <div class="hsProjectContent">
+        <p>Reprodutor de música nativo para dispositivos Android que se conecta a servidores de mídia Jellyfin. O código é baseado no repositório arquivado do Gelli, que por sua vez se baseia em uma versão antiga do Phonograph.</p>
+    </div>
+</div>
+
+            
+<div class="hsProject">
+    <div class="hsProjectHeader">
+        <div class="hsProjectImage"><img src="/static/images/itemeconomy2-wide.png" alt="ItemEconomy"></div>
+        <a href="https://github.com/adrianvic/ItemEconomy" class="hsProjectHeaderIcon">
+            <img src="/static/visual/github.svg" class="invertedc">
+        </a>
+    </div>
+    <div class="hsProjectContent">
+        <p>Este plugin PaperMC integra-se ao VaultUnlocked para fornecer um sistema de economia único baseado em itens para o seu servidor Minecraft. Em vez de depender apenas de saldos virtuais, os jogadores usam itens do jogo como moeda física, adicionando uma camada de imersão e realismo à sua economia.</p>
+    </div>
+</div>
+
+            
+<div class="hsProject">
+    <div class="hsProjectHeader">
+        <div class="hsProjectImage"><img src="/static/images/eye_of_nemesis.png" alt="Eye of Nemesis"></div>
+        <a href="https://github.com/adrianvic/NemesisEye" class="hsProjectHeaderIcon">
+            <img src="/static/visual/github.svg" class="invertedc">
+        </a>
+    </div>
+    <div class="hsProjectContent">
+        <p>Eye of Nemesis é um plugin que permite aos administradores de servidores escrever políticas que negarão ou permitirão (lista negra/branca) que os jogadores façam coisas específicas com base no valor dos nós.</p>
+    </div>
+</div>
+
+            
+<div class="hsProject">
+    <div class="hsProjectHeader">
+        <div class="hsProjectImage"><img src="/static/images/pestowikifullwhite.png" alt="PestoWiki"></div>
+        <a href="https://github.com/Margarina-not-butter/PestoWiki" class="hsProjectHeaderIcon">
+            <img src="/static/visual/github.svg" class="invertedc">
+        </a>
+    </div>
+    <div class="hsProjectContent">
+        <p>Cliente personalizável multiplataforma para wikis escrito em Python usando PySide6 (QT).</p>
+    </div>
+</div>
+            
         </div>
     </div>
 </main>

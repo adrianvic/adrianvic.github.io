@@ -5,7 +5,7 @@ document.addEventListener('keydown', function(event) {
   if (event.code === konamiCode[keyIndex]) {
     keyIndex++;
     if (keyIndex === konamiCode.length) {
-        window.location.href = './static/toyourdreams.txt'
+        window.location.href = '/static/toyourdreams.txt'
         keyIndex = 0;
     }
   } else {
