@@ -16,7 +16,7 @@ title: Adrian Victor:Blog
         <li>
           <p>
             <a href="{{ post.url }}">{{ post.data.postTitle }}</a><br>
-            {{ post.data.date }}
+            <b>{{ post.data.date | postDate }}</b>{% if post.data.lastModified | postDate !==  post.data.date | postDate %} ({{ i18n[langKey].lastEditedIn }} {{ post.data.lastModified | postDate}}){% endif %}
           </p>
         </li>
       {% endif %}

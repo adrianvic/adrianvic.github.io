@@ -1,6 +1,11 @@
 {
 	"pageTitle": "Bookmarks",
 	"pageDescription": "My collection of interesting websites/pages.",
+	"intro": "A list of useful or cool websites/pages curated by me. Divided in sections for an easier navigation.",
 	"profiles": "Profiles",
-	"downloads": "Downloads"
+	"downloads": "Downloads",
+	"games": "Games",
+	"tools": "Tools",
+	"music": "Music",
+	"piracy": "Piracy"
 }

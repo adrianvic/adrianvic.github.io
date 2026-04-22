@@ -27,18 +27,23 @@ layout: base.njk
         <div class="box pageHeaderBox">
         <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>
+        <div class="homeBadgesBox">
         {{ i88x31("tenkuma.gif") }}
         {{ i88x31("anybrowser6.gif") }}
         {{ i88x31("ai.gif") }}
         {{ i88x31("WEBP.gif") }}
         {{ i88x31("rainbowrain.gif") }}
         {{ i88x31("blasphemy.gif") }}
+        {{ i88x31("css3.gif") }}
+        {{ i88x31("best_viewed_with_open_eyes.gif") }}
+        {{ i88x31("gnu-linux.gif") }}
+        </div>
         </div>
         <hr>
-        <h2>{{ i18n[langKey].aboutMe | smartTitle }}</h2>
+        <h2>{{ i18n[langKey].aboutMe | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeAboutMeParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeAboutMeParagraphTwo | safe }}</p>
-        <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h2>
+        <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraphTwo | safe }}</p>
     </div>
@@ -48,8 +53,10 @@ layout: base.njk
         <h1>{{ i18n[langKey].myMusic | smartTitle }}</h1>
         <p>{{ i18n[langKey].homeMyMusicParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeMyMusicParagraphTwo | safe }}</p>
+        <div class="homeBadgesBox">
         {{ i88x31("rave.gif") }}
         {{ i88x31("happymix.gif") }}
+        </div>
         </div>
         <hr>
         <div class="hsMusicCard">

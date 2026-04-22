@@ -1,43 +1,158 @@
 {
     "links": {
-        "downloads": [
-            {
-                "name": "MalwareWatch",
-                "link": "https://malwarewatch.org/",
-                "description": {
-                    "pt": "Website do Enderman. Tem download de vários softwares úteis, imagens de sistemas operacionais e malware.",
-                    "en": "Enderman's website. Provides download to various useful softwares, operating system images and malware."
-                }
-            },
-            {
-                "name": "88x31",
-                "link": "https://88x31.nl/",
-                "description": {
-                    "pt": "Essa é uma coleção de mais de 6500 GIFs e PNGs no formato 88x31. No final dos anos 1990 e começo dos 2000 era muito comum usar essas imagens no seu site pessoal.",
-                    "en": "This website is a collection with over 6500 GIF's and PNG's in 88x31 format. In the late 1990 and begin of the 2000's it was very common to use these pictures on your personal website."
+        "downloads": {
+            "88x31": [
+                "iglooftp.gif",
+                "eftpbutton.gif"
+            ],
+            "links": [
+                {
+                    "name": "MalwareWatch",
+                    "link": "https://malwarewatch.org/",
+                    "description": {
+                        "pt": "Website do Enderman. Tem download de vários softwares úteis, imagens de sistemas operacionais e malware.",
+                        "en": "Enderman's website. Provides download to various useful softwares, operating system images and malware."
+                    }
                 },
-                "88x31": [
-                    "WEBP.gif"
-                ]
-            }
-        ],
-        "profiles": [
-            {
-                "name": "Mr. Nando",
-                "link": "https://www.youtube.com/@mrnandokk",
-                "description": {
-                    "pt": "Meu amigo Fernando, ele faz músicas e vídeos de Minecraft e speedrun.",
-                    "en": "My friend Fernando, he makes music and YouTube videos of Minecraft and speedrun."
+                {
+                    "name": "Free Images",
+                    "link": "https://free-images.com/",
+                    "description": {
+                        "pt": "Pesquise por milhões de imagens, artes e vetores. Todas as imagens são de domínio público ou sobre CC0. Livre para baixar e livre para usar.",
+                        "en": "Search through millions of free stock photos, art and vector images.  Every image is Public Domain or CC0. Free to Download and Free to Use."
+                    }
+                },
+                {
+                    "name": "88x31",
+                    "link": "https://88x31.nl/",
+                    "description": {
+                        "pt": "Essa é uma coleção de mais de 6500 GIFs e PNGs no formato 88x31. No final dos anos 1990 e começo dos 2000 era muito comum usar essas imagens no seu site pessoal.",
+                        "en": "This website is a collection with over 6500 GIF's and PNG's in 88x31 format. In the late 1990 and begin of the 2000's it was very common to use these pictures on your personal website."
+                    },
+                    "88x31": [
+                        "WEBP.gif",
+                        "blank.gif"
+                    ]
                 }
-            },
-            {
-                "name": "Endermanch",
-                "link": "https://enderman.ch/",
-                "description": {
-                    "pt": "Andrew é um engenheiro de software, entusiasta de malware e, mais importante, uma estranha e alta criatura. Cresci com os seus videos e ele é uma grande inspiração para mim.",
-                    "en": "Andrew is a software engineer, a malware enthusiast and most importantly, a weird tall creature. I've grown up with his videos and he's a great inspiration for me."
+            ]
+        },
+        "profiles": {
+            "links": [
+                {
+                    "name": "Mr. Nando",
+                    "link": "https://www.youtube.com/@mrnandokk",
+                    "description": {
+                        "pt": "Meu amigo Fernando, ele faz músicas e vídeos de Minecraft e speedrun.",
+                        "en": "My friend Fernando, he makes music and YouTube videos of Minecraft and speedrun."
+                    }
+                },
+                {
+                    "name": "Endermanch",
+                    "link": "https://enderman.ch/",
+                    "description": {
+                        "pt": "Andrew é um engenheiro de software, entusiasta de malware e, mais importante, uma estranha e alta criatura. Cresci com os seus videos e ele é uma grande inspiração para mim.",
+                        "en": "Andrew is a software engineer, a malware enthusiast and most importantly, a weird tall creature. I've grown up with his videos and he's a great inspiration for me."
+                    }
                 }
-            }
-        ]
+            ]
+        },
+        "tools": {
+            "links": [
+                {
+                    "name": "Excalidraw",
+                    "link": "https://excalidraw.com/",
+                    "description": {
+                        "pt": "Quadro branco sem distrações.",
+                        "en": "Whiteboard with no bloat."
+                    }
+                },
+                {
+                    "name": "Postimages",
+                    "link": "https://postimages.org/",
+                    "description": {
+                        "pt": "Gere links permantes de suas imagens para forums, blogs e redes sociais.",
+                        "en": "Get permanent links of your images for forums, blogs, and social media."
+                    }
+                },
+                {
+                    "name": "uBlock Origin",
+                    "link": "https://github.com/gorhill/uBlock#ublock-origin",
+                    "description": {
+                        "pt": "Um bloqueador eficiente para Chromium e Firefox. Rápido e pequeno.",
+                        "en": "An efficient blocker for Chromium and Firefox. Fast and lean."
+                    },
+                    "88x31": ["ublock-now.png"]
+                }
+            ]
+        },
+        "games": {
+            "88x31": [
+                "gb.gif",
+                "amd_powered.gif"
+            ],
+            "links": [
+                {
+                    "name": "SteamGridDB",
+                    "link": "https://www.steamgriddb.com/",
+                    "description": {
+                        "pt": "Baixe e compartilhe recursos visuais de jogos e personalize sua biblioteca de jogos.",
+                        "en": "Download and share custom video game assets and personalize your gaming library."
+                    }
+                }
+            ]
+        },
+        "music": {
+            "88x31": [
+                "rave.gif",
+                "2014-rave.gif",
+                "wmpfree.gif",
+                "wmp.gif",
+                "wmp9.gif",
+                "wmp10.gif",
+                "wmp11.gif",
+                "ffmpeg.gif",
+                "ymusic.gif"
+            ],
+            "links": [
+                {
+                    "name": "CVGM Radio",
+                    "link": "https://radio.cvgm.net/demovibes/",
+                    "description": {
+                        "pt": "Seu lar para música relacionada a video games, demo scene e computadores.",
+                        "en": "Your home for video game, demo scene and computer related music."
+                    }
+                }
+            ]
+        },
+        "piracy": {
+            "88x31": ["piracy.png"],
+            "links": [
+                {
+                    "name": "Nyaa",
+                    "link": "https://nyaa.si/",
+                    "description": {
+                        "pt": "Um tracker de animes, mangás e coisas relacionadas.",
+                        "en": "A tracker of animes, mangas and related stuff."
+                    },
+                    "88x31": ["rukia.gif"]
+                },
+                {
+                    "name": "Lucida",
+                    "link": "https://lucida.to/",
+                    "description": {
+                        "pt": "Com Lucida, você pode baixar musica diretamente de Qobuz, Tidal, Soundcloud, Deezer, Amazon Music, e Yandex Music em alta qualidade de graça. Sem pegadinhas, sem anúncios obrigatórios, sem enrolação. Como que funciona?",
+                        "en": "With Lucida, you can download music directly from Qobuz, Tidal, Soundcloud, Deezer, Amazon Music, and Yandex Music in high quality for free. No catches, no mandatory ads, no BS. How does it work?"
+                    }
+                },
+                {
+                    "name": "DoubleDouble",
+                    "link": "https://doubledouble.top/",
+                    "description": {
+                        "pt": "Baixe musica diretamente de Qobuz, Tidal, Soundcloud, Deezer, Amazon Music, e Yandex Music em alta qualidade de graça.",
+                        "en": "Download music directly from Amazon Music, Soundcloud, Qobuz, Deezer and Tidal for free."
+                    }
+                }
+            ]
+        }
     }
 }

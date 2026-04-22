@@ -1,7 +1,11 @@
 {
 	"pageTitle": "Favoritos",
 	"pageDescription": "Minha coleção de sites e páginas interessantes.",
+	"intro": "Essa é a lista de links favoritos curada por mim, dividida em seções para facilitar a navegação ;-)",
 	"profiles": "Perfis",
 	"downloads": "Downloads",
-	"intro": "Essa é a lista de links favoritos curada por mim, dividida em seções para facilitar a navegação ;-)"
+	"games": "Jogos",
+	"tools": "Ferramentas",
+	"music": "Música",
+	"piracy": "Pirataria"
 }

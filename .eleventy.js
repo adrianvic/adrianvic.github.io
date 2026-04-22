@@ -45,6 +45,15 @@ eleventyConfig.addFilter("absoluteUrl", function(path) {
   return base + path;
 });
 
+eleventyConfig.addFilter("postDate", (dateObj) => {
+  return dateObj.toLocaleString(undefined, {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    timeZone: "America/Sao_Paulo"
+  });
+});
+
 eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
   if (!str) return "";
   const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",

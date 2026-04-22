@@ -73,7 +73,8 @@ module.exports = {
     alsoAvailableAsVideo: "Also available as video",
     websiteDescription: "Personal website/blog of Adrian Victor.",
     miscellaneous: "Miscellaneous",
-    i88x31hover: "Click to expand"
+    i88x31hover: "Click to expand",
+    lastEditedIn: "last edited in"
   },
   pt: {
     language: "português",
@@ -123,6 +124,7 @@ module.exports = {
     alsoAvailableAsVideo: "Também disponível em vídeo",
     websiteDescription: "Website/blog pessoal de Adrian Victor.",
     miscellaneous: "Miscelâneo",
-    i88x31hover: "Clique para expandir"
+    i88x31hover: "Clique para expandir",
+    lastEditedIn: "editado por último em"
   }
 };

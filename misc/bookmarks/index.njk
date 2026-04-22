@@ -18,20 +18,32 @@ backgroundOpacity: .2
   </div>
   <hr>
   {% for sectionName, section in c.links %}
-  <h2>{{ t[sectionName] }}</h2>
-  <dl>
-    {% for link in section %}
-    <dt><a href="{{ link.link }}">{{ link.name }}</a></dt>
-    <dd>
-      {% if link.88x31 %}
-      {% for 88x31 in link.88x31 %}
+  <div>
+    <h2>{{ t[sectionName] }}</h2>
+    {% if section.88x31 %}
+    <div class="box favorites88x31Box">
+      {% for 88x31 in section.88x31 %}
       {{ i88x31(88x31) }}
       {% endfor %}
-      <br>
-      {% endif %}
-      {{ link.description[langKey] }}
-    </dd>
+    </div>
+    {% endif %}
+    <dl>
+      {% for link in section.links %}
+      <div class="favoritesDefinitionListItem">
+        <dt><a href="{{ link.link }}">{{ link.name }}</a></dt>
+        <hr class="favoritesDivider">
+        <dd>
+          {{ link.description[langKey] }}
+          <div class="favorite88x31Box">
+            {% if link.88x31 %}
+            {% for 88x31 in link.88x31 %}
+            {{ i88x31(88x31) }}
+            {% endfor %}
+            {% endif %}
+          </div>
+        </dd>
+      </div>
+      {% endfor %}
+    </dl>
     {% endfor %}
-  </dl>
-  {% endfor %}
-</main>
+  </main>
