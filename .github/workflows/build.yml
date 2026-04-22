@@ -2,9 +2,16 @@ name: Build Eleventy
 
 on:
   push:
+    paths-ignore:
+      - '/maintenance/**'
+      - '/README.md'
     branches:
       - main
   workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - '/maintenance/**'
+      - '/README.md'
 
 permissions:
   contents: write

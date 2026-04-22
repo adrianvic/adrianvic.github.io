@@ -24,8 +24,6 @@ module.exports = {
             return {};
         }
     },
-    
-    
     permalink: data => {
         return `/${data.langKey}/misc/${data.page.fileSlug}/`;
     },
