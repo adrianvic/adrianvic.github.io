@@ -618,6 +618,16 @@ div.hs.selected {
     opacity: 0.6;
 }
 
+#fixedHint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 10;
+    padding: .2em;
+    outline: thin solid var(--theme-color);
+}
+
 #sound {
     filter: invert();
 }
