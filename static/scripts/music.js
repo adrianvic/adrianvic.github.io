@@ -1,4 +1,5 @@
 // This script handles the playback of music in the header's miniplayer ;)
+import { showNotification } from './notification.js';
 const body = document.querySelector("body");
 
 const musicdiv = document.getElementById("music");
@@ -42,7 +43,7 @@ optionsAside.classList.add("metromenu");
     <div id="playlist"></div>
     <div>
         <p>Volume</p>
-        <input id="volume" oninput="setVolume(this.value / 100)" type="range" min="0" max="100"></input>
+        <input id="volume" type="range" min="0" max="100"></input>
     </div>
         <div class="checkbox">
             <p>${headeri18n.hideBackground}</p>
@@ -54,6 +55,9 @@ optionsAside.classList.add("metromenu");
 }
 body.appendChild(optionsAside);
 
+document.getElementById("volume").addEventListener("input", (e) => {
+    setVolume(e.target.value / 100);
+}); // dirty workaround to replace inline function calling in the volume input
 
 const toggleIMG = document.querySelector('#sound');
 toggleIMG.addEventListener('click', () => {
@@ -146,11 +150,21 @@ let audio = new Audio(`/static/music/${audioSelect.value}`);
 
 const savedTime = localStorage.getItem("audioTime");
 const savedVolume = localStorage.getItem("volume");
+
+if (savedVolume !== null) {
+    audio.volume = parseFloat(savedVolume);
+} else {
+    audio.volume = 0.8;
+}
+
 const wasPlaying = localStorage.getItem("audioPlaying") === 'true';
 
 function play() {
-    audio.volume = localStorage.getItem("volume");
-    audio.play();
+    audio.volume = localStorage.getItem("volume") ?? 0.8;
+    audio.play().catch(() => {
+            stop();
+            showNotification(headeri18n.permissionIssue, headeri18n.permissionIssueNotificationContent, 5000);
+        });;
     localStorage.setItem("audioPlaying", "true")
     toggleIMG.src = "/static/images/sound-on.png"
     console.log(`[Music Player] playing ${audioSelect.value}`)
