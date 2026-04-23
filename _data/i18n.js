@@ -74,7 +74,11 @@ module.exports = {
     websiteDescription: "Personal website/blog of Adrian Victor.",
     miscellaneous: "Miscellaneous",
     i88x31hover: "Click to expand",
-    lastEditedIn: "last edited in"
+    lastEditedIn: "last edited in",
+    permissionIssue: "Permission issue",
+    permissionIssueNotificationContent: "Unable to continue playing background music, please enable audio <b>autoplay</b> for this website.",
+    notificationDefaultHint: "<b>Click to dismiss</b>"
+
   },
   pt: {
     language: "português",
@@ -125,6 +129,9 @@ module.exports = {
     websiteDescription: "Website/blog pessoal de Adrian Victor.",
     miscellaneous: "Miscelâneo",
     i88x31hover: "Clique para expandir",
-    lastEditedIn: "editado por último em"
+    lastEditedIn: "editado por último em",
+    permissionIssue: "Problema de permissão",
+    permissionIssueNotificationContent: "Não foi possivel continuar tocando a música de fundo, por favor habilite <b>reprodução automática</b> de áudio para esse website.",
+    notificationDefaultHint: "<b>Clique para ignorar</b>"
   }
 };

@@ -9,7 +9,7 @@ title: Adrian Victor:Blog
     <article>
         <div id="postHeader">
             <h1>{{ postTitle }}</h1>
-            <p>{{ authors or "Adrian Victor" }} - {{ date | postDate }}</p>
+            <p>{{ authors or "Adrian Victor" }} - <b>{{ date | postDate }}</b>{% if lastModified | postDate !==  date | postDate %} ({{ i18n[langKey].lastEditedIn }} {{ lastModified | postDate }}){% endif %}</p>
             {% if altLanguages.length > 0 %}
             {{ i18n[langKey].availableInOtherLanguages }}:
             {% for alt in altLanguages %}

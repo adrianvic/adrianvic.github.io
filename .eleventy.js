@@ -27,45 +27,47 @@ module.exports = function(eleventyConfig) {
     }));
   });
 
-eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("static");
 
-eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, postId, currentLanguageKey) {
-  return collection.filter(post => 
-    post.data.postId === postId && post.data.langKey !== currentLanguageKey
-  )
-  .map(post => ({
-    lang: post.data.langKey,
-    url: post.url,
-    title: post.data.title
-  }))
-});
-
-eleventyConfig.addFilter("absoluteUrl", function(path) {
-  const base = "https://adrianvic.github.io";
-  return base + path;
-});
-
-eleventyConfig.addFilter("postDate", (dateObj) => {
-  return dateObj.toLocaleString(undefined, {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    timeZone: "America/Sao_Paulo"
+  eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, postId, currentLanguageKey) {
+    return collection.filter(post => 
+      post.data.postId === postId && post.data.langKey !== currentLanguageKey
+    )
+    .map(post => ({
+      lang: post.data.langKey,
+      url: post.url,
+      title: post.data.title
+    }))
   });
-});
 
-eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
-  if (!str) return "";
-  const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",
-    "e","de","do","da","dos","das","a","o","um","uma","em","por","para","com","no","na","nos"];
+  eleventyConfig.addFilter("absoluteUrl", function(path) {
+    const base = "https://adrianvic.github.io";
+    return base + path;
+  });
+
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    if (!dateObj) return "";
+    return dateObj.toLocaleString(undefined, {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      timeZone: "America/Sao_Paulo"
+    });
+  });
+
+  eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
+    if (!str) return "";
+    const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",
+      "e","de","do","da","dos","das","a","o","um","uma","em","por","para","com","no","na","nos"];
     return str.toLowerCase().split(" ").map((word, i) => {
       if (i === 0) return word.charAt(0).toUpperCase() + word.slice(1);
       return smallWords.includes(word) ? word : word.charAt(0).toUpperCase() + word.slice(1);
     }).join(" ");
   });
+
   return {
     dir: {
       output: "docs"
     }
   };
-}
+};
