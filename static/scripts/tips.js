@@ -6,11 +6,9 @@ const hintPanelDefaultText = hint.innerHTML;
 let fixedHint;
 let currentObserver;
 
-if (!isMobile) {
-  elements.forEach(el => {
-    registerElementHint(el);
-  })  
-}
+elements.forEach(el => {
+  registerElementHint(el);
+})
 
 function cleanup() {
   hint.innerHTML = hintPanelDefaultText;
@@ -25,6 +23,9 @@ function cleanup() {
 }
 
 export function registerElementHint(el) {
+  if (isMobile) {
+    return;
+  }
   el.addEventListener('mouseenter', function() {
       cleanup();
       
