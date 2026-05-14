@@ -3,7 +3,7 @@ permalink: "/index.html"
 layout: base.njk
 langKey: "en"
 ---
-<script src="/static/scripts/language.js" defer></script>
+<script src="{{ '/static/scripts/language.js' | url }}" defer></script>
 <style>
     #headerLinks {
         display: none!important;
@@ -12,7 +12,7 @@ langKey: "en"
 <main>
     <h1 id="languageTitle">Pick a language</h1>
     <ul id="languageList">
-        <li><a href="/en/">English</a></li>
-        <li><a href="/pt/">Português Brasileiro</a></li>
+        <li><a href="{{ '/en/' | url }}">English</a></li>
+        <li><a href="{{ '/pt/' | url }}">Português Brasileiro</a></li>
     </ul>
 </main>

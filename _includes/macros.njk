@@ -1,31 +1,39 @@
 {% macro i88x31(link) %}
-  <img class="i88x31" src="/static/images/88x31/{{ link }}" data-tip="<b>{{ i18n[langKey].i88x31hover }}</b> ({{ link }})">
+  <img
+    class="i88x31"
+    src="{{ ('/static/images/88x31/' ~ link) | url }}"
+    data-tip="<b>{{ i18n[langKey].i88x31hover }}</b> ({{ link }})"
+  >
 {% endmacro %}
 
 {% macro videoCard(videoLink, videoTitle, videoImage, videoWebsite, videoDuration, videoAccent) %}
 <div class="youtubeCardHolderHelper">
-<div class="youtubeCardHolder">
-<a href="{{ videoLink }}">
-    <div class="blogpostYoutubeVideo" {% if videoAccent %}style="border-color: {{ videoAccent }};"{% endif %}>
-        <img src="/static/images{{ videoImage }}">
-        <div class="videoHeader">
-            <!-- <p class="alsoAvailable">{{ i18n[langKey].alsoAvailableAsVideo }}:</p> -->
-            <h2 class="videoTitle" {% if videoAccent %}style="color: {{ videoAccent }};"{% endif %}>{{ videoTitle }}</h2>
-            <p>{{ videoWebsite }}{% if videoDuration %} ({{ videoDuration }}){% endif %}</p>
-        </div>
-        <!-- <p class="goLabel">ir</p> -->
+    <div class="youtubeCardHolder">
+        <a href="{{ videoLink }}">
+            <div class="blogpostYoutubeVideo" {% if videoAccent %}style="border-color: {{ videoAccent }};"{% endif %}>
+                <img src="{{ ('/static/images' ~ videoImage) | url }}">
+                <div class="videoHeader">
+                    {# <p class="alsoAvailable">{{ i18n[langKey].alsoAvailableAsVideo }}:</p> #}
+                    <h2 class="videoTitle" {% if videoAccent %}style="color: {{ videoAccent }};"{% endif %}>
+                        {{ videoTitle }}
+                    </h2>
+                    <p>{{ videoWebsite }}{% if videoDuration %} ({{ videoDuration }}){% endif %}</p>
+                </div>
+                {# <p class="goLabel">ir</p> #}
+            </div>
+        </a>
     </div>
-</a>
-</div>
 </div>
 {% endmacro %}
 
 {% macro projectCard(projectName, projectDescription, projectLink, projectImage, projectImageAlt) %}
 <div class="hsProject">
     <div class="hsProjectHeader">
-        <div class="hsProjectImage"><img src="{{ projectImage }}" alt="{{ projectImageAlt or projectName }}"></div>
+        <div class="hsProjectImage">
+            <img src="{{ projectImage | url }}" alt="{{ projectImageAlt or projectName }}">
+        </div>
         <a href="{{ projectLink }}" class="hsProjectHeaderIcon">
-            <img src="/static/visual/github.svg" class="invertedc">
+            <img src="{{ '/static/visual/github.svg' | url }}" class="invertedc">
         </a>
     </div>
     <div class="hsProjectContent">

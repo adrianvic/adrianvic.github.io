@@ -9,7 +9,7 @@ let info = [
 ]
 
 info.forEach(square => {
-    let rawHTML = `<div class='headerSquare' id='${square[1]}'><img src='/static/images/${square[2]}' alt='${square[3]}'></div>`;
+    let rawHTML = `<div class='headerSquare' id='${square[1]}'><img src='${rootPrefix}static/images/${square[2]}' alt='${square[3]}'></div>`;
     _homeSquares.innerHTML += rawHTML;
 });
 

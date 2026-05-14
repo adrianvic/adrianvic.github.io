@@ -40,9 +40,10 @@ module.exports = function(eleventyConfig) {
     }))
   });
 
-  eleventyConfig.addFilter("absoluteUrl", function(path) {
+    eleventyConfig.addFilter("absoluteUrl", function(url) {
     const base = "https://adrianvic.github.io";
-    return base + path;
+    const prefix = "/tenkuma/web";
+    return base + prefix + url;
   });
 
   eleventyConfig.addFilter("postDate", (dateObj) => {

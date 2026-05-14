@@ -15,7 +15,7 @@ title: Adrian Victor:Blog
       {% if post.data.langKey == langKey %}
         <li>
           <p>
-            <a href="{{ post.url }}">{{ post.data.postTitle }}</a><br>
+            <a href="{{ post.url | url }}">{{ post.data.postTitle }}</a><br>
             <b>{{ post.data.date | postDate }}</b>{% if post.data.lastModified | postDate !==  post.data.date | postDate %} ({{ i18n[langKey].lastEditedIn }} {{ post.data.lastModified | postDate}}){% endif %}
           </p>
         </li>

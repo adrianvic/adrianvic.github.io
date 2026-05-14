@@ -11,25 +11,33 @@
 <html lang="{{ langKey }}">
 <head>
     <meta charset="UTF-8">
-    <title>Adrian Victor{% if pageTitle or postTitle %} - {{pageTitle or postTitle}}{% endif %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="/static/main.css?fixcache=1">
-    <script type="module" src="/static/scripts/ccd.js"></script>
-    <script type="module" src="/static/scripts/music.js" defer></script>
-    <script type="module" src="/static/scripts/88x31.js" defer></script>
-    <script type="module" src="/static/scripts/tips.js" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-    <link rel="manifest" href="/static/site.webmanifest">
+    <title>Adrian Victor{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ '/static/main.css?fixcache=1' | url }}">
+
+    <script type="module" src="{{ '/static/scripts/ccd.js' | url }}"></script>
+    <script type="module" src="{{ '/static/scripts/music.js' | url }}" defer></script>
+    <script type="module" src="{{ '/static/scripts/88x31.js' | url }}" defer></script>
+    <script type="module" src="{{ '/static/scripts/tips.js' | url }}" defer></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png' | url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png' | url }}">
+    <link rel="manifest" href="{{ '/static/site.webmanifest' | url }}">
+
     <script src="https://keepandroidopen.org/banner.js" defer></script>
+
     <meta property="og:title" content="Adrian Victor{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}">
     <meta property="og:description" content="{{ description or i18n[langKey].websiteDescription }}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ page.url | url | absoluteUrl }}">
-    <meta property="og:image" content="{{ ('/static/images/' ~ (background or 'bear.jpg')) | absoluteUrl }}">
+    <meta property="og:image" content="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url | absoluteUrl }}">
 </head>
 <body>
+    <script>
+        const rootPrefix = "{{ '/' | url }}";
+    </script>
     <style>
         .bg {
             opacity: {{ backgroundOpacity or ".4" }}!important;
@@ -43,7 +51,7 @@
         </style>    
     </noscript>
     <div id="everythingHelper">
-        <img src="/static/images/{{ background or "bear.jpg" }}" class="bg">
+        <img src="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url }}" class="bg">
         {% include "header.njk" %}
         <div id="mainHelper">
             {{ content | safe }}

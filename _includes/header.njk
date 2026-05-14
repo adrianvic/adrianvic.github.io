@@ -16,12 +16,12 @@
         </script>
     </div>
     <div id="linksHelper">
-        <div id="music">
-        </div>
+        <div id="music"></div>
+    
         <ul id="headerLinks">
-            <a href="/{{ langKey }}/">{{ i18n[langKey].home }}</a>
-            <a href="/{{ langKey }}/blog/">blog</a>
-            <a href="/{{ langKey }}/misc/">misc</a>
+            <a href="{{ ('/' ~ langKey ~ '/') | url }}">{{ i18n[langKey].home }}</a>
+            <a href="{{ ('/' ~ langKey ~ '/blog/') | url }}">blog</a>
+            <a href="{{ ('/' ~ langKey ~ '/misc/') | url }}">misc</a>
         </ul>
     </div>
 </header>

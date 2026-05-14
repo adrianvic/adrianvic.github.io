@@ -12,73 +12,86 @@ layout: base.njk
 
 <div id="homeSquares">
 </div>
+
 <main>
-    <script src="/static/scripts/home.js" defer></script>
-    <noscript><style>
-        .hs {
-            display: unset!important;
-        }
-        #homeSquares {
-            display: none;
-        }
-    </style></noscript>
+    <script src="{{ '/static/scripts/home.js' | url }}" defer></script>
+
+    <noscript>
+        <style>
+            .hs {
+                display: unset !important;
+            }
+            #homeSquares {
+                display: none;
+            }
+        </style>
+    </noscript>
 
     <div class="hs" id="hsDefault">
         <div class="box pageHeaderBox">
-        <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
-        <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>
-        <div class="homeBadgesBox">
-        {{ i88x31("tenkuma.gif") }}
-        {{ i88x31("anybrowser6.gif") }}
-        {{ i88x31("ai.gif") }}
-        {{ i88x31("WEBP.gif") }}
-        {{ i88x31("rainbowrain.gif") }}
-        {{ i88x31("blasphemy.gif") }}
-        {{ i88x31("css3.gif") }}
-        {{ i88x31("best_viewed_with_open_eyes.gif") }}
-        {{ i88x31("gnu-linux.gif") }}
+            <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
+            <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>
+
+            <div class="homeBadgesBox">
+                {{ i88x31("tenkuma.gif") }}
+                {{ i88x31("anybrowser6.gif") }}
+                {{ i88x31("ai.gif") }}
+                {{ i88x31("WEBP.gif") }}
+                {{ i88x31("rainbowrain.gif") }}
+                {{ i88x31("blasphemy.gif") }}
+                {{ i88x31("css3.gif") }}
+                {{ i88x31("best_viewed_with_open_eyes.gif") }}
+                {{ i88x31("gnu-linux.gif") }}
+            </div>
         </div>
-        </div>
+
         <hr>
-        <h2>{{ i18n[langKey].aboutMe | smartTitle }}</h1>
+
+        <h2>{{ i18n[langKey].aboutMe | smartTitle }}</h2>
         <p>{{ i18n[langKey].homeAboutMeParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeAboutMeParagraphTwo | safe }}</p>
-        <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h1>
+
+        <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h2>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraphTwo | safe }}</p>
     </div>
 
     <div class="hs" id="hsMusic">
         <div class="box pageHeaderBox">
-        <h1>{{ i18n[langKey].myMusic | smartTitle }}</h1>
-        <p>{{ i18n[langKey].homeMyMusicParagraph | safe }}</p>
-        <p>{{ i18n[langKey].homeMyMusicParagraphTwo | safe }}</p>
-        <div class="homeBadgesBox">
-        {{ i88x31("rave.gif") }}
-        {{ i88x31("happymix.gif") }}
+            <h1>{{ i18n[langKey].myMusic | smartTitle }}</h1>
+            <p>{{ i18n[langKey].homeMyMusicParagraph | safe }}</p>
+            <p>{{ i18n[langKey].homeMyMusicParagraphTwo | safe }}</p>
+
+            <div class="homeBadgesBox">
+                {{ i88x31("rave.gif") }}
+                {{ i88x31("happymix.gif") }}
+            </div>
         </div>
-        </div>
+
         <hr>
+
         <div class="hsMusicCard">
-        {{
-            videoCard(
-                i18n["global"].homeSongLink,
-                i18n["global"].homeSongTitle,
-                i18n["global"].homeSongImage,
-                i18n["global"].homeSongWebsite,
-                i18n["global"].homeSongDuration,
-                i18n["global"].homeSongAccent
+            {{
+                videoCard(
+                    i18n["global"].homeSongLink,
+                    i18n["global"].homeSongTitle,
+                    i18n["global"].homeSongImage,
+                    i18n["global"].homeSongWebsite,
+                    i18n["global"].homeSongDuration,
+                    i18n["global"].homeSongAccent
                 )
-        }}
+            }}
         </div>
     </div>
 
     <div class="hs" id="hsVideo">
         <div class="box pageHeaderBox">
-        <h1>{{ i18n[langKey].myVideos | smartTitle }}</h1>
-        <p>{{ i18n[langKey].homeMyVideoParagraph | safe }}</p>
+            <h1>{{ i18n[langKey].myVideos | smartTitle }}</h1>
+            <p>{{ i18n[langKey].homeMyVideoParagraph | safe }}</p>
         </div>
+
         <hr>
+
         {{
             videoCard(
                 i18n["global"].homeVideoLink,
@@ -86,22 +99,58 @@ layout: base.njk
                 i18n["global"].homeVideoImage,
                 i18n["global"].homeVideoWebsite,
                 i18n["global"].homeVideoDuration
-                )
+            )
         }}
     </div>
-    
+
     <div class="hs" id="hsCode">
         <div class="box pageHeaderBox">
-        <h1>{{ i18n[langKey].mySoftware | smartTitle }}</h1>
-        <p>{{ i18n[langKey].homeMySoftwareParagraph | safe }}</p>
-        {# <p>{{ i18n[langKey].homeMySoftwareNotableProjects | safe }}</p> #}
+            <h1>{{ i18n[langKey].mySoftware | smartTitle }}</h1>
+            <p>{{ i18n[langKey].homeMySoftwareParagraph | safe }}</p>
         </div>
+
         <hr>
+
         <div class="hsProjects">
-            {{ projectCard("Jamfish", i18n[langKey].jamfishProjectDesctiption, "https://github.com/adrianvic/jamfish", "/static/images/jamfish-wide.png") }}
-            {{ projectCard("ItemEconomy", i18n[langKey].itemeconomyProjectDesctiption, "https://github.com/adrianvic/ItemEconomy", "/static/images/itemeconomy2-wide.png") }}
-            {{ projectCard("Eye of Nemesis", i18n[langKey].eyeofnemesisProjectDesctiption, "https://github.com/adrianvic/NemesisEye", "/static/images/eye_of_nemesis.png") }}
-            {{ projectCard("PestoWiki", i18n[langKey].pestoProjectDesctiption, "https://github.com/Margarina-not-butter/PestoWiki", "/static/images/pestowikifullwhite.png") }}            
+            {{
+                projectCard(
+                    "Jamfish",
+                    i18n[langKey].jamfishProjectDesctiption,
+                    "https://github.com/adrianvic/jamfish",
+                    '/static/images/jamfish-wide.png',
+                    "Jamfish"
+                )
+            }}
+
+            {{
+                projectCard(
+                    "ItemEconomy",
+                    i18n[langKey].itemeconomyProjectDesctiption,
+                    "https://github.com/adrianvic/ItemEconomy",
+                    '/static/images/itemeconomy2-wide.png',
+                    "ItemEconomy"
+                )
+            }}
+
+            {{
+                projectCard(
+                    "Eye of Nemesis",
+                    i18n[langKey].eyeofnemesisProjectDesctiption,
+                    "https://github.com/adrianvic/NemesisEye",
+                    '/static/images/eye_of_nemesis.png',
+                    "Eye of Nemesis"
+                )
+            }}
+
+            {{
+                projectCard(
+                    "PestoWiki",
+                    i18n[langKey].pestoProjectDesctiption,
+                    "https://github.com/Margarina-not-butter/PestoWiki",
+                    '/static/images/pestowikifullwhite.png',
+                    "PestoWiki"
+                )
+            }}
         </div>
     </div>
 </main>

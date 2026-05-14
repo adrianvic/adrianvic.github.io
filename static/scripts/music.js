@@ -4,8 +4,8 @@ const body = document.querySelector("body");
 
 const musicdiv = document.getElementById("music");
 musicdiv.innerHTML = `
-<img src="/static/images/gears.svg" class="optionsToggle invertedc">
-<img src="/static/images/sound-on.png" id="sound">
+<img src="${rootPrefix}static/images/gears.svg" class="optionsToggle invertedc">
+<img src="${rootPrefix}static/images/sound-on.png" id="sound">
 <select name="song" id="songSelection"></select>
 `
 const linksHelper = document.getElementById("linksHelper");
@@ -89,7 +89,7 @@ songs.forEach(song => {
     songElement.classList.add("drawerSong");
     songElement.dataset.song = song.file;
     const songImage = document.createElement("img");
-    songImage.src = `/static/images/songs/${song.artwork}`;
+    songImage.src = `${rootPrefix}static/images/songs/${song.artwork}`;
     songElement.appendChild(songImage);
     songElement.addEventListener('click', () => {
         changeSong(song.file);
@@ -146,7 +146,7 @@ optionsButton.forEach(button => {
 });
 
 // Create the audio object using the current select value
-let audio = new Audio(`/static/music/${audioSelect.value}`);
+let audio = new Audio(`${rootPrefix}static/music/${audioSelect.value}`);
 
 const savedTime = localStorage.getItem("audioTime");
 const savedVolume = localStorage.getItem("volume");
@@ -166,14 +166,14 @@ function play() {
             showNotification(headeri18n.permissionIssue, headeri18n.permissionIssueNotificationContent, 5000);
         });;
     localStorage.setItem("audioPlaying", "true")
-    toggleIMG.src = "/static/images/sound-on.png"
+    toggleIMG.src = `${rootPrefix}static/images/sound-on.png`
     console.log(`[Music Player] playing ${audioSelect.value}`)
 }
 
 function stop() {
     audio.pause();
     localStorage.setItem("audioPlaying", "false")
-    toggleIMG.src = "/static/images/sound-off.png"
+    toggleIMG.src = `${rootPrefix}static/images/sound-off.png`
 }
 
 function setVolume(volume) {
@@ -198,7 +198,7 @@ function changeSong(song) {
     const wasPlaying = !audio.paused;
     stop();
     localStorage.removeItem("audioTime");
-    audio = new Audio(`/static/music/${song}`);
+    audio = new Audio(`${rootPrefix}static/music/${song}`);
     if (savedVolume) setVolume(savedVolume);
     console.log(`[Music Player] changing song to ${song}`)
     localStorage.setItem("song", song);
