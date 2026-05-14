@@ -41,7 +41,7 @@ jobs:
           git config --global user.name "Forgejo Actions"
           git config --global user.email "actions@localhost"
 
-          REPO_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          REPO_URL=https://inspiran.beetal-castor.ts.net/${GITHUB_REPOSITORY}.git"
           AUTH_URL="$(printf '%s\n' "$REPO_URL" | sed "s#^https://#https://oauth2:${TOKEN}@#")"
 
           git clone "$AUTH_URL" deploy
