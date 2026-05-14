@@ -15,7 +15,8 @@ on:
 
 jobs:
   build:
-    runs-on: arch-linux
+    runs-on:
+      - arch-linux
 
     steps:
       - name: Checkout repository
@@ -24,7 +25,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: "24"
 
       - name: Install dependencies
         run: npm ci
@@ -32,40 +33,37 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Publish to forgejo-pages branch
+      - name: Publish to forgejo-pages
         if: github.ref == 'refs/heads/main'
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}.git
         run: |
           git config --global user.name "Forgejo Actions"
           git config --global user.email "actions@localhost"
 
-          # Clone target branch
-          git clone \
-            "https://oauth2:${TOKEN}@${{ github.server_url#https:// }}/${{ github.repository }}.git" \
-            deploy
-
+          # Clone repository
+          git clone "https://oauth2:${TOKEN}@${REPO_URL#https://}" deploy
           cd deploy
 
-          # Switch to forgejo-pages branch, create if missing
-          if git show-ref --verify --quiet refs/heads/forgejo-pages; then
-            git checkout forgejo-pages
+          # Checkout or create forgejo-pages
+          git fetch origin forgejo-pages || true
+          if git ls-remote --exit-code --heads origin forgejo-pages >/dev/null 2>&1; then
+            git checkout -B forgejo-pages origin/forgejo-pages
           else
             git checkout --orphan forgejo-pages
-            git rm -rf .
+            git rm -rf . || true
           fi
 
-          # Remove old contents
-          find . -mindepth 1 -maxdepth 1 \
-            ! -name '.git' \
-            -exec rm -rf {} +
+          # Remove old files
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
 
-          # Copy new build output
-          cp -r ../docs/. .
+          # Copy new site
+          cp -a ../docs/. .
 
-          # Commit and push if there are changes
-          git add .
+          # Commit and push if changed
+          git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "Deploy from ${GITHUB_SHA}"
+            git commit -m "Deploy ${GITHUB_SHA}"
             git push origin forgejo-pages
           fi
