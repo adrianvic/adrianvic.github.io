@@ -37,8 +37,13 @@ jobs:
           npm ci
           npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          publish_dir: ./docs
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to forgejo-pages
+        run: |
+          git config user.email "ci@example.com"
+          git config user.name "CI Bot"
+          git checkout --orphan forgejo-pages
+          git rm -rf .
+          cp -r docs/* .
+          git add .
+          git commit -m "Deploy: $(date)"
+          git push -f origin forgejo-pages
