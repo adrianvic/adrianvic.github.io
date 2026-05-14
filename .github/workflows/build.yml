@@ -2,43 +2,70 @@ name: Build Eleventy
 
 on:
   push:
-    paths-ignore:
-      - '/maintenance/**'
-      - '/README.md'
     branches:
       - main
-  workflow_dispatch:
+    paths-ignore:
+      - 'maintenance/**'
+      - 'README.md'
   pull_request:
     paths-ignore:
-      - '/maintenance/**'
-      - '/README.md'
-
-permissions:
-  contents: write
+      - 'maintenance/**'
+      - 'README.md'
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [24.x]
+    runs-on: arch-linux
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '24'
 
-      - name: Install dependencies & build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Publish to forgejo-pages branch
+        if: github.ref == 'refs/heads/main'
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm ci
-          npm run build
+          git config --global user.name "Forgejo Actions"
+          git config --global user.email "actions@localhost"
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          publish_dir: ./docs
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Clone target branch
+          git clone \
+            "https://oauth2:${TOKEN}@${{ github.server_url#https:// }}/${{ github.repository }}.git" \
+            deploy
+
+          cd deploy
+
+          # Switch to forgejo-pages branch, create if missing
+          if git show-ref --verify --quiet refs/heads/forgejo-pages; then
+            git checkout forgejo-pages
+          else
+            git checkout --orphan forgejo-pages
+            git rm -rf .
+          fi
+
+          # Remove old contents
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            -exec rm -rf {} +
+
+          # Copy new build output
+          cp -r ../docs/. .
+
+          # Commit and push if there are changes
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy from ${GITHUB_SHA}"
+            git push origin forgejo-pages
+          fi
