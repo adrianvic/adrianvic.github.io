@@ -1,69 +1,33 @@
-name: Build Eleventy
+- name: Publish to forgejo-pages
+  if: github.ref == 'refs/heads/main'
+  env:
+    TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    git config --global user.name "Forgejo Actions"
+    git config --global user.email "actions@localhost"
 
-on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'maintenance/**'
-      - 'README.md'
-  pull_request:
-    paths-ignore:
-      - 'maintenance/**'
-      - 'README.md'
-  workflow_dispatch:
+    # Build authenticated clone URL
+    REPO_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+    AUTH_URL="$(echo "$REPO_URL" | sed "s#^https://#https://oauth2:${TOKEN}@#")"
 
-jobs:
-  build:
-    runs-on:
-      - arch-linux
+    git clone "$AUTH_URL" deploy
+    cd deploy
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    git fetch origin forgejo-pages || true
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "24"
+    if git ls-remote --exit-code --heads origin forgejo-pages >/dev/null 2>&1; then
+      git checkout -B forgejo-pages origin/forgejo-pages
+    else
+      git checkout --orphan forgejo-pages
+      git rm -rf . || true
+    fi
 
-      - name: Install dependencies
-        run: npm ci
+    find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
 
-      - name: Build site
-        run: npm run build
+    cp -a ../docs/. .
 
-      - name: Publish to forgejo-pages
-        if: github.ref == 'refs/heads/main'
-        env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_URL: ${{ github.server_url }}/${{ github.repository }}.git
-        run: |
-          git config --global user.name "Forgejo Actions"
-          git config --global user.email "actions@localhost"
-
-          # Clone repository
-          git clone "https://oauth2:${TOKEN}@${REPO_URL#https://}" deploy
-          cd deploy
-
-          # Checkout or create forgejo-pages
-          git fetch origin forgejo-pages || true
-          if git ls-remote --exit-code --heads origin forgejo-pages >/dev/null 2>&1; then
-            git checkout -B forgejo-pages origin/forgejo-pages
-          else
-            git checkout --orphan forgejo-pages
-            git rm -rf . || true
-          fi
-
-          # Remove old files
-          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-
-          # Copy new site
-          cp -a ../docs/. .
-
-          # Commit and push if changed
-          git add -A
-          if ! git diff --cached --quiet; then
-            git commit -m "Deploy ${GITHUB_SHA}"
-            git push origin forgejo-pages
-          fi
+    git add -A
+    if ! git diff --cached --quiet; then
+      git commit -m "Deploy ${GITHUB_SHA}"
+      git push origin forgejo-pages
+    fi
