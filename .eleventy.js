@@ -66,6 +66,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/tenkuma/web",
     dir: {
       output: "docs"
     }
