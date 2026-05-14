@@ -1,0 +1,44 @@
+name: Build Eleventy
+
+on:
+  push:
+    paths-ignore:
+      - '/maintenance/**'
+      - '/README.md'
+    branches:
+      - main
+  workflow_dispatch:
+  pull_request:
+    paths-ignore:
+      - '/maintenance/**'
+      - '/README.md'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies & build
+        run: |
+          npm ci
+          npm run build -- --pathprefix=""
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
