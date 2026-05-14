@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: arch-linux
 
     strategy:
       matrix:
@@ -35,10 +35,15 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm ci
-          npm run build -- --pathprefix=""
+          npm run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          publish_dir: ./docs
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to forgejo-pages
+        run: |
+          git config user.email "adrianvictor+webmaster@disroot.org"
+          git config user.name "mareguma"
+          git checkout --orphan forgejo-pages
+          git rm -rf .
+          cp -r docs/* .
+          git add .
+          git commit -m "Deploy: $(date)"
+          git push -f origin forgejo-pages
