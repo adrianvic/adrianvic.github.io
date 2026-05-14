@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm ci
-          npm run build
+          npm run build -- --pathprefix="/tenkuma/web"
 
       - name: Deploy to forgejo-pages
         run: |
