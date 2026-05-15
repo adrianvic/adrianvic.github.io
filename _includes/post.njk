@@ -14,7 +14,7 @@ title: Adrian Victor:Blog
             {{ i18n[langKey].availableInOtherLanguages }}:
             {% for alt in altLanguages %}
             <li class="inlineList">
-                <a href="{{ alt.url }}" hreflang="{{ alt.lang }}">
+                <a href="{{ alt.url | url }}" hreflang="{{ alt.lang }}">
                     {{ i18n[alt.lang].language }}
                 </a>
             </li>
