@@ -1,0 +1,20 @@
+{
+    "pageTitle": "About this website",
+    "pageDescription": "Information, attributions and credits about this website.",
+    "introText1": "This website and blog is a project of Adrian Victor, made using the Eleventy static website generator. It's source code is available ",
+    "introRepoLinkText": "on this repository",
+    "introText2": " under the ",
+    "introLicenseLinkText": "Apache license",
+    "privacyText1": "The scripts loaded inside the website do save the preferences you set in the settings page",
+    "privacyText2": "and the music player status",
+    "privacyText3": "in your browser's local storage. External servers are queried exclusively for loading content used to display the current page. JavaScript is only used to enhance the navigation experience and is totally optional.",
+    "attributionsHeading": "Attributions",
+    "bgImageLabel": "Background image (bear.png)",
+    "bgImageCredit": "Abenakis @ Pixbay",
+    "badges88x31Label": "88x31 images",
+    "neocitiesCommunity": "Neocities community",
+    "clickSoundLabel": "Click sound effect",
+    "thanksHeading": "Thanks",
+    "eleventyDesc": "Static website generator, used in this website.",
+    "githubPagesDesc": "For web hosting."
+}

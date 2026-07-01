@@ -1,0 +1,34 @@
+---
+layout: base.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+tags: misc
+backgroundOpacity: "0.3"
+background: "bear3.jpg"
+---
+<main>
+    <h1>{{ t.pageTitle }}</h1>
+    <p>{{ t.introText1 }} <a href="https://github.com/adrianvic/adrianvic.github.io">{{ t.introRepoLinkText }}</a> {{ t.introText2 }} <a href="{{ ('/static/LICENSE.txt') | url }}">{{ t.introLicenseLinkText }}</a>.</p>
+    <p>{{ t.privacyText1 }} <span class="noWrap">(<img class="lineHeight invertedc" src="{{ ('/static/images/gears.svg') | url }}">)</span> {{ t.privacyText2 }} <span class="noWrap">(<img class="lineHeight invertedc" src="{{ ('/static/images/sound-on.png') | url }}">)</span> {{ t.privacyText3 }}</p>
+    
+    <h2>{{ t.attributionsHeading }}</h2>
+    <dl>
+        <dt>{{ t.bgImageLabel }}</dt>
+        <dd>{{ t.bgImageCredit }}</dd>
+        <dt>{{ t.badges88x31Label }}</dt>
+        <dd><a href="https://88x31.nl/">88x31.nl</a></dd>
+        <dd><a href="https://neocities.org/browse">{{ t.neocitiesCommunity }}</a></dd>
+        <dt>{{ t.clickSoundLabel }}</dt>
+        <dd><a href="https://www.myinstants.com/en/instant/dog-clicker-7758/">lilypids @ Myinstants</a></dd>
+    </dl>
+
+    <h2>{{ t.thanksHeading }}</h2>
+    <dl>
+        <dt>Eleventy (11ty)</dt>
+        <dd>{{ t.eleventyDesc }}</dd>
+        <dt>GitHub Pages</dt>
+        <dd>{{ t.githubPagesDesc }}</dd>
+    </dl>
+</main>

@@ -1,0 +1,20 @@
+{
+    "pageTitle": "Sobre o website",
+    "pageDescription": "Informações, atribuições e créditos sobre esse website.",
+    "introText1": "Esse website e blog é um projeto de Adrian Victor, feito com a tecnologia do gerador de sites estáticos Eleventy. O código fonte está disponível",
+    "introRepoLinkText": "nesse repositório",
+    "introText2": "sob",
+    "introLicenseLinkText": "a licensa de código aberto Apache",
+    "privacyText1": "Os scripts carregados dentro do website salvam suas preferências indicadas na área de configuração",
+    "privacyText2": "e status do player de música",
+    "privacyText3": "no armazenamento local do seu navegador. Servidores externos são acessados exclusivamente para carregar conteúdo utilizado na exibição da página. JavaScript é usado apenas para melhorar a experiência de navegação e é totalmente opcional.",
+    "attributionsHeading": "Atribuições",
+    "bgImageLabel": "Imagem de fundo (bear.png)",
+    "bgImageCredit": "Abenakis @ Pixbay",
+    "badges88x31Label": "Imagens 88x31",
+    "neocitiesCommunity": "Comunidade do Neocities",
+    "clickSoundLabel": "Efeito sonoro de clique",
+    "thanksHeading": "Agradecimentos",
+    "eleventyDesc": "Gerador de sites estáticos, usado neste website.",
+    "githubPagesDesc": "Pela hospedagem do website."
+}
