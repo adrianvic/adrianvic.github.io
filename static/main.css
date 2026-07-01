@@ -749,6 +749,12 @@ header div:first-child {
     display: flex;
 }
 
+#homeWebrings {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
 #telnetSimulation {
     display: flex;
     width: 100%;
