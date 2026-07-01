@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("absoluteUrl", function(url) {
     const base = "https://adrianvic.github.io";
-    const prefix = "/tenkuma/web";
+    const prefix = process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web";
     return base + prefix + url;
   });
 
@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/tenkuma/web",
+    pathPrefix: process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web",
     dir: {
       output: "docs"
     }
