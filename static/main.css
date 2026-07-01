@@ -212,6 +212,14 @@ aside.metromenu #content {
 
 /* Global classes and IDs */
 
+.nomargin {
+    margin: 0;
+}
+
+.end-text {
+    text-align: end;
+}
+
 .notificationBox {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     width: fit-content;
@@ -246,6 +254,12 @@ li.inlineList {
 
 .box *:last-child {
     margin-bottom: 0;
+}
+
+.kaoBox {
+    border-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(255, 0, 0, 0.1);
+    margin-bottom: 1em;
 }
 
 .pageHeaderBox {

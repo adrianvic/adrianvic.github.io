@@ -28,6 +28,10 @@ layout: base.njk
     </noscript>
 
     <div class="hs" id="hsDefault">
+        <div class="box kaoBox">
+            <p>{{ i18n[langKey].kaoMain | safe }}</p>
+            <p class="end-text nomargin"><a href="https://keepandroidopen.org/">{{ i18n[langKey].kaoLink | safe }}</a></p>
+        </div>
         <div class="box pageHeaderBox">
             <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
             <p>{{ i18n[langKey].homeWelcomeParagraph | safe }}</p>

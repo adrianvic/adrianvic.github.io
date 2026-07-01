@@ -78,8 +78,9 @@ module.exports = {
     lastEditedIn: "last edited in",
     permissionIssue: "Permission issue",
     permissionIssueNotificationContent: "Unable to continue playing background music, please enable audio <b>autoplay</b> for this website.",
-    notificationDefaultHint: "<b>Click to dismiss</b>"
-
+    notificationDefaultHint: "<b>Click to dismiss</b>",
+    kaoMain: "The Android OS is great danger. You're about to lose sovereignty over your phone because of Google's monopoly.",
+    kaoLink: "Learn what you can do at Keep Android Open ->"
   },
   pt: {
     language: "português",
@@ -134,6 +135,8 @@ module.exports = {
     lastEditedIn: "editado por último em",
     permissionIssue: "Problema de permissão",
     permissionIssueNotificationContent: "Não foi possivel continuar tocando a música de fundo, por favor habilite <b>reprodução automática</b> de áudio para esse website.",
-    notificationDefaultHint: "<b>Clique para ignorar</b>"
+    notificationDefaultHint: "<b>Clique para ignorar</b>",
+    kaoMain: "O Android está em grande perigo. Você está prestes a perder controle do seu celular em favor do monopólio da Google.",
+    kaoLink: "Veja o que você pode fazer em Keep Android Open ->"
   }
 };
