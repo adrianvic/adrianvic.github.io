@@ -49,6 +49,10 @@ optionsAside.classList.add("metromenu");
             <p>${headeri18n.hideBackground}</p>
             <input id="background" type="checkbox"></input>
         </div>
+        <div class="checkbox">
+            <p>${headeri18n.disableSoundEffects}</p>
+            <input id="soundEffects" type="checkbox"></input>
+        </div>
     </div>
     `
     optionsAside.appendChild(content);
@@ -75,6 +79,12 @@ function toggleBG() {
     bg.classList.toggle("invisible");
     localStorage.setItem("bgHidden", bg.classList.contains("invisible"))
 }
+
+const disableSFX = document.querySelector("input#soundEffects");
+if (localStorage.getItem("disablesfx") === "true") disableSFX.checked = true;
+disableSFX.addEventListener("click", () => {
+    localStorage.setItem("disablesfx", disableSFX.checked)
+})
 
 const songsDrawer = document.querySelector("#songDrawer");
 const drawerSongs = [];
