@@ -256,9 +256,9 @@ li.inlineList {
 #defaultSquare {
     transition: 0.4s;
     border: medium solid white;
-    height: 7vh;
+    height: 3vw;
     overflow: hidden;
-    width: 10vh;
+    width: 6vw;
     opacity: 0.4;
     padding: 0.4em;
     cursor: pointer;
@@ -279,7 +279,7 @@ li.inlineList {
 .headerSquare.selected,
 #defaultSquare.selected {
     opacity: 1;
-    height: 10vh;
+    height: 6vw;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.4), 0px -4px 10px rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.3);
 }
