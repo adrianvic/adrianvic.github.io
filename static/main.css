@@ -816,6 +816,7 @@ header div:first-child {
     flex-direction: column;
     gap: 1em;
     height: fit-content;
+    margin-bottom: 2em;
 }
 
 #telnetSimulation {

@@ -41,7 +41,7 @@ module.exports = {
     homeAboutMeParagraph: `
       My name is Adrian Victor, but I go by tenkuma on-line. I'm in high school's last year, also studying computing. My hobbies are music, music production, programming, selfhosting, Linux, and a lot more.
     `,
-    homeAboutMeParagraphTwo: `The name Tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
+    homeAboutMeParagraphTwo: `The name tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
     homeSocialsAndContactParagraph: `
       I'm publicly available at Mastodon <a href='${globalValues.mastodon.url}'>(${globalValues.mastodon.username})</a>,
       GitHub <a href='${globalValues.github.url}'>(${globalValues.github.username})</a>,
