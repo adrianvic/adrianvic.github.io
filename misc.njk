@@ -12,7 +12,7 @@ title: Adrian Victor:Misc
   <h1>{{ i18n[langKey].miscellaneous }}</h1>
 
   <ul>
-    <dl>
+    <dl id="miscList">
       {% for page in collections.misc %}
         {% set t = page | getTranslation(langKey) %}
 

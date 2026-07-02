@@ -28,9 +28,9 @@ layout: base.njk
     </noscript>
 
     <div class="hs" id="hsDefault">
-        <div class="box kaoBox">
+        <div class="box kaoBox alert">
             <p>{{ i18n[langKey].kaoMain | safe }}</p>
-            <p class="end-text nomargin">{{ i18n[langKey].kaoLink | safe }}</p>
+            <p class="end-text nomargin">{{ i18n[langKey].kaoLink | safe }} →</p>
         </div>
         <div class="box pageHeaderBox">
             <h1 id="homeTitle">{{ i18n[langKey].welcome | smartTitle }}</h1>
@@ -58,64 +58,6 @@ layout: base.njk
         <h2>{{ i18n[langKey].socialsAndContact | smartTitle }}</h2>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraph | safe }}</p>
         <p>{{ i18n[langKey].homeSocialsAndContactParagraphTwo | safe }}</p>
-
-        <h2>Webrings</h2>
-        <div id="homeWebrings">
-              <center>
-                <div class="droidringwidget">
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home"><img src="https://kanandraw.neocities.org/stuffs/droidring/assets/logo.png" style="width: 200px;"></a><br/>
-                    <img src="https://kanandraw.neocities.org/stuffs/droidring/assets/droidwidget.png" style="width: 115px;"><br>
-                    <div class="buttonsdroidring">
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=previous"><button class="navdroidring">←</button></a>
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=random"><button class="navdroidring" style="position: relative; top: 1.6px;">⚄</button></a>
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=next"><button class="navdroidring">→</button></a>
-                    </div>
-                    <style>
-                    .droidringwidget {
-                    font-family: 'Droid Sans',sans-serif;
-                    align-content: center;
-                    text-align: center;
-                    width: 215px;
-                    border: 1px solid #666666;
-                    background: linear-gradient(0deg, black, #000000db);
-                    padding: 5px;
-                    }
-                    .buttonsdroidring {
-                    background: #989898;
-                    padding: 4px;
-                    margin: -5px;
-                    }
-                    
-                    .navdroidring {
-                    background: linear-gradient(to bottom, #F1F1F1, #B8B8B8);
-                    padding: 5px;
-                    color: black;
-                    box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003B;
-                    border: none;
-                    width: 50px;
-                    height: 27px;
-                    min-width: 50px;
-                    }
-                    .navdroidring:active {
-                    background: linear-gradient(to bottom,#FFD554,#E99D00);
-                    }
-                    /* .navdroidring:hover {
-                    background: linear-gradient(to bottom, #ffebc4, #f2f2f2);
-                    } */
-                    </style>
-                </div>
-            </center>
-            <center>
-                <div style="width: fit-content; border: 2px outset; text-align:center">
-                    <p style="margin: 0; padding: 0.1em; border: 2px inset">This site is a member of the breakcore webring.</p>
-                    <div style="display: flex">
-                        <a style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset" href="https://webri.ng/webring/breakcoreweb/previous?via=https%3A%2F%2Fadrianvic.github.io%2F">Previous Site</a>
-                        <a style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset" href="https://appak.neocities.org/breakcore">Breakcore Webring</a>
-                        <a style="flex: 1; margin: 0; padding: 0.1em; border: 2px inset" href="https://webri.ng/webring/breakcoreweb/next?via=https%3A%2F%2Fadrianvic.github.io%2F">Next Site</a>
-                    </div>
-                </div>
-            </center>
-        </div>
     </div>
 
     <div class="hs" id="hsMusic">
@@ -216,3 +158,67 @@ layout: base.njk
         </div>
     </div>
 </main>
+
+<aside>
+<div id="homeWebrings">
+        <div>
+        <h1 class="nomargin negativeMargin">Webrings</h1>
+        <hr style="margin-bottom: .4em;">
+        <p class="end-text">{{ i18n[langKey].webringDescription | safe }}</p>
+        </div>
+              <center>
+                <div class="droidringwidget">
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home"><img src="https://kanandraw.neocities.org/stuffs/droidring/assets/logo.png" style="width: 200px;"></a><br/>
+                    <img src="https://kanandraw.neocities.org/stuffs/droidring/assets/droidwidget.png" style="width: 115px;"><br>
+                    <div class="buttonsdroidring">
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=previous"><button class="navdroidring">←</button></a>
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=random"><button class="navdroidring" style="position: relative; top: 1.6px;">⚄</button></a>
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=next"><button class="navdroidring">→</button></a>
+                    </div>
+                    <style>
+                    .droidringwidget {
+                    font-family: 'Droid Sans',sans-serif;
+                    align-content: center;
+                    text-align: center;
+                    width: 215px;
+                    border: 1px solid #666666;
+                    background: linear-gradient(0deg, black, #000000db);
+                    padding: 5px;
+                    }
+                    .buttonsdroidring {
+                    background: #989898;
+                    padding: 4px;
+                    margin: -5px;
+                    }
+                    
+                    .navdroidring {
+                    background: linear-gradient(to bottom, #F1F1F1, #B8B8B8);
+                    padding: 5px;
+                    color: black;
+                    box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003B;
+                    border: none;
+                    width: 50px;
+                    height: 27px;
+                    min-width: 50px;
+                    }
+                    .navdroidring:active {
+                    background: linear-gradient(to bottom,#FFD554,#E99D00);
+                    }
+                    .navdroidring:hover {
+                    background: linear-gradient(to bottom, #ffebc4, #f2f2f2);
+                    }
+                    </style>
+                </div>
+            </center>
+            <center>
+                <div id="breakcoreWebring" class="box noPadding" style="width: fit-content; text-align:center; background-image: url('{{ '/static/images/metro-flowers.jpg' | url }}');">
+                    <p style="margin: 0; padding: 0.4em;">{{ i18n[langKey].breakcoreWebring }}</p>
+                    <div style="display: flex">
+                        <a style="flex: 1; margin: 0; padding: 0.2em;" href="https://webri.ng/webring/breakcoreweb/previous?via=https%3A%2F%2Fadrianvic.github.io%2F">{{ i18n[langKey].previousSite | smartTitle }}</a>
+                        <a style="flex: 1; margin: 0; padding: 0.2em;" href="https://appak.neocities.org/breakcore">Breakcore Webring</a>
+                        <a style="flex: 1; margin: 0; padding: 0.2em;" href="https://webri.ng/webring/breakcoreweb/next?via=https%3A%2F%2Fadrianvic.github.io%2F">{{ i18n[langKey].nextSite | smartTitle }}</a>
+                    </div>
+                </div>
+            </center>
+        </div>
+</aside>

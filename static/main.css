@@ -3,7 +3,7 @@
 :root {
     --theme-color: #4c6d6e;
     --theme-color-lighter: #84b9bb;
-    --theme-color-variation: #22e6ed;
+    --theme-color-variation: #568b8d;
 }
 
 * {
@@ -21,12 +21,13 @@ body {
 
 a {
     transition: 0.2s;
-    color: lightgray;
+    color: var(--theme-color-variation);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--theme-color-lighter);
+    color: lightgray;
+    text-decoration: underline;
 }
 
 li {
@@ -216,6 +217,10 @@ aside.metromenu #content {
     margin: 0;
 }
 
+.noPadding {
+    padding: 0!important;
+}
+
 .end-text {
     text-align: end;
 }
@@ -264,10 +269,25 @@ li.inlineList {
     margin-bottom: 0;
 }
 
-.kaoBox {
+.box.alert {
     border-color: rgba(255, 0, 0, 0.1);
-    background-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(100, 0, 0, 0.3);
+}
+
+.box.alert a {
+    color: lightcoral;
+}
+
+.box.alert a:hover {
+    color: lightgray;
+}
+
+.kaoBox {
     margin-bottom: 1em;
+}
+
+.negativeMargin {
+    margin-bottom: -.2em;
 }
 
 .pageHeaderBox {
@@ -651,9 +671,35 @@ div.hs.selected {
 
 #mainHelper {
     padding-top: 3rem;
-    max-width: 50vw;
+    max-width: 70vw;
     margin: auto;
     display: flex;
+    gap: 2em;
+}
+
+#mainHelper aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#breakcoreWebring {
+    background-position-x: 0;
+    background-size: cover;
+}
+
+#breakcoreWebring p {
+    margin: 20px;
+}
+
+#breakcoreWebring a {
+    border: thick solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0;
+}
+
+#breakcoreWebring a:first-child, #breakcoreWebring a:last-child {
+    border-left: 0;
+    border-right: 0;
 }
 
 #headerSubtitle {
@@ -732,8 +778,6 @@ header div:first-child {
     transition: 0.4s;
     width: fit-content;
     height: fit-content;
-    margin-right: 3vw;
-    margin-bottom: 3rem;
     gap: 10px;
 }
 
@@ -753,6 +797,7 @@ header div:first-child {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    height: fit-content;
 }
 
 #telnetSimulation {
@@ -810,10 +855,11 @@ header div:first-child {
 
 #languageList li a {
     transition: 1s;
+    color: white;
 }
 
 .languagesHighlightedLink {
-    color: var(--theme-color-variation);
+    color: var(--theme-color-variation)!important;
 }
 
 #songDrawer {
@@ -855,6 +901,11 @@ header div:first-child {
 
 #postHeader {
     margin-bottom: 1em;
+}
+
+#miscList dt {
+    color: var(--theme-color-lighter);
+    font-weight: bolder;
 }
 
 /* Page: misc/favorites */
@@ -933,6 +984,12 @@ header div:first-child {
 
 /* Media queries */
 
+@media screen and (max-width: 1400px) {
+    #mainHelper {
+        max-width: 90vw;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     body { font-size: 2vh; }
 
@@ -947,7 +1004,10 @@ header div:first-child {
         margin-bottom: 1.4rem;
     }
 
-    main { max-width: 90vw; }
+    main { 
+        max-width: 90vw;
+        margin-bottom: 0px;
+    }
 
     main h1 { font-size: 3vh; }
 

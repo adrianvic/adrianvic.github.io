@@ -19,7 +19,8 @@ const globalValues = {
   homeSongImage: "/songs/velkommen.jpg",
   homeSongWebsite: "Bandcamp",
   homeSongDuration: "5:39",
-  homeSongAccent: "#482948"
+  homeSongAccent: "#482948",
+
 };
 
 module.exports = {
@@ -38,9 +39,9 @@ module.exports = {
     myVideos: "my videos",
     mySoftware: "my software",
     homeAboutMeParagraph: `
-      My name is Adrian Victor, but I go by tenkuma on-line. I'm in high school's last year, also studying computing. My hobbies are music and music production, programming, selfhosting, Linux, and a lot more.
+      My name is Adrian Victor, but I go by tenkuma on-line. I'm in high school's last year, also studying computing. My hobbies are music, music production, programming, selfhosting, Linux, and a lot more.
     `,
-    homeAboutMeParagraphTwo: `Tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
+    homeAboutMeParagraphTwo: `The name Tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
     homeSocialsAndContactParagraph: `
       I'm publicly available at Mastodon <a href='${globalValues.mastodon.url}'>(${globalValues.mastodon.username})</a>,
       GitHub <a href='${globalValues.github.url}'>(${globalValues.github.username})</a>,
@@ -79,8 +80,12 @@ module.exports = {
     permissionIssue: "Permission issue",
     permissionIssueNotificationContent: "Unable to continue playing background music, please enable audio <b>autoplay</b> for this website.",
     notificationDefaultHint: "<b>Click to dismiss</b>",
-    kaoMain: "The Android OS is great danger. You're about to lose sovereignty over your phone because of Google's monopoly.",
-    kaoLink: "<a href='https://keepandroidopen.org/'>Learn what you can do at Keep Android Open -></a>"
+    kaoMain: "You're about to lose sovereignty over your phone because of Google's monopoly. Fight back before is too late!",
+    kaoLink: "<a href='https://keepandroidopen.org/'>Learn what you can do at Keep Android Open</a>",
+    webringDescription: "<a href='https://en.wikipedia.org/wiki/Webring'>What are webrings?</a>",
+    breakcoreWebring: "This site is a member of the breakcore webring.",
+    previousSite: "previous site",
+    nextSite: "next site"
   },
   pt: {
     language: "português",
@@ -136,7 +141,11 @@ module.exports = {
     permissionIssue: "Problema de permissão",
     permissionIssueNotificationContent: "Não foi possivel continuar tocando a música de fundo, por favor habilite <b>reprodução automática</b> de áudio para esse website.",
     notificationDefaultHint: "<b>Clique para ignorar</b>",
-    kaoMain: "O Android está em grande perigo. Você está prestes a perder controle do seu celular em favor do monopólio da Google.",
-    kaoLink: "<a href='https://keepandroidopen.org/pt-BR/'>Veja o que você pode fazer em Keep Android Open -></a>"
+    kaoMain: "Você está prestes a perder controle do seu celular em favor do monopólio da Google. Lute contra antes que seja tarde!",
+    kaoLink: "<a href='https://keepandroidopen.org/pt-BR/'>Veja o que você pode fazer em Keep Android Open</a>",
+    webringDescription: "<a href='https://pt.wikipedia.org/wiki/Webring'>O que são webrings?</a>",
+    breakcoreWebring: "Esse website faz parte do webring breakcore.",
+    previousSite: "site anterior",
+    nextSite: "próximo site"
   }
 };
