@@ -1,3 +1,8 @@
+/* 
+    Adrian Victor's website stylesheet
+    Don't kill me, I'm just a messenger that grew up using Windows Phone...
+*/
+
 /* Raw elements */
 
 :root {
@@ -27,6 +32,9 @@ a {
 
 a:hover {
     color: lightgray;
+
+    /* I greatly dislike the look of text-decoration: underline but setting this on hover
+       is harmonic with the clicking sound effect (it clicks better)  */
     text-decoration: underline;
 }
 
@@ -91,6 +99,12 @@ main {
     margin-bottom: 2em;
 }
 
+#boxChain {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
 h1,
 h2,
 h3 {
@@ -121,6 +135,9 @@ blockquote {
 }
 
 hr {
+    /* DON'T ASK ME HOW THIS LOOKS SO GOOD
+       the browser is probably doing weird stuff
+       to hrs */
     border-bottom: thick solid rgba(255, 255, 255, 0.1);
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
     /* margin: .5em 0; */
@@ -287,6 +304,7 @@ li.inlineList {
 }
 
 .negativeMargin {
+    /* to make a text container merge to a hr below it */
     margin-bottom: -.2em;
 }
 
