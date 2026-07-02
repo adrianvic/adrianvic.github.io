@@ -85,7 +85,8 @@ module.exports = {
     webringDescription: "<a href='https://en.wikipedia.org/wiki/Webring'>What are webrings?</a>",
     breakcoreWebring: "This site is a member of the breakcore webring.",
     previousSite: "previous site",
-    nextSite: "next site"
+    nextSite: "next site",
+    random: "random"
   },
   pt: {
     language: "português",
@@ -146,6 +147,7 @@ module.exports = {
     webringDescription: "<a href='https://pt.wikipedia.org/wiki/Webring'>O que são webrings?</a>",
     breakcoreWebring: "Esse website faz parte do webring breakcore.",
     previousSite: "site anterior",
-    nextSite: "próximo site"
+    nextSite: "próximo site",
+    random: "aleatório"
   }
 };

@@ -171,9 +171,9 @@ layout: base.njk
                     <a href="https://kanandraw.neocities.org/stuffs/droidring/home"><img src="https://kanandraw.neocities.org/stuffs/droidring/assets/logo.png" style="width: 200px;"></a><br/>
                     <img src="https://kanandraw.neocities.org/stuffs/droidring/assets/droidwidget.png" style="width: 115px;"><br>
                     <div class="buttonsdroidring">
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=previous"><button class="navdroidring">←</button></a>
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=random"><button class="navdroidring">⇄</button></a>
-                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=next"><button class="navdroidring">→</button></a>
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=previous"><button class="navdroidring" data-tip="{{ i18n[langKey].previousSite | smartTitle }}">←</button></a>
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=random"><button class="navdroidring" data-tip="{{ i18n[langKey].random | smartTitle }}">⇄</button></a>
+                    <a href="https://kanandraw.neocities.org/stuffs/droidring/home?action=next"><button class="navdroidring" data-tip="{{ i18n[langKey].nextSite | smartTitle }}">→</button></a>
                     </div>
                     <style>
                     .droidringwidget {
