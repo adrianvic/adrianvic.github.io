@@ -84,6 +84,7 @@ module.exports = {
     kaoLink: "<a href='https://keepandroidopen.org/'>Learn what you can do at Keep Android Open</a>",
     webringDescription: "<a href='https://en.wikipedia.org/wiki/Webring'>What are webrings?</a>",
     breakcoreWebring: "This site is a member of the breakcore webring.",
+    wrongosWebring: "This site is a member of the Wrongos webring.",
     previousSite: "previous site",
     nextSite: "next site",
     random: "random"
@@ -146,6 +147,7 @@ module.exports = {
     kaoLink: "<a href='https://keepandroidopen.org/pt-BR/'>Veja o que você pode fazer em Keep Android Open</a>",
     webringDescription: "<a href='https://pt.wikipedia.org/wiki/Webring'>O que são webrings?</a>",
     breakcoreWebring: "Esse website faz parte do webring breakcore.",
+    wrongosWebring: "Esse website faz parte do webring Wrongos.",
     previousSite: "site anterior",
     nextSite: "próximo site",
     random: "aleatório"

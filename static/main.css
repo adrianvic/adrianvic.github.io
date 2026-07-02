@@ -720,6 +720,14 @@ div.hs.selected {
     border-right: 0;
 }
 
+#webring-Wrongos-widget p {
+    border-top-right-radius: 10px;
+}
+
+#webring-Wrongos-widget a:first-child {
+    border-bottom-left-radius: 10px;
+}
+
 #headerSubtitle {
     color: white;
     opacity: 0.6;
