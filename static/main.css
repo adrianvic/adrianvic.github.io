@@ -228,6 +228,10 @@ aside.metromenu #content {
     gap: 1em;
 }
 
+footer a {
+    font-size: small;
+}
+
 /* Global classes and IDs */
 
 .nomargin {
@@ -701,6 +705,22 @@ div.hs.selected {
     gap: 1em;
 }
 
+.webringGeneric {
+    background-color: black;
+    padding: .4em;
+    background-position-x: 0;
+    background-size: cover;
+}
+
+.webringButtons {
+    display: flex;
+    gap: .4em;
+}
+
+.wrongoLink {
+    color: #D5E7B5;
+}
+
 #breakcoreWebring {
     background-position-x: 0;
     background-size: cover;
@@ -819,12 +839,27 @@ header div:first-child {
     display: flex;
 }
 
+#homeAside {
+    margin-bottom: 2em;
+}
+
 #homeWebrings {
     display: flex;
     flex-direction: column;
     gap: 1em;
     height: fit-content;
-    margin-bottom: 2em;
+}
+
+#homeBlog p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+#homeBlog a {
+    color: white;
 }
 
 #telnetSimulation {

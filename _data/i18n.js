@@ -87,7 +87,12 @@ module.exports = {
     wrongosWebring: "This site is a member of the Wrongos webring.",
     previousSite: "previous site",
     nextSite: "next site",
-    random: "random"
+    random: "random",
+    showMore: "Show more",
+    previous: "previous",
+    next: "next",
+    about: "about",
+    thisWebsiteDoesNotTrackYou: "This website does not track you."
   },
   pt: {
     language: "português",
@@ -150,6 +155,11 @@ module.exports = {
     wrongosWebring: "Esse website faz parte do webring Wrongos.",
     previousSite: "site anterior",
     nextSite: "próximo site",
-    random: "aleatório"
+    random: "aleatório",
+    showMore: "Ver mais",
+    previous: "anterior",
+    next: "próximo",
+    about: "sobre",
+    thisWebsiteDoesNotTrackYou: "Esse website não rastreia você."
   }
 };

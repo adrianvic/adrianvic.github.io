@@ -41,3 +41,16 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro webring(opts) %}
+<div class="webringGeneric"
+     style="{% if opts.image %}background-image:url('{{ opts.image | url }}');{% endif %}
+            {% if opts.color %}background-color:{{ opts.color }};{% endif %}">
+    <p>{{ opts.text }}</p>
+    <div class="webringButtons">
+        {% for link in opts.links %}
+            {{ link | safe }}
+        {% endfor %}
+    </div>
+</div>
+{% endmacro %}

@@ -13,20 +13,16 @@
     <meta charset="UTF-8">
     <title>Adrian Victor{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ '/static/main.css?fixcache=1' | url }}">
-
     <script type="module" src="{{ '/static/scripts/ccd.js' | url }}"></script>
     <script type="module" src="{{ '/static/scripts/music.js' | url }}" defer></script>
     <script type="module" src="{{ '/static/scripts/88x31.js' | url }}" defer></script>
     <script type="module" src="{{ '/static/scripts/tips.js' | url }}" defer></script>
     <script type="module" src="{{ '/static/scripts/click.js' | url }}" defer></script>
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png' | url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png' | url }}">
     <link rel="manifest" href="{{ '/static/site.webmanifest' | url }}">
-
     <meta property="og:title" content="Adrian Victor{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}">
     <meta property="og:description" content="{{ description or i18n[langKey].websiteDescription }}">
     <meta property="og:type" content="article">
@@ -37,21 +33,26 @@
     <script>
         const rootPrefix = "{{ '/' | url }}";
     </script>
+
     <style>
         .bg {
             opacity: {{ backgroundOpacity or ".4" }}!important;
         }
     </style>
+
     <noscript>
         <style>
             .i88x31:hover {
                 transform: scale(2);
             }
-        </style>    
+        </style>
     </noscript>
+
     <div id="everythingHelper">
         <img src="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url }}" class="bg">
+
         {% include "header.njk" %}
+
         <div id="mainHelper">
             {{ content | safe }}
         </div>
