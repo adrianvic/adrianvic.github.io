@@ -1,6 +1,6 @@
-{% macro i88x31(link, alt=link) %}
+{% macro i88x31(link, alt=link, interactive=true) %}
   <img
-    class="i88x31"
+    class="i88x31{% if interactive == true %} i88x31i{% endif %}"
     src="{{ ('/static/images/88x31/' ~ link) | url }}"
     {% if alt == link %}
     data-tip="<b>{{ i18n[langKey].i88x31hover }}</b> ({{ link }})"
