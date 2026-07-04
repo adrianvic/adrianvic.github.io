@@ -9,6 +9,7 @@ import Webmentions from "eleventy-plugin-webmentions"; // configure later
 import pluginInlineLinkFavicon from "eleventy-plugin-inline-link-favicon";
 import poison from "eleventy-plugin-poison";
 import mastoarchive from "eleventy-plugin-mastoarchive";
+import purgeCssPlugin from "eleventy-plugin-purgecss";
 
 // import i18n from "./_data/i18n.js";
 
@@ -27,6 +28,12 @@ export default function (eleventyConfig) {
     userId: "114661188739031987",
     cacheLocation: ".cache/mastodon.json"
   });
+
+  eleventyConfig.addPlugin(purgeCssPlugin, {
+    config: "./purgecss.config.cjs",
+    quiet: false,
+  });
+
 
   eleventyConfig.addCollection("post", function (collectionApi) {
     return collectionApi

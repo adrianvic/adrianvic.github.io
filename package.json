@@ -19,6 +19,7 @@
     "eleventy-plugin-inline-link-favicon": "^1.1.0",
     "eleventy-plugin-mastoarchive": "^0.2.0",
     "eleventy-plugin-poison": "^1.0.1",
+    "eleventy-plugin-purgecss": "^0.6.0",
     "eleventy-plugin-recent-changes": "^1.0.1",
     "eleventy-plugin-webmentions": "^2.1.0"
   }
