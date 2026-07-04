@@ -355,7 +355,7 @@ li.inlineList {
 .headerSquare,
 #defaultSquare {
     transition: 0.4s;
-    border: medium solid white;
+    border: thick solid rgba(255, 255, 255, 0.2);
     height: 3vw;
     overflow: hidden;
     width: 6vw;
@@ -382,6 +382,7 @@ li.inlineList {
     height: 6vw;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.4), 0px -4px 10px rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.3);
+    border-color: white;
 }
 
 .youtubeCardHolderHelper {
@@ -913,6 +914,12 @@ header div:first-child {
     color: white;
 }
 
+.centeredItemsBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .internetometerAside img {
     max-width: 100%;
 }
@@ -1071,9 +1078,56 @@ header div:first-child {
 }
 
 .mastodonPost {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 1em;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.mastodonPostContent {
+    padding: 1em;
+}
+
+.mastodonPostContent, .mastodonLink {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mastodonPost p {
+    margin-bottom: .2em;
+}
+
+.mastodonLink {
+    width: fit-content;
+    padding: .4em;
+    opacity: .8;
+    margin-left: auto;
+}
+
+.mastodonMedia {
+    max-height: 5em;
+    border: medium solid rgba(0, 0, 0, 0.2);
+}
+
+.mastodonMediaBox {
+    margin-top: 1em;
+}
+
+.mastodonMediaBox div {
+    display: flex;
+    overflow: scroll;
+}
+
+.mastodonMediaBox img {
+    transition: .2s;
+    opacity: .6;
+}
+
+.mastodonMediaBox img:hover {
+    opacity: 1;
+}
+
+#socialAside img {
+    border: thick solid rgba(255, 255, 255, 0.1);
+    border-top: none;
 }
 
 /* Animations */
@@ -1163,6 +1217,10 @@ header div:first-child {
 
     #socialAside img {
         max-width: 50%;
+    }
+
+    #socialAside h1 {
+        text-align: end;
     }
 
     #homeSquares {

@@ -13,19 +13,30 @@ title: Adrian Victor:Social
             <h1 class="nomargin negativeMargin"><a class="textColored noDecoration" href="https://mstdn.social/@tenkuma">@tenkuma</a></h1>
             <hr class="nomargin">
             <img src="{{ '/static/images/profile.jpg' | url }}">
-            <hr class="nomargin">
         </div>
     </div>
     {% include 'widgets/internetometer-aside.html' %}
 </aside>
 <main>
+    <p>{{ i18n[langKey].mastodonPageDescription }}</p>
     <ul>
       {% for post in mastodon.posts %}
         <hr class="nomargin">
         <div class="mastodonPost">
-            {{ post.content | safe }}
-            <p><a class="postLink" href="{{ post.source_url }}">{{ post.date }}</a></p>
+            <div class="mastodonPostContent">
+                {{ post.content | safe }}
+                {% if post.media %}
+                <div class="mastodonMediaBox">
+                    <div>
+                        {% for media in post.media %}
+                            <a href="{{ media.image }}"><img class="mastodonMedia" src="{{ media.image }}" {% if media.alt %}alt="{{ media.alt }}"{% endif %}></a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <p class="mastodonLink"><a class="postLink" href="{{ post.source_url }}">{{ post.date }}</a></p>
         </div>
-      {% endfor %}
+        {% endfor %}
     </ul>
 </main>

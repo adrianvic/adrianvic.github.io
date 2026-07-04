@@ -96,7 +96,8 @@ module.exports = {
     mrnandoChannel: "Mr. Nando's channel",
     liked: "liked",
     changes: "changes",
-    readingTime: "Reading time"
+    readingTime: "Reading time",
+    mastodonPageDescription: "This is an archive of all my Mastodon posts."
   },
   pt: {
     language: "português",
@@ -168,6 +169,7 @@ module.exports = {
     mrnandoChannel: "Canal do Mr. Nando",
     liked: "curtiu",
     changes: "mudanças",
-    readingTime: "Tempo de leitura"
+    readingTime: "Tempo de leitura",
+    mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon."
   }
 };
