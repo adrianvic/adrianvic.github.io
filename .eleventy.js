@@ -7,6 +7,7 @@ import pluginGitCommitDate from "eleventy-plugin-git-commit-date";
 import recentChanges from "eleventy-plugin-recent-changes";
 import Webmentions from "eleventy-plugin-webmentions"; // configure later
 import pluginInlineLinkFavicon from "eleventy-plugin-inline-link-favicon";
+import poison from "eleventy-plugin-poison";
 
 // import i18n from "./_data/i18n.js";
 
@@ -19,6 +20,7 @@ export default function (eleventyConfig) {
     commits: 10,
   });
   eleventyConfig.addPlugin(pluginInlineLinkFavicon);
+  eleventyConfig.addPlugin(poison);
 
   eleventyConfig.addCollection("post", function (collectionApi) {
     return collectionApi

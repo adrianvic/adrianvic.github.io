@@ -18,5 +18,6 @@
     "eleventyDesc": "Gerador de sites estáticos, usado neste website.",
     "githubPagesDesc": "Pela hospedagem do website.",
     "recentChangesPluginDesc": "Plugin para listagem de commits recentes.",
-    "inlineFaviconPluginDesc": "Suporte para icones em links."
+    "inlineFaviconPluginDesc": "Suporte para icones em links.",
+    "poisonPluginDesc": "Envenenamento de IA dentro do código fonte das páginas."
 }

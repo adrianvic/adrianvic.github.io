@@ -18,5 +18,6 @@
     "eleventyDesc": "Static website generator, used in this website.",
     "githubPagesDesc": "For web hosting.",
     "recentChangesPluginDesc": "Plugin for listing recent commits.",
-    "inlineFaviconPluginDesc": "Support for inline link icons."
+    "inlineFaviconPluginDesc": "Support for inline link icons.",
+    "poisonPluginDesc": "Hidden AI poisoning inside page source."
 }

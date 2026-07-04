@@ -31,6 +31,7 @@
     <meta property="og:image" content="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url | absoluteUrl }}">
 </head>
 <body>
+    {% poison %}
     <script>
         const rootPrefix = "{{ '/' | url }}";
     </script>

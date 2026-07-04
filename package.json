@@ -17,6 +17,7 @@
     "@sardine/eleventy-plugin-external-links": "^1.4.0",
     "eleventy-plugin-git-commit-date": "^1.0.2",
     "eleventy-plugin-inline-link-favicon": "^1.1.0",
+    "eleventy-plugin-poison": "^1.0.1",
     "eleventy-plugin-recent-changes": "^1.0.1",
     "eleventy-plugin-webmentions": "^2.1.0"
   }

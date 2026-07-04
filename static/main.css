@@ -234,6 +234,10 @@ footer a {
 
 /* Global classes and IDs */
 
+.visually-hidden {
+    display: none;
+}
+
 .nomargin {
     margin: 0;
 }
