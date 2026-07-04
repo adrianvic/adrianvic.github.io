@@ -31,18 +31,23 @@ background: "bear3.jpg"
         <dd>{{ t.eleventyDesc }}</dd>
         <dt>GitHub Pages</dt>
         <dd>{{ t.githubPagesDesc }}</dd>
+        <dt><a href="https://www.npmjs.com/package/eleventy-plugin-recent-changes">eleventy-plugin-recent-changes</a> {{ i18n[langKey].by }} workeffortwaste</dt>
+        <dd>{{ t.recentChangesPluginDesc }}</dd>
+        <dt><a href="https://www.npmjs.com/package/eleventy-plugin-inline-link-favicon">eleventy-plugin-inline-link-favicon</a> {{ i18n[langKey].by }} bmuenzenmeyer</dt>
+        <dd>{{ t.inlineFaviconPluginDesc }}</dd>
     </dl>
 </main>
 <aside>
     <div id="aboutChangelog">
         <div>
-            <h1 class="nomargin negativeMargin">Changelog</h1>
+            <h1 class="nomargin negativeMargin">{{ i18n[langKey].changes | smartTitle }}</h1>
             <hr style="margin-bottom: .4em;">
         </div>
         <ul>
           {%- for commit in collections.recentChanges %}
-                <li class="doubleLine"><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</li>
+                <li class="doubleLine"><a class="textColored" href="https://github.com/adrianvic/adrianvic.github.io/commit/{{ commit.hash }}"><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</a></li>
           {%- endfor %}
         </ul>
     </div>
+    {% include 'widgets/internetometer-aside.html' %}
 </aside>

@@ -93,7 +93,9 @@ module.exports = {
     next: "next",
     about: "about",
     thisWebsiteDoesNotTrackYou: "This website does not track you.",
-    mrnandoChannel: "Mr. Nando's channel"
+    mrnandoChannel: "Mr. Nando's channel",
+    liked: "liked",
+    changes: "changes"
   },
   pt: {
     language: "português",
@@ -162,6 +164,8 @@ module.exports = {
     next: "próximo",
     about: "sobre",
     thisWebsiteDoesNotTrackYou: "Esse website não rastreia você.",
-    mrnandoChannel: "Canal do Mr. Nando"
+    mrnandoChannel: "Canal do Mr. Nando",
+    liked: "curtiu",
+    changes: "mudanças"
   }
 };

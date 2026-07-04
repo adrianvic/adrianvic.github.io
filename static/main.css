@@ -274,6 +274,10 @@ footer a {
     -webkit-box-orient: vertical;
 }
 
+.textColored {
+    color: white;
+}
+
 .notificationBox {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     width: fit-content;

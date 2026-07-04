@@ -16,5 +16,7 @@
     "clickSoundLabel": "Click sound effect",
     "thanksHeading": "Thanks",
     "eleventyDesc": "Static website generator, used in this website.",
-    "githubPagesDesc": "For web hosting."
+    "githubPagesDesc": "For web hosting.",
+    "recentChangesPluginDesc": "Plugin for listing recent commits.",
+    "inlineFaviconPluginDesc": "Support for inline link icons."
 }

@@ -16,5 +16,7 @@
     "clickSoundLabel": "Efeito sonoro de clique",
     "thanksHeading": "Agradecimentos",
     "eleventyDesc": "Gerador de sites estáticos, usado neste website.",
-    "githubPagesDesc": "Pela hospedagem do website."
+    "githubPagesDesc": "Pela hospedagem do website.",
+    "recentChangesPluginDesc": "Plugin para listagem de commits recentes.",
+    "inlineFaviconPluginDesc": "Suporte para icones em links."
 }
