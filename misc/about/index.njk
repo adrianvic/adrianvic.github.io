@@ -41,7 +41,7 @@ background: "bear3.jpg"
         </div>
         <ul>
           {%- for commit in collections.recentChanges %}
-                <li><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</li>
+                <li class="doubleLine"><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</li>
           {%- endfor %}
         </ul>
     </div>

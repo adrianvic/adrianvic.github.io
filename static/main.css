@@ -258,6 +258,22 @@ footer a {
     width: 100%;
 }
 
+.singleLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.doubleLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .notificationBox {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     width: fit-content;
@@ -708,6 +724,10 @@ article {
     gap: 2em;
 }
 
+#mainHelper > aside {
+    max-width: 20%;
+}
+
 #mainHelper aside {
     display: flex;
     flex-direction: column;
@@ -1107,6 +1127,10 @@ header div:first-child {
     #mainHelper {
         flex-direction: column;
         max-width: 90vw;
+    }
+
+    #mainHelper > aside {
+        max-width: unset;
     }
 
     #homeSquares {
