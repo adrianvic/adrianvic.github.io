@@ -1,46 +1,73 @@
-const fs = require("fs");
-const path = require("path");
-const i18n = require('./_data/i18n.js');
+import fs from "fs";
+import path from "path";
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addCollection("post", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./posts/*").sort((a, b) => b.date - a.date);
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import safeLinks from "@sardine/eleventy-plugin-external-links";
+import pluginGitCommitDate from "eleventy-plugin-git-commit-date";
+import recentChanges from "eleventy-plugin-recent-changes";
+import Webmentions from "eleventy-plugin-webmentions"; // configure later
+import pluginInlineLinkFavicon from "eleventy-plugin-inline-link-favicon";
+
+// import i18n from "./_data/i18n.js";
+
+export default function (eleventyConfig) {
+  eleventyConfig.setQuietMode(true);
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(safeLinks);
+  eleventyConfig.addPlugin(pluginGitCommitDate);
+  eleventyConfig.addPlugin(recentChanges, {
+    commits: 10,
   });
-  eleventyConfig.addCollection("misc", (api) =>
-    api.getFilteredByTag("misc")
-  );
+  eleventyConfig.addPlugin(pluginInlineLinkFavicon);
+
+  eleventyConfig.addCollection("post", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("./posts/*")
+      .sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("misc", (api) => api.getFilteredByTag("misc"));
+
   eleventyConfig.addFilter("getTranslation", (page, lang) => {
     const dir = path.dirname(page.inputPath);
     const file = path.join(dir, `${lang}.json`);
-    
+
     if (fs.existsSync(file)) {
       return JSON.parse(fs.readFileSync(file, "utf-8"));
     }
-  
+
     return {};
   });
+
   eleventyConfig.addCollection("88x31", () => {
-    return fs.readdirSync("static/images/88x31")
-    .map(file => ({
-      url: `/static/images/88x31/${file}`,
-      fileSlug: file
-    }));
+    return fs
+      .readdirSync("static/images/88x31")
+      .map((file) => ({
+        url: `/static/images/88x31/${file}`,
+        fileSlug: file,
+      }));
   });
 
   eleventyConfig.addPassthroughCopy("static");
 
-  eleventyConfig.addNunjucksFilter("alternateLanguages", function(collection, postId, currentLanguageKey) {
-    return collection.filter(post => 
-      post.data.postId === postId && post.data.langKey !== currentLanguageKey
-    )
-    .map(post => ({
-      lang: post.data.langKey,
-      url: post.url,
-      title: post.data.title
-    }))
-  });
+  eleventyConfig.addNunjucksFilter(
+    "alternateLanguages",
+    function (collection, postId, currentLanguageKey) {
+      return collection
+        .filter(
+          (post) =>
+            post.data.postId === postId &&
+            post.data.langKey !== currentLanguageKey
+        )
+        .map((post) => ({
+          lang: post.data.langKey,
+          url: post.url,
+          title: post.data.title,
+        }));
+    }
+  );
 
-    eleventyConfig.addFilter("absoluteUrl", function(url) {
+  eleventyConfig.addFilter("absoluteUrl", function (url) {
     const base = "https://adrianvic.github.io";
     const prefix = process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web";
     return base + prefix + url;
@@ -52,24 +79,65 @@ module.exports = function(eleventyConfig) {
       year: "numeric",
       month: "numeric",
       day: "numeric",
-      timeZone: "America/Sao_Paulo"
+      timeZone: "America/Sao_Paulo",
     });
   });
 
-  eleventyConfig.addNunjucksFilter("smartTitle", function(str) {
+  eleventyConfig.addNunjucksFilter("smartTitle", function (str) {
     if (!str) return "";
-    const smallWords = ["a","an","and","at","but","by","for","in","nor","of","on","or","so","the","to","up","yet",
-      "e","de","do","da","dos","das","a","o","um","uma","em","por","para","com","no","na","nos"];
-    return str.toLowerCase().split(" ").map((word, i) => {
-      if (i === 0) return word.charAt(0).toUpperCase() + word.slice(1);
-      return smallWords.includes(word) ? word : word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(" ");
+    const smallWords = [
+      "a",
+      "an",
+      "and",
+      "at",
+      "but",
+      "by",
+      "for",
+      "in",
+      "nor",
+      "of",
+      "on",
+      "or",
+      "so",
+      "the",
+      "to",
+      "up",
+      "yet",
+      "e",
+      "de",
+      "do",
+      "da",
+      "dos",
+      "das",
+      "a",
+      "o",
+      "um",
+      "uma",
+      "em",
+      "por",
+      "para",
+      "com",
+      "no",
+      "na",
+      "nos",
+    ];
+
+    return str
+      .toLowerCase()
+      .split(" ")
+      .map((word, i) => {
+        if (i === 0) return word.charAt(0).toUpperCase() + word.slice(1);
+        return smallWords.includes(word)
+          ? word
+          : word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
   });
 
   return {
     pathPrefix: process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web",
     dir: {
-      output: "docs"
-    }
+      output: "docs",
+    },
   };
-};
+}

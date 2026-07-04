@@ -33,3 +33,16 @@ background: "bear3.jpg"
         <dd>{{ t.githubPagesDesc }}</dd>
     </dl>
 </main>
+<aside>
+    <div id="aboutChangelog">
+        <div>
+            <h1 class="nomargin negativeMargin">Changelog</h1>
+            <hr style="margin-bottom: .4em;">
+        </div>
+        <ul>
+          {%- for commit in collections.recentChanges %}
+                <li><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</li>
+          {%- endfor %}
+        </ul>
+    </div>
+</aside>

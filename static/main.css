@@ -254,6 +254,10 @@ footer a {
     height: 1em;
 }
 
+.fullWidth {
+    width: 100%;
+}
+
 .notificationBox {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
     width: fit-content;
@@ -569,6 +573,11 @@ div.hs.selected {
     opacity: 0 !important;
 }
 
+article {
+    max-width: 70%;
+    margin: auto;
+}
+
 .blogpostYoutubeVideo {
     user-select: none;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
@@ -710,6 +719,10 @@ div.hs.selected {
     padding: .4em;
     background-position-x: 0;
     background-size: cover;
+}
+
+.webringGeneric p {
+    margin: 0;
 }
 
 .webringButtons {
@@ -1058,6 +1071,11 @@ header div:first-child {
 
 @media screen and (max-width: 1280px) {
     body { font-size: 2vh; }
+
+    article {
+        max-width: 100%;
+        margin: auto;
+    }
 
     header {
         padding-top: 1.4rem;

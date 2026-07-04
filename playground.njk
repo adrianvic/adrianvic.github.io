@@ -1,0 +1,89 @@
+---
+layout: text.njk
+---
+{% from "macros.njk" import i88x31 with context %}
+{% from "macros.njk" import webring %}
+{% from "macros.njk" import projectCard %}
+{% from "macros.njk" import videoCard with context %}
+
+<div class="box pageHeaderBox">
+	<h1>Playground</h1>
+	<p>This is a test page showcasing different elements from the website. By the way, this box is a page header box, which is a regular box without margin followed by a separator.</p>
+</div>
+
+<hr>
+
+<h2>Text</h2>
+<p>Flowers are red, they can also be blue. Just like <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXCgBwE%3D">links</a>. I'm not much of a poet... Anyways, did I get the link contrast right this time? And the paragraph spacing?</p>
+<h3>Bolinho de Chuva</h3>
+<p>Did you know here in Brazil we have a dessert literally called Bolinho de Chuva (lit. "rain cake")? It's basically fried dough with sugar, the best ones have banana inside. The tradition is to make them when it's raining, I have a lot of childhood memories of eating this and thinking of this now makes me realize it may be one of the reasons I like rain so much. Don't get me wrong, I hate being <i>in</i> the rain, I swear I can feel each drop puncturing me like a needle. What I like is to stay home and listen to the gentle song of falling droplets.</p>
+<p>I was eating one when I wrote this.</p>
+
+<h2>Alert box</h2>
+<div class="box alert">
+	<p>This is a alert box.</p>
+</div>
+
+<h2>Code block</h2>
+<p>Uses Eleventy highlight plugin, Prism CSS by RunDevelopment slightly edited to fit the website design language.</p>
+{% highlight "js" %}
+function myFunction() {
+	return true;
+}
+{% endhighlight %}
+
+<h2>88x31 interactive images</h2>
+<p>88x31 are looking too small on modern monitors, so you can now click on them to expand.</p>
+{{ i88x31("tenkuma.gif") }}
+{{ i88x31("anybrowser6.gif") }}
+{{ i88x31("ai.gif") }}
+{{ i88x31("WEBP.gif") }}
+
+<h2>Webring widget</h2>
+<p>Generic webring widget with custom background, link color and links.</p>
+{{ webring({
+    text: "Breakcore Webring",
+    links: [
+        "<a href='https://webri.ng/webring/breakcoreweb/previous?via=https%3A%2F%2Fadrianvic.github.io%2F'>First</a>",
+        "<a href='https://appak.neocities.org/breakcore'>Second</a>",
+        "<a href='https://webri.ng/webring/breakcoreweb/next?via=https%3A%2F%2Fadrianvic.github.io%2F'>Third</a>"
+    ],
+    image: "/static/images/metro-flowers.jpg"
+}) }}
+
+<h2>Project card</h2>
+<p>These are used in the homepage to list my repos.</p>
+{{
+    projectCard(
+    "Example project",
+    "I'm probably not entering heaven for this terrible picture I made of my Minecraft skin. Now I cannot delete it from the website files because it's being used here. I even had the balls to call it <a href='" ~ ('/static/images/me.png' | url ) ~ "'>me.png</a>.",
+    ('/static/images/me.png' | url ),
+    '/static/images/me.png',
+    "PestoWiki"
+    )
+}}
+
+<h2>Video card</h2>
+<p>The image, website and video duration are hardcoded so you don't ping any server to pull it (and it works without JS). Of course none of that is relevant to you, this site source is a mess so you don't have to deal with privacy invasive bullshit, I'm just stating that to fill space after the title, spacing is strange with no text here.</p>
+<div style="width: 50%; margin: auto;">
+	{{
+	    videoCard(
+	    i18n["global"].homeVideoLink,
+	    "I don't know the video title, it's pulling from the global string table.",
+	    i18n["global"].homeVideoImage,
+	    i18n["global"].homeVideoWebsite,
+	    i18n["global"].homeVideoDuration
+	    )
+	}}
+</div>
+
+<h2>Recent commits</h2>
+<p>Thanks to <a href="https://www.npmjs.com/package/eleventy-plugin-recent-changes">workeffortwaste's eleventy-plugin-recent-changes</a> <3</p>
+<ul>
+  {%- for commit in collections.recentChanges %}
+        <li><time>{{ commit.authorDate }}</time> {{ commit.subject }}</li>
+  {%- endfor %}
+</ul>
+
+<h2>Link with favicon</h2>
+<p>Here's a link to {% ai "https://github.com/adrianivc" %}my github page{% endai %}. Thanks to <a href="https://www.npmjs.com/package/eleventy-plugin-recent-changes">bmuenzenmeyer's eleventy-plugin-inline-link-favicon</a> <3</p>

@@ -1,8 +1,14 @@
-{% macro i88x31(link) %}
+{% macro i88x31(link, alt=link) %}
   <img
     class="i88x31"
     src="{{ ('/static/images/88x31/' ~ link) | url }}"
+    {% if alt == link %}
     data-tip="<b>{{ i18n[langKey].i88x31hover }}</b> ({{ link }})"
+    {% endif %}
+    {% if alt != link %}
+    data-tip="{{ alt }}"
+    {% endif %}
+    alt="{{ alt }}"
   >
 {% endmacro %}
 
@@ -37,7 +43,7 @@
         </a>
     </div>
     <div class="hsProjectContent">
-        <p>{{ projectDescription }}</p>
+        <p>{{ projectDescription | safe }}</p>
     </div>
 </div>
 {% endmacro %}
