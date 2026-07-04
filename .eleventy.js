@@ -17,6 +17,8 @@ import readingTime from 'eleventy-plugin-reading-time';
 // import i18n from "./_data/i18n.js";
 
 export default function (eleventyConfig) {
+  eleventyConfig.setInputDirectory("site");
+
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(safeLinks);
@@ -39,10 +41,12 @@ export default function (eleventyConfig) {
   // eleventyConfig.addPlugin(githubRepos, { userAccount: 'adrianvic' });
   eleventyConfig.addPlugin(readingTime);
 
+  eleventyConfig.addWatchTarget("./site");
+
 
   eleventyConfig.addCollection("post", function (collectionApi) {
     return collectionApi
-      .getFilteredByGlob("./posts/*")
+      .getFilteredByGlob("./site/posts/*")
       .sort((a, b) => b.date - a.date);
   });
 

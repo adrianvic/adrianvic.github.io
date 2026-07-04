@@ -1,0 +1,31 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/social/index.html"
+layout: base.njk
+title: Adrian Victor:Social
+---
+<aside>
+    <div id="socialAside">
+        <div>
+            <h1 class="nomargin negativeMargin"><a class="textColored noDecoration" href="https://mstdn.social/@tenkuma">@tenkuma</a></h1>
+            <hr class="nomargin">
+            <img src="{{ '/static/images/profile.jpg' | url }}">
+            <hr class="nomargin">
+        </div>
+    </div>
+    {% include 'widgets/internetometer-aside.html' %}
+</aside>
+<main>
+    <ul>
+      {% for post in mastodon.posts %}
+        <hr class="nomargin">
+        <div class="mastodonPost">
+            {{ post.content | safe }}
+            <p><a class="postLink" href="{{ post.source_url }}">{{ post.date }}</a></p>
+        </div>
+      {% endfor %}
+    </ul>
+</main>

@@ -158,6 +158,10 @@ button {
     padding: 0.6em;
 }
 
+img {
+    max-width: 100%;
+}
+
 hs {
     border-bottom: thin solid white;
 }
@@ -240,6 +244,10 @@ footer a {
 
 .nomargin {
     margin: 0;
+}
+
+.noDecoration, .noDecoration:hover {
+    text-decoration: none;
 }
 
 .noPadding {
@@ -695,6 +703,7 @@ article {
     height: 1.4em;
     margin-top: auto;
     opacity: 0.6;
+    margin: auto;
 }
 
 #music:hover {
@@ -734,6 +743,7 @@ article {
 
 #mainHelper > aside {
     max-width: 20%;
+    min-width: 20%;
 }
 
 #mainHelper aside {
@@ -1060,6 +1070,12 @@ header div:first-child {
     margin-top: .2em;
 }
 
+.mastodonPost {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
 /* Animations */
 
 @keyframes ellipsis-loader {
@@ -1143,6 +1159,10 @@ header div:first-child {
 
     #mainHelper > aside {
         max-width: unset;
+    }
+
+    #socialAside img {
+        max-width: 50%;
     }
 
     #homeSquares {
