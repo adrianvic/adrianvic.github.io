@@ -903,6 +903,10 @@ header div:first-child {
     color: white;
 }
 
+.internetometerAside img {
+    max-width: 100%;
+}
+
 #telnetSimulation {
     display: flex;
     width: 100%;
