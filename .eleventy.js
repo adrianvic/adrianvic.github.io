@@ -8,6 +8,7 @@ import recentChanges from "eleventy-plugin-recent-changes";
 import Webmentions from "eleventy-plugin-webmentions"; // configure later
 import pluginInlineLinkFavicon from "eleventy-plugin-inline-link-favicon";
 import poison from "eleventy-plugin-poison";
+import mastoarchive from "eleventy-plugin-mastoarchive";
 
 // import i18n from "./_data/i18n.js";
 
@@ -21,6 +22,11 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(pluginInlineLinkFavicon);
   eleventyConfig.addPlugin(poison);
+  eleventyConfig.addPlugin(mastoarchive, {
+    host: "https://mstdn.social",
+    userId: "114661188739031987",
+    cacheLocation: ".cache/mastodon.json"
+  });
 
   eleventyConfig.addCollection("post", function (collectionApi) {
     return collectionApi
