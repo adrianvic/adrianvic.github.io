@@ -1,5 +1,8 @@
 name: Build Eleventy
 
+with:
+  fetch-depth: 0
+
 on:
   push:
     paths-ignore:
