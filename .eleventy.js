@@ -5,11 +5,14 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import safeLinks from "@sardine/eleventy-plugin-external-links";
 import pluginGitCommitDate from "eleventy-plugin-git-commit-date";
 import recentChanges from "eleventy-plugin-recent-changes";
-import Webmentions from "eleventy-plugin-webmentions"; // configure later
+// import Webmentions from "eleventy-plugin-webmentions"; // configure later
 import pluginInlineLinkFavicon from "eleventy-plugin-inline-link-favicon";
 import poison from "eleventy-plugin-poison";
 import mastoarchive from "eleventy-plugin-mastoarchive";
-import purgeCssPlugin from "eleventy-plugin-purgecss";
+// import purgeCssPlugin from "eleventy-plugin-purgecss";
+import pluginCleanUrls from "@inframanufaktur/eleventy-plugin-clean-urls";
+// import githubRepos from 'eleventy-plugin-github-repos';
+import readingTime from 'eleventy-plugin-reading-time';
 
 // import i18n from "./_data/i18n.js";
 
@@ -28,11 +31,13 @@ export default function (eleventyConfig) {
     userId: "114661188739031987",
     cacheLocation: ".cache/mastodon.json"
   });
-
-  eleventyConfig.addPlugin(purgeCssPlugin, {
-    config: "./purgecss.config.cjs",
-    quiet: false,
-  });
+  // eleventyConfig.addPlugin(purgeCssPlugin, {
+  //   config: "./purgecss.config.cjs",
+  //   quiet: false,
+  // });
+  eleventyConfig.addPlugin(pluginCleanUrls);
+  // eleventyConfig.addPlugin(githubRepos, { userAccount: 'adrianvic' });
+  eleventyConfig.addPlugin(readingTime);
 
 
   eleventyConfig.addCollection("post", function (collectionApi) {

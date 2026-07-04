@@ -95,7 +95,8 @@ module.exports = {
     thisWebsiteDoesNotTrackYou: "This website does not track you.",
     mrnandoChannel: "Mr. Nando's channel",
     liked: "liked",
-    changes: "changes"
+    changes: "changes",
+    readingTime: "Reading time"
   },
   pt: {
     language: "português",
@@ -166,6 +167,7 @@ module.exports = {
     thisWebsiteDoesNotTrackYou: "Esse website não rastreia você.",
     mrnandoChannel: "Canal do Mr. Nando",
     liked: "curtiu",
-    changes: "mudanças"
+    changes: "mudanças",
+    readingTime: "Tempo de leitura"
   }
 };
