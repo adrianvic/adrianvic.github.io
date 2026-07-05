@@ -12,12 +12,12 @@
   >
 {% endmacro %}
 
-{% macro videoCard(videoLink, videoTitle, videoImage, videoWebsite, videoDuration, videoAccent) %}
+{% macro videoCard(videoLink, videoTitle, videoImage, videoWebsite, videoDuration, videoAccent, imageAlt = i18n[langKey].videoArtworkAlt) %}
 <div class="youtubeCardHolderHelper">
     <div class="youtubeCardHolder">
         <a href="{{ videoLink }}">
             <div class="blogpostYoutubeVideo" {% if videoAccent %}style="border-color: {{ videoAccent }};"{% endif %}>
-                <img src="{{ ('/static/images' ~ videoImage) | url }}">
+                <img src="{{ ('/static/images' ~ videoImage) | url }}" alt="{{ imageAlt }}">
                 <div class="videoHeader">
                     {# <p class="alsoAvailable">{{ i18n[langKey].alsoAvailableAsVideo }}:</p> #}
                     <h2 class="videoTitle" {% if videoAccent %}style="color: {{ videoAccent }};"{% endif %}>

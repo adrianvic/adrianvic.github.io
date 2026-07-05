@@ -4,18 +4,18 @@ const body = document.querySelector("body");
 
 const musicdiv = document.getElementById("music");
 musicdiv.innerHTML = `
-<img src="${rootPrefix}static/images/gears.svg" class="optionsToggle invertedc">
-<img src="${rootPrefix}static/images/sound-on.png" id="sound">
-<select name="song" id="songSelection"></select>
+<img src="${rootPrefix}static/images/gears.svg" class="optionsToggle invertedc" alt="${headeri18n.gearsAlt}">
+<img src="${rootPrefix}static/images/sound-on.png" id="sound" alt="${headeri18n.soundOnAlt}">
+<select name="song" id="songSelection" alt="${headeri18n.songSelectAlt}"></select>
 `
 const linksHelper = document.getElementById("linksHelper");
 linksHelper.insertBefore(document.createElement("hs"), document.getElementById("headerLinks"));
 
 const songs = [
-    { file: "Velkommen.mp3", name: 'Velkommen', artwork: "velkommen.jpg" },
-    { file: "PG2.mp3", name: 'Frugal APE', artwork: "pg.jpg" },
-    { file: "dreamscape.mp3", name: 'Dreamscape', artwork: "winds.png" },
-    { file: "skychat.mp3", name: 'Skychat', artwork: "winds.png" }
+    { file: "Velkommen.mp3", name: 'Velkommen', artwork: "velkommen.jpg", alt: headeri18n.velkommenArtAlt },
+    { file: "PG2.mp3", name: 'Frugal APE', artwork: "pg.jpg" , alt: headeri18n.pgArtAlt },
+    { file: "dreamscape.mp3", name: 'Dreamscape', artwork: "winds.png" , alt: headeri18n.windsArtAlt },
+    { file: "skychat.mp3", name: 'Skychat', artwork: "winds.png" , alt: headeri18n.windsArtAlt }
 ];
 
 // Options page
@@ -43,15 +43,15 @@ optionsAside.classList.add("metromenu");
     <div id="playlist"></div>
     <div>
         <p>Volume</p>
-        <input id="volume" type="range" min="0" max="100"></input>
+        <input id="volume" type="range" min="0" max="100" alt="${headeri18n.volumeSliderAlt}"></input>
     </div>
         <div class="checkbox">
             <p>${headeri18n.hideBackground}</p>
-            <input id="background" type="checkbox"></input>
+            <input id="background" type="checkbox" alt="${headeri18n.backgroundCheckAlt}"></input>
         </div>
         <div class="checkbox">
             <p>${headeri18n.disableSoundEffects}</p>
-            <input id="soundEffects" type="checkbox"></input>
+            <input id="soundEffects" type="checkbox" alt="${headeri18n.sfxCheckboxAlt}"></input>
         </div>
     </div>
     `
@@ -99,6 +99,7 @@ songs.forEach(song => {
     songElement.classList.add("drawerSong");
     songElement.dataset.song = song.file;
     const songImage = document.createElement("img");
+    songImage.alt = song.alt;
     songImage.src = `${rootPrefix}static/images/songs/${song.artwork}`;
     songElement.appendChild(songImage);
     songElement.addEventListener('click', () => {
@@ -177,6 +178,7 @@ function play() {
         });;
     localStorage.setItem("audioPlaying", "true")
     toggleIMG.src = `${rootPrefix}static/images/sound-on.png`
+    toggleIMG.alt = headeri18n.soundOnAlt;
     console.log(`[Music Player] playing ${audioSelect.value}`)
 }
 
@@ -184,6 +186,7 @@ function stop() {
     audio.pause();
     localStorage.setItem("audioPlaying", "false")
     toggleIMG.src = `${rootPrefix}static/images/sound-off.png`
+    toggleIMG.alt = headeri18n.soundOffAlt;
 }
 
 function setVolume(volume) {

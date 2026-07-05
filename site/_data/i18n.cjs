@@ -100,7 +100,19 @@ module.exports = {
     mastodonPageDescription: "This is an archive of all my Mastodon posts.",
     addMe: "Add me",
     socialContentNotRated: "Social content is not rated and may mention topics not appropriate for all ages.",
-    clickHereToContinue: "Click here to continue"
+    clickHereToContinue: "Click here to continue",
+    windsArtAlt: "First Winds album artwork",
+    velkommenArtAlt: "Velkommen song artwork",
+    pgArtAlt: "Frugal APE song artwork",
+    bearAlt: "Background image. White bear swimming in water that reverberates around it.",
+    gearsAlt: "Gears",
+    soundOffAlt: "Audio disabled",
+    soundOnAlt: "Audio enabled",
+    volumeSliderAlt: "Volume",
+    backgroundCheckAlt: "Background image",
+    sfxCheckboxAlt: "Sound effects",
+    videoArtworkAlt: "Video artwork",
+    songSelectAlt: "Song selector"
   },
   pt: {
     language: "português",
@@ -176,6 +188,18 @@ module.exports = {
     mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon.",
     addMe: "Me adicionar",
     socialContentNotRated: "Conteúdo das redes sociais não é monitorado e pode conter tópicos não apropriados para todas as idades.",
-    clickHereToContinue: "Clique aqui para continuar"
+    clickHereToContinue: "Clique aqui para continuar",
+    windsArtAlt: "Capa do album First Winds",
+    velkommenArtAlt: "Capa da música Velkommen",
+    pgArtAlt: "Capa da música Frugal APE",
+    bearAlt: "Imagem de fundo. Urso branco nadando na água que reverbera ao seu redor.",
+    gearsAlt: "Engrenagens",
+    soundOffAlt: "Áudio desligado",
+    soundOnAlt: "Áudio ligado",
+    volumeSliderAlt: "Volume",
+    backgroundCheckAlt: "Imagem de fundo",
+    sfxCheckboxAlt: "Efeitos sonoros",
+    videoArtworkAlt: "Capa do vídeo",
+    songSelectAlt: "Seletor de música"
   }
 };

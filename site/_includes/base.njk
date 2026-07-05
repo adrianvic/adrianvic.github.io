@@ -51,7 +51,7 @@
     </noscript>
 
     <div id="everythingHelper">
-        <img src="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url }}" class="bg">
+        <img src="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url }}" class="bg" alt="{{ i18n[langKey].bearAlt }}">
 
         {% include "header.njk" %}
 
