@@ -151,6 +151,14 @@
                         "pt": "Baixe musica diretamente de Qobuz, Tidal, Soundcloud, Deezer, Amazon Music, e Yandex Music em alta qualidade de graça.",
                         "en": "Download music directly from Amazon Music, Soundcloud, Qobuz, Deezer and Tidal for free."
                     }
+                },
+                {
+                    "name": "Orpheus",
+                    "link": "https://orpheus.network/",
+                    "description": {
+                        "pt": "Tracker de músicas por convite, tem algumas músicas mais difíceis de achar.",
+                        "en": "Invitation only music tracker, has a lot of hard to find songs."
+                    }
                 }
             ]
         }
