@@ -30,7 +30,7 @@ backgroundOpacity: .2
     <dl>
       {% for link in section.links %}
       <div class="favoritesDefinitionListItem">
-        <dt><a href="{{ link.link }}">{{ link.name }}</a></dt>
+        <dt>{% ai link.link %}{{ link.name }}{% endai %}</dt>
         <hr class="favoritesDivider">
         <dd>
           {{ link.description[langKey] }}

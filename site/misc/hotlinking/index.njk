@@ -1,0 +1,45 @@
+---
+layout: text.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+---
+{% from "macros.njk" import i88x31 with context %}
+
+<main>
+  <div class="box pageHeaderBox">
+    <h1>{{ t.pageTitle }}</h1>
+    <p>{{ t.intro }}</p>
+  </div>
+  <hr>
+  <h2>88x31</h2>
+  {{ i88x31("tenkuma.gif") }}
+  {% highlight "html" %}
+    <a href="https://adrianvic.github.io/"><img src="https://adrianvic.github.io/static/images/88x31/tenkuma.gif"></a>
+  {% endhighlight %}
+  {{ i88x31("tenkuma2.gif") }}
+  {% highlight "html" %}
+    <a href="https://adrianvic.github.io/"><img src="https://adrianvic.github.io/static/images/88x31/tenkuma2.gif"></a>
+  {% endhighlight %}
+  {{ i88x31("tenkuma-splash.gif") }}
+  {% highlight "html" %}
+    <a href="https://adrianvic.github.io/"><img src="https://adrianvic.github.io/static/images/88x31/tenkuma-splash.gif"></a>
+  {% endhighlight %}
+
+  <h2>HTML</h2>
+  <a href="https://adrianvic.github.io/" style="width: fit-content;">
+    <div style="height: 10em; width: fit-content; display: flex; border: medium solid white;">
+      <p style="font-size: 3em; margin: auto 0px 1rem 1rem; color: white; text-decoration: none;">tenkuma</p>
+      <img src="https://adrianvic.github.io/static/images/arrow-cursor.svg" style="height=100%; filter: invert(1);" alt="Computer cursor arrow line drawing">
+    </div>
+  </a>
+  {% highlight "html" %}
+<a href="https://adrianvic.github.io/" style="width: fit-content;">
+  <div style="height: 10em; width: fit-content; display: flex; border: medium solid white;">
+    <p style="font-size: 3em; margin: auto 0px 1rem 1rem; color: white; text-decoration: none;">tenkuma</p>
+    <img src="https://adrianvic.github.io/static/images/arrow-cursor.svg" style="height=100%; filter: invert(1);" alt="Computer cursor arrow line drawing">
+  </div>
+</a>
+  {% endhighlight %}
+</main>

@@ -46,7 +46,7 @@ layout: base.njk
                 {{ i88x31("WEBP.gif") }}
                 {{ i88x31("rainbowrain.gif") }}
                 {{ i88x31("blasphemy.gif") }}
-                {{ i88x31("css3.gif") }}
+                {{ i88x31("wrongos.gif") }}
                 {{ i88x31("best_viewed_with_open_eyes.gif") }}
                 {{ i88x31("gnu-linux.gif") }}
             </div>
@@ -189,13 +189,15 @@ layout: base.njk
 
     <div id="homeFriends">
         <div>
-            <h1 class="nomargin negativeMargin">Friends</h1>
+            <h1 class="nomargin negativeMargin">Hotlinks</h1>
             <hr style="margin-bottom: .4em;">
         </div>
 
         <div class="centeredItemsBox">
             <a href="https://www.youtube.com/@mrnandokk">{{ i88x31("mrnandokk.gif", i18n[langKey].mrnandoChannel, false) }}</a>
+            <a href="https://appak.neocities.org/">{{ i88x31("appak.png", "appak", false) }}</a>
         </div>
+        <p style="text-align: center;"><a href="{{ ('/' ~ langKey ~ '/misc/hotlinking') | url }}">{{ i18n[langKey].addMe }}?</a></p>
     </div>
 
     <div id="homeWebrings">

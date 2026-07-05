@@ -97,7 +97,8 @@ module.exports = {
     liked: "liked",
     changes: "changes",
     readingTime: "Reading time",
-    mastodonPageDescription: "This is an archive of all my Mastodon posts."
+    mastodonPageDescription: "This is an archive of all my Mastodon posts.",
+    addMe: "Add me"
   },
   pt: {
     language: "português",
@@ -170,6 +171,7 @@ module.exports = {
     liked: "curtiu",
     changes: "mudanças",
     readingTime: "Tempo de leitura",
-    mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon."
+    mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon.",
+    addMe: "Me adicionar"
   }
 };
