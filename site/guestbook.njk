@@ -1,0 +1,14 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/guestbook/index.html"
+layout: iframe.njk
+title: Adrian Victor:Guestbook
+headerLink: social
+---
+<main>
+    <p>{{ i18n[langKey].guestbookWarning | safe }}</p>
+    <button id="guestbookConfirmButton" onClick="window.location.href = 'https://iframe.chat/embed?chat=17048300'">Load</button>
+</main>

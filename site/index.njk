@@ -177,16 +177,24 @@ headerLink: home
 
         {% for post in collections.post %}
           {% if post.data.langKey == langKey %}
-            <li>
-            <p>
+            <ul>
+                <li>
                 <a href="{{ post.url | url }}">{{ post.data.postTitle }}</a>
-            </p>
-            <p><b>{{ post.data.date | postDate }}</b></p>
-            </li>
+                <b>{{ post.data.date | postDate }}</b>
+                </li>
+            </ul>
           {% endif %}
         {% endfor %}
 
         <p class="end-text"><a href="{{ ('/' ~ langKey ~ '/blog/') | url }}">{{ i18n[langKey].showMore }}</a></p>
+    </div>
+
+    <div id="homeWebrings">
+        <div>
+            <h1 class="nomargin negativeMargin">Guestbook</h1>
+            <hr style="margin-bottom: .4em;">
+        </div>
+        {% include 'widgets/chattable.html' %}
     </div>
 
     <div id="homeFriends" class="burn">
@@ -195,10 +203,12 @@ headerLink: home
             <hr style="margin-bottom: .4em;">
         </div>
 
-        <div class="centeredItemsBox">
+        <div class="hotlinks88x31">
             <a href="https://www.youtube.com/@mrnandokk">{{ i88x31("mrnandokk.gif", i18n[langKey].mrnandoChannel, false) }}</a>
             <a href="https://appak.neocities.org/">{{ i88x31("appak.png", "appak", false) }}</a>
             <a href="https://bribribribribri.xyz/" target="_blank">{{ i88x31("brigif.gif", "bribribribribri", false) }}</a>
+            <a href="https://status.cafe/">{{ i88x31("statuscafe.png", "Status Cafe", false) }}</a>
+            <a href="https://9larp.net/">{{ i88x31("9larpfinal.png", "9larp", false) }}</a>
         </div>
         <p style="text-align: center;"><a href="{{ ('/' ~ langKey ~ '/misc/hotlinking') | url }}">{{ i18n[langKey].addMe }}?</a></p>
     </div>

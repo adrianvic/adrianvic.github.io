@@ -40,6 +40,7 @@ a:hover {
 
 li {
     list-style-type: none;
+    margin-bottom: .4em;
 }
 
 dt::before {
@@ -919,10 +920,11 @@ header div:first-child {
     color: white;
 }
 
-.centeredItemsBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hotlinks88x31 {
+    display: grid;
+    width: fit-content;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .internetometerAside img {
@@ -1157,6 +1159,20 @@ header div:first-child {
 
 #socialPosts {
     transition: .4s;
+}
+
+#chattable {
+    background-color: black;
+    border: medium solid rgb(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.iframe {
+    padding: 1rem;
+}
+
+.iframe p {
+    font-size: medium;
 }
 
 /* Animations */
