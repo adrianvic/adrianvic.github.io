@@ -16,6 +16,9 @@ import readingTime from 'eleventy-plugin-reading-time';
 
 // import i18n from "./_data/i18n.js";
 
+const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS);
+console.log("Production: ", production ? "true" : "false");
+
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("site");
 
@@ -31,7 +34,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(mastoarchive, {
     host: "https://mstdn.social",
     userId: "114661188739031987",
-    cacheLocation: ".cache/mastodon.json"
+    cacheLocation: ".cache/mastodon.json",
+    isProduction: production
   });
   // eleventyConfig.addPlugin(purgeCssPlugin, {
   //   config: "./purgecss.config.cjs",
