@@ -124,6 +124,18 @@
                 }
             ]
         },
+        "services": {
+            "links": [
+                {
+                    "name": "Disroot",
+                    "link": "https://disroot.org/",
+                    "description": {
+                        "en": "Privacy respecting e-mail, Nextcloud storage, XMPP server, encrypted file sharing and other cool services.",
+                        "pt": "E-mail que respeita sua privacidade, armazenamento Nextcloud, servidor XMPP, compartilhamento de arquivos criptografados e outros serviços legais."
+                    }
+                }
+            ]
+        },
         "piracy": {
             "88x31": ["piracy.png"],
             "links": [
