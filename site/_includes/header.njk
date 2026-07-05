@@ -21,10 +21,10 @@
     
         <ul id="headerLinks">
             {% if langKey %}
-            <a href="{{ ('/' ~ langKey ~ '/') | url }}">{{ i18n[langKey].home }}</a>
-            <a href="{{ ('/' ~ langKey ~ '/blog/') | url }}">blog</a>
-            <a href="{{ ('/' ~ langKey ~ '/misc/') | url }}">misc</a>
-            <a href="{{ ('/' ~ langKey ~ '/social/') | url }}">social</a>
+            <a href="{{ ('/' ~ langKey ~ '/') | url }}"{% if headerLink == "home" %} style="text-decoration: underline; color: white;"{% endif %}>{{ i18n[langKey].home }}</a>
+            <a href="{{ ('/' ~ langKey ~ '/blog/') | url }}" {% if headerLink == "blog" %} style="text-decoration: underline; color: white;"{% endif %}>blog</a>
+            <a href="{{ ('/' ~ langKey ~ '/misc/') | url }}" {% if headerLink == "misc" %} style="text-decoration: underline; color: white;"{% endif %}>misc</a>
+            <a href="{{ ('/' ~ langKey ~ '/social/') | url }}" {% if headerLink == "social" %} style="text-decoration: underline; color: white;"{% endif %}>social</a>
             {% endif %}
             {% if langKey == undefined %}
             <a href="{{ ('/') | url }}">home</a>

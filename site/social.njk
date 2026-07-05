@@ -6,7 +6,12 @@ pagination:
 permalink: "/{{ langKey }}/social/index.html"
 layout: base.njk
 title: Adrian Victor:Social
+headerLink: social
 ---
+<script>
+    const clickHereToContinueLocalized = "{{ i18n[langKey].clickHereToContinue }}";
+</script>
+<script src="{{ '/static/scripts/social.js' | url }}" defer></script>
 <aside>
     <div id="socialAside">
         <div>
@@ -18,8 +23,11 @@ title: Adrian Victor:Social
     {% include 'widgets/internetometer-aside.html' %}
 </aside>
 <main>
+    <div id="socialAlert" class="box alert" style="margin-bottom: 1em;">
+            <p>{{ i18n[langKey].socialContentNotRated }}</p>
+        </div>
     <p>{{ i18n[langKey].mastodonPageDescription }}</p>
-    <ul>
+    <ul id="socialPosts">
       {% for post in mastodon.posts %}
         <hr class="nomargin">
         <div class="mastodonPost">

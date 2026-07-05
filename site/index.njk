@@ -5,6 +5,7 @@ pagination:
     alias: langKey
 permalink: "/{{ langKey }}/index.html"
 layout: base.njk
+headerLink: home
 ---
 {% from "macros.njk" import i88x31 with context %}
 {% from "macros.njk" import videoCard with context %}
@@ -196,6 +197,7 @@ layout: base.njk
         <div class="centeredItemsBox">
             <a href="https://www.youtube.com/@mrnandokk">{{ i88x31("mrnandokk.gif", i18n[langKey].mrnandoChannel, false) }}</a>
             <a href="https://appak.neocities.org/">{{ i88x31("appak.png", "appak", false) }}</a>
+            <a href="https://bribribribribri.xyz/" target="_blank">{{ i88x31("brigif.gif", "bribribribribri", false) }}</a>
         </div>
         <p style="text-align: center;"><a href="{{ ('/' ~ langKey ~ '/misc/hotlinking') | url }}">{{ i18n[langKey].addMe }}?</a></p>
     </div>

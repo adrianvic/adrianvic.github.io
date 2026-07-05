@@ -98,7 +98,9 @@ module.exports = {
     changes: "changes",
     readingTime: "Reading time",
     mastodonPageDescription: "This is an archive of all my Mastodon posts.",
-    addMe: "Add me"
+    addMe: "Add me",
+    socialContentNotRated: "Social content is not rated and may mention topics not appropriate for all ages.",
+    clickHereToContinue: "Click here to continue"
   },
   pt: {
     language: "português",
@@ -172,6 +174,8 @@ module.exports = {
     changes: "mudanças",
     readingTime: "Tempo de leitura",
     mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon.",
-    addMe: "Me adicionar"
+    addMe: "Me adicionar",
+    socialContentNotRated: "Conteúdo das redes sociais não é monitorado e pode conter tópicos não apropriados para todas as idades.",
+    clickHereToContinue: "Clique aqui para continuar"
   }
 };

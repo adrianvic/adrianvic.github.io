@@ -1,5 +1,6 @@
 let data = {
 	layout: "_includes/post.njk",
+	headerLink: "blog",
 	eleventyComputed: {
 		lastModified: function(data) {
 			const fs = require('fs');
