@@ -1,0 +1,28 @@
+---
+pagination:
+  data: i18n
+  size: 1
+  alias: langKey
+permalink: "/{{ langKey }}/iframe/guestbook/index.html"
+layout: iframe.njk
+title: Adrian Victor:Guestbook
+headerLink: social
+---
+<script defer>
+if (localStorage.getItem("autoLoadGuestBook") == "true") {
+  window.location.href = 'https://iframe.chat/embed?chat=17048300';
+}
+
+function loadGuestbook() {
+  const askAgain = document.querySelector("#dontAskAgain").value;
+  if (askAgain) {
+    localStorage.setItem("autoLoadGuestbook", true);
+  }
+  window.location.href = 'https://iframe.chat/embed?chat=17048300';
+}
+</script>
+<main>
+    <p>{{ i18n[langKey].guestbookWarning | safe }}</p>
+    <label><input id="dontAskAgain" type="checkbox" style="margin-right: .4em;">{{ i18n[langKey].dontAskAgain }}</label>
+    <div style="margin-top: 1em;"><button id="guestbookConfirmButton" style="margin-top: auto;" onclick="loadGuestbook()">Load</button></div>
+</main>

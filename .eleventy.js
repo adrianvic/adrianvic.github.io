@@ -16,8 +16,8 @@ import readingTime from 'eleventy-plugin-reading-time';
 
 // import i18n from "./_data/i18n.js";
 
-const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS);
-console.log("Production: ", production ? "true" : "false");
+const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS || process.env.IS_PRODUCTION);
+console.log("Production:", production ? "true" : "false");
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("site");

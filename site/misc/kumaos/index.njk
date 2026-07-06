@@ -1,0 +1,29 @@
+---
+layout: text.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+pageTitle: KumaOS
+---
+{% from "macros.njk" import i88x31 with context %}
+
+<script type="module" src="{{ '/static/kumos/kernel.mjs' | url }}" defer></script>
+<script type="module" src="{{ '/static/kumos/shell.mjs' | url }}" defer></script>
+<script type="module" src="{{ '/static/kumos/guestbook.mjs' | url }}" defer></script>
+<script type="module" src="{{ '/static/kumos/browser.mjs' | url }}" defer></script>
+<script type="module" src="{{ '/static/kumos/apps.mjs' | url }}" defer></script>
+<script type="module" src="{{ '/static/kumos/taskmanager.mjs' | url }}" defer></script>
+<main>
+  <!-- <script src="https://iframe.chat/scripts/main.min.js"></script> -->
+  <!-- <div class="window" id="guestbookWindow">
+    <div class="windowHeader" id="guestbookWindowHeader">
+      <p>Guestbook</p>
+    </div>
+  </div>
+  <script>
+      chattable.initialize({
+          theme: "moderno"
+      });
+  </script> -->
+</main>

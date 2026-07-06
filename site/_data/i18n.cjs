@@ -113,7 +113,8 @@ module.exports = {
     sfxCheckboxAlt: "Sound effects",
     videoArtworkAlt: "Video artwork",
     songSelectAlt: "Song selector",
-    guestbookWarning: "Load guestbook widget? You're subject to <a href='https://iframe.chat/tos.html'>Chattable's terms of service</a>."
+    guestbookWarning: "Load guestbook widget? You're subject to <a href='https://iframe.chat/tos.html'>Chattable's terms of service</a>.",
+    dontAskAgain: "Don't ask again"
   },
   pt: {
     language: "português",
@@ -202,6 +203,7 @@ module.exports = {
     sfxCheckboxAlt: "Efeitos sonoros",
     videoArtworkAlt: "Capa do vídeo",
     songSelectAlt: "Seletor de música",
-    guestbookWarning: "Carregar o guestbook? Você estará sujeito aos <a href='https://iframe.chat/tos.html'>termos de uso do Chattable</a>."
+    guestbookWarning: "Carregar o guestbook? Você estará sujeito aos <a href='https://iframe.chat/tos.html'>termos de uso do Chattable</a>.",
+    dontAskAgain: "Não pergunte novamente"
   }
 };

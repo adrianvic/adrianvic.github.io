@@ -3,7 +3,7 @@ import { registerElementHint } from "./tips.js";
 const notificationBox = document.createElement('div');
 notificationBox.classList.add('notificationBox');
 
-export async function showNotification(title, subtitle, time, hint) {
+export async function showNotification(title, subtitle, time = 5000, hint) {
     if (!hint) {
         hint = headeri18n.notificationDefaultHint;
     }
