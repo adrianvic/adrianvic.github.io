@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: langKey
 pageTitle: KumaOS
+background: bliss-dark.jpg
 ---
 {% from "macros.njk" import i88x31 with context %}
 
@@ -15,15 +16,19 @@ pageTitle: KumaOS
 <script type="module" src="{{ '/static/kumos/apps.mjs' | url }}" defer></script>
 <script type="module" src="{{ '/static/kumos/taskmanager.mjs' | url }}" defer></script>
 <main>
-  <!-- <script src="https://iframe.chat/scripts/main.min.js"></script> -->
-  <!-- <div class="window" id="guestbookWindow">
-    <div class="windowHeader" id="guestbookWindowHeader">
-      <p>Guestbook</p>
-    </div>
-  </div>
-  <script>
-      chattable.initialize({
-          theme: "moderno"
-      });
-  </script> -->
+  <h1>Welcome to KumOS</h1>
+  <p>There's not much to do right now as the system is being developed... Try running <code>apps</code> to see what's available.</p>
 </main>
+<aside>
+  <div id="aboutChangelog">
+        <div>
+            <h1 class="nomargin negativeMargin">{{ i18n[langKey].changes | smartTitle }}</h1>
+            <hr style="margin-bottom: .4em;">
+        </div>
+        <ul>
+          {%- for commit in collections.recentChanges %}
+                <li class="doubleLine"><a class="textColored" href="https://github.com/adrianvic/adrianvic.github.io/commit/{{ commit.hash }}"><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</a></li>
+          {%- endfor %}
+        </ul>
+    </div>
+</aside>
