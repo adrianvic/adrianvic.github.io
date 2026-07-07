@@ -1,7 +1,7 @@
-import { Application, Window, promoteWindow, registerApplication, getScreenRoot, getApplications } from "./kernel.mjs";
+import { Application, Window, promoteWindow, registerApplication, getScreenRoot, getApplications } from "../kernel.mjs";
 
 const app = new Application('apps', (p) => {
-    const w = new Window();
+    const w = new Window(p);
     w.setTitle("App list");
     w.content.style.padding = "1rem";
 
@@ -10,7 +10,7 @@ const app = new Application('apps', (p) => {
         const item = document.createElement("li");
         const link = document.createElement("a");
         link.innerText = app.name;
-        link.addEventListener('click', () => app.fn());
+        link.addEventListener('click', () => app.bootstrap());
         item.appendChild(link);
         list.appendChild(item);
     })
@@ -26,4 +26,4 @@ const app = new Application('apps', (p) => {
     promoteWindow(w);
 })
 
-registerApplication(app);
+export default app;

@@ -1,34 +1,34 @@
 ---
-layout: text.njk
+pageTitle: kumaOS
 pagination:
   data: languages
   size: 1
   alias: langKey
-pageTitle: KumaOS
-background: bliss-dark.jpg
 ---
-{% from "macros.njk" import i88x31 with context %}
 
-<script type="module" src="{{ '/static/kumos/kernel.mjs' | url }}" defer></script>
-<script type="module" src="{{ '/static/kumos/shell.mjs' | url }}" defer></script>
-<script type="module" src="{{ '/static/kumos/guestbook.mjs' | url }}" defer></script>
-<script type="module" src="{{ '/static/kumos/browser.mjs' | url }}" defer></script>
-<script type="module" src="{{ '/static/kumos/apps.mjs' | url }}" defer></script>
-<script type="module" src="{{ '/static/kumos/taskmanager.mjs' | url }}" defer></script>
-<main>
-  <h1>Welcome to KumOS</h1>
-  <p>There's not much to do right now as the system is being developed... Try running <code>apps</code> to see what's available.</p>
-</main>
-<aside>
-  <div id="aboutChangelog">
-        <div>
-            <h1 class="nomargin negativeMargin">{{ i18n[langKey].changes | smartTitle }}</h1>
-            <hr style="margin-bottom: .4em;">
-        </div>
-        <ul>
-          {%- for commit in collections.recentChanges %}
-                <li class="doubleLine"><a class="textColored" href="https://github.com/adrianvic/adrianvic.github.io/commit/{{ commit.hash }}"><b>{{ commit.abbrevHash }}</b> {{ commit.subject }}</a></li>
-          {%- endfor %}
-        </ul>
-    </div>
-</aside>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ '/static/kumos/kumos.css' | url }}">
+  <script type="module" src="{{ '/static/kumos/kernel.mjs' | url }}" defer></script>
+  <script type="module" src="{{ '/static/kumos/system/init.mjs' | url }}" defer></script>
+</head>
+<body>
+  <div style="user-select: none; pointer-events: none; display: flex; gap: 1em;">
+    <h1>kumaOS</h1>
+    <p>demo - not for production</p>
+  </div>
+  <style>
+    body {
+      background-image: url("{{ '/static/images/bliss-dark.jpg' | url }}");
+      background-size: cover;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+  </style>
+</body>
+</html>

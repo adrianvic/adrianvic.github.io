@@ -1,7 +1,7 @@
-import { Application, Window, promoteWindow, registerApplication, getScreenRoot } from "./kernel.mjs";
+import { Application, Window, promoteWindow, registerApplication, getScreenRoot } from "../kernel.mjs";
 
 const app = new Application('browser', (p) => {
-    const w = new Window();
+    const w = new Window(p);
     w.setTitle("Web browser");
     const iframe = document.createElement("iframe");
     iframe.src = "https://adrianvic.github.io";
@@ -29,4 +29,4 @@ const app = new Application('browser', (p) => {
     })
 })
 
-registerApplication(app);
+export default app;

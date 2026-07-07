@@ -1,0 +1,138 @@
+.kumosroot {
+    --theme-color: #4c6d6e;
+    --theme-color-lighter: #84b9bb;
+    --theme-color-variation: #568b8d;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .window {
+        position: absolute;
+        z-index: 9;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        resize: both;
+        overflow: hidden;
+    }
+    
+    .window.maximized {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: auto;
+    }
+    
+    .windowHeader {
+        padding: 10px;
+        cursor: move;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #000000;
+        flex: 0 0 auto;
+    }
+    
+    .windowHeader .buttonContainer {
+        display: flex;
+        gap: .4em;
+    }
+    
+    .windowContent {
+        width: 100%;
+        height: 100%;
+        flex: 1 1 auto;
+        border: 0;
+    }
+    
+    .windowContent {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+    
+    .windowHeader {
+        display: flex;
+    }
+    
+    .windowHeaderTitle {
+        margin: 0px;
+        margin-right: auto;
+    }
+    
+    .kumosBar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--theme-color);
+        padding: .4em;
+        display: flex;
+        gap: 1em;
+    }
+    
+    .kumosBar * {
+        height: 100%;
+    }
+    
+    .windowHeaderButton {
+        height: 1em;
+        width: 1em;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
+        line-height: 1;
+        cursor: pointer;
+    }
+    
+    .windowHeaderButton.close::before {
+        content: "×";
+    }
+    
+    .windowHeaderButton.close {
+        background-color: rgba(255, 0, 0, 0.6);
+        color: white;
+    }
+    
+    .windowHeaderButton.maximize::before {
+        content: "□";
+    }
+    
+    .windowHeaderButton.maximize {
+        background-color: rgba(255, 255, 0, 0.6);
+        color: black;
+    }
+    
+    button, input, textarea {
+        padding: .2em;
+        border: none;
+    }
+    
+    textarea {
+        resize: none;
+    }
+
+    li {
+        margin-inline-start: 1em;
+    }
+}

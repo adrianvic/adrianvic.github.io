@@ -1,8 +1,8 @@
-import { Application, Window, promoteWindow, registerApplication, getScreenRoot, getProcList } from "./kernel.mjs";
-import { notify } from "./shell.mjs";
+import { Application, Window, promoteWindow, registerApplication, getScreenRoot, getProcList } from "../kernel.mjs";
+import { notify } from "../system/shell.mjs";
 
 function draw(p) {
-    const w = new Window();
+    const w = new Window(p);
     w.setTitle("Guestbook");
     w.content.innerHTML = `
     <script src="https://iframe.chat/scripts/main.min.js"></script>
@@ -35,4 +35,4 @@ function main(p) {
 }
 
 const app = new Application('guestbook', main);
-registerApplication(app);
+export default app;

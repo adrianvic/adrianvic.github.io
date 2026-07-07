@@ -1,4 +1,4 @@
-import { Application, Window, promoteWindow, registerApplication, getScreenRoot, getProcList } from "./kernel.mjs";
+import { Application, Window, promoteWindow, getScreenRoot, getProcList } from "../kernel.mjs";
 
 const app = new Application('task', (p) => {
     function update() {
@@ -7,7 +7,7 @@ const app = new Application('task', (p) => {
         getProcList().forEach(proc => {
             const item = document.createElement("li");
             const link = document.createElement("a");
-            link.innerText = `${proc.pid} -> ${proc.name}`;
+            link.innerText = `${proc.pid} -> ${proc.parent.length === 0 ? `` : proc.parent} ${proc.name}`;
             item.appendChild(link);
             list.appendChild(item);
         })
@@ -31,4 +31,4 @@ const app = new Application('task', (p) => {
     promoteWindow(w);
 })
 
-registerApplication(app);
+export default app;

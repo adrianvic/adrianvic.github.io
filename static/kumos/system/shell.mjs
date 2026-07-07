@@ -1,5 +1,5 @@
-import { getScreenRoot, getApplications, Process } from "./kernel.mjs";
-import { showNotification } from "../scripts/notification.js";
+import { getScreenRoot, getApplications, Process } from "../kernel.mjs";
+import { showNotification } from "../../scripts/notification.js";
 
 export function notify(title, text, time) {
     showNotification(title, text, time);
@@ -9,14 +9,14 @@ function runApp(name) {
     let launched = false;
     getApplications().forEach(app => {
         if (app.name == name) {
-            new Process(app);
+            app.bootstrap();
             launched = true;
         }
     })
     if (!launched) alert("Not found.");
 }
 
-function createShell() {
+export default function createShell(p) {
     const bar = document.createElement('div');
     bar.classList.add("kumosBar");
 
@@ -31,6 +31,3 @@ function createShell() {
 
     getScreenRoot().appendChild(bar);
 }
-
-createShell();
-showNotification("KumOS Shell", "Welcome to KumOS, everything is work-in-progress! Try running apps to see available packages.", 10000);
