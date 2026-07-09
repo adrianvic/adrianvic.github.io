@@ -1,0 +1,8 @@
+{
+    "pageTitle": "Web assets",
+	"pageDescription": "My library of assets/scripts for websites.",
+    "intro": "This page's dedicated to showcasing some stuff I made for websites that may also be useful to you. Everything's on public domain unless otherwise stated, and atributtion is very appreciated ;-)",
+    "tumblrAdapt": "A script that detects if the URL attribute <i>tumblr</i> is <i>true</i> and adapts the website design to dodge Tumblr menu, useful if you point your blog HTML to your website (doable with iframe). It also sanitizes external links adding <i>target=\"_blank\"</i> (opens in a new tab) and preserves the <i>tumblr</i> attribute in each link.",
+    "click": "Script that plays a custom sound when you click the page or hover a link. The code checks <i>disablesfx</i> on localstorage, if it's <i>true</i> the sound does not play. Localstorage is checked when playing the audio, so it's possible to enable/disable it without reloading the page.",
+    "ccd": "Triggered when the user types the famous Konami Code inside the page and redirects to another page. The script name is an abbreviation of Konami Code, but with a C instead of K to be less obvious. It's pretty easy to modify it do other stuff."
+}

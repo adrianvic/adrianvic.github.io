@@ -1,0 +1,8 @@
+{
+    "pageTitle": "Recursos web",
+	"pageDescription": "Meu acervo de assets/scripts para websites.",
+    "intro": "Essa página é dedicada para reunir algumas coisas que eu fiz para websites que podem ser úteis para você também. Tudo daqui está em domínio público, a não ser que esteja escrito o contrário, mas deixar os créditos seria legal ;-)",
+    "tumblrAdapt": "Um script que detecta se o atributo de URL <i>tumblr</i> é <i>true</i> e adapta o design do site para desviar do menu do Tumblr, caso você coloque seu site como blog do Tumblr (dá para fazer com iframe). Ele também limpa os links adicionando <i>target=\"_blank\"</i> (abre em outra janela) para links externos e preserva o atributo <i>tumblr</i> em todos.",
+    "click": "Script que toca um som customizado quando você clica ou coloca o cursor em cima de um link. O código verifica o valor de <i>disablesfx</i> no localstorage, se ele for <i>true</i> o som não toca. O localstorage é verificado toda vez que o som toca, então dá para habilitar/desabilitar sem recarregar a página.",
+    "ccd": "Acionado quando o usuário digita o famoso Konami Code dentro da página e redireciona para outra página. O nome é a abreviação de Konami Code, mas com C ao invés de K para ficar menos óbvio. É bem fácil modificar ele para fazer outra coisa."
+}

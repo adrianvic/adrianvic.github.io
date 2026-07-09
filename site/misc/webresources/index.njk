@@ -1,0 +1,123 @@
+---
+layout: text.njk
+pagination:
+  data: languages
+  size: 1
+  alias: langKey
+---
+{% from "macros.njk" import i88x31 with context %}
+
+<main>
+  <div class="box pageHeaderBox">
+    <h1>{{ t.pageTitle }}</h1>
+    <p>{{ t.intro }}</p>
+  </div>
+  <hr>
+
+  <style>
+    pre.language-js {
+      height: 10em;
+      resize: vertical;
+    }
+  </style>
+
+  <h2>tumblr-adapt.js</h2>
+  <p>{{ t.tumblrAdapt | safe }}</p>
+  {% highlight 'js'%}const isTumblr = new URLSearchParams(location.search).get("tumblr") == "true"; // add ?tumblr=true to the tumblr iframe src attribute
+
+function adaptToTumblrLayout() {
+    const header = document.querySelector('header'); // change to anything that would return your header
+    header.classList.add("tumblr"); // your CSS must handle the rest
+
+    // will calc the size of the header and save as a CSS variable called --header-height
+    const setHeaderOffset = () => {
+      const height = header.offsetHeight + "px";
+      document.documentElement.style.setProperty('--header-height', height);
+    };
+
+    // do this once and when the page resizes
+    setHeaderOffset();
+    window.addEventListener('resize', setHeaderOffset);
+    
+    // sanitizing links so they don't open in your tumblr iframe
+    // also making sure all links carry the tumblr property!
+    document.querySelectorAll("a").forEach(link => {
+        if (new URL(link.href).host !== location.host) {
+            link.target = "_blank";
+        }
+        const u = new URL(link.href);
+        u.searchParams.set("tumblr", "true");
+        link.href = u.toString();
+    });
+}
+
+if (isTumblr) adaptToTumblrLayout();
+
+/* 
+    By tenkuma ^^
+    https://adrianvic.github.io
+    For those thumblrs that change the blog HTML for an iframe poiting to your personal website!
+*/{% endhighlight %}
+
+<h2>click.js</h2>
+<p>{{ t.click | safe }}</p>
+
+{% highlight 'js' %}// these must be URLs pointing to your audio!
+const click = new Audio(`https://adrianvic.github.io/static/audio/click.ogg`);
+const hover = new Audio(`https://adrianvic.github.io/static/audio/hover.ogg`);
+click.preload = "auto";
+hover.preload = "auto";
+
+// adjust volume below
+click.volume = 0.5;
+hover.volume = 0.5;
+
+
+document.body.addEventListener("click", () => {
+    // set disablesfx in the local storage to true to
+    // disable sound effects
+    if (localStorage.getItem("disablesfx") == 'true') return;
+    
+    click.currentTime = 0;
+    click.play().catch(() => {});
+});
+
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener("mouseenter", () => {
+        if (localStorage.getItem("disablesfx") == 'true') return;
+        hover.currentTime = 0;
+        hover.play().catch(() => {});
+    })
+})
+
+/* 
+    By tenkuma ^^
+    https://adrianvic.github.io
+    For those thumblrs that change the blog HTML for an iframe poiting to your personal website!
+*/{% endhighlight %}
+
+<h2>ccd.js</h2>
+<p>{{ t.ccd }}</p>
+
+{% highlight 'js' %}const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+let keyIndex = 0;
+
+document.addEventListener('keydown', function(event) {
+  if (event.code === konamiCode[keyIndex]) {
+    keyIndex++;
+    if (keyIndex === konamiCode.length) {
+        // change this to your link!
+        window.location.href = `https://adrianvic.github.io/static/toyourdreams.txt`
+        keyIndex = 0;
+    }
+  } else {
+    keyIndex = 0;
+  }
+});
+
+/* 
+    By tenkuma ^^
+    https://adrianvic.github.io
+    For those thumblrs that change the blog HTML for an iframe poiting to your personal website!
+*/{% endhighlight %}
+</main>
