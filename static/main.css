@@ -64,10 +64,15 @@ select {
 
 header {
     display: flex;
+    flex-direction: column;
     border-bottom: thick solid rgba(255, 255, 255, 0.1);
-    width: 100%;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header .headerContent {
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
 }
 
 header.tumblr {
@@ -81,7 +86,7 @@ header.tumblr {
     background-color: rgb(0,0,0,0.8);
 }
 
-header div {
+header #headerTitle, header #linksHelper {
     padding: 1rem;
 }
 

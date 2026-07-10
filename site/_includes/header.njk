@@ -1,5 +1,6 @@
 <header>
-    <div>
+    <div class="headerContent">
+    <div id="headerTitle">
         <h1>{{ title or "Adrian Victor" }}</h1>
         <p id="headerSubtitle"><i>{{ subtitle or "Fanasy is not a crime, find your castle in the sky." }}</i></p>
         <script>
@@ -43,5 +44,7 @@
             <a href="https://github.com/adrianvic" rel="me" style="display: none;">github.com/aaronpk</a>
         </ul>
     </div>
+    </div>
+    {# <marquee scrollamount="10vw" style="opacity: .8; background-color: rgb(0,0,0, 0.4); postion: fixed; bottom: 0; left: 0;">test</marquee> #}
 </header>
 <script type="module" src="{{ '/static/scripts/tumblr-adapt.js' | url }}"></script>
