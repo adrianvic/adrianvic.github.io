@@ -1310,15 +1310,15 @@ header div:first-child {
         margin: auto;
     }
 
-    header {
-        padding-top: 1.4rem;
+    .headerContent {
+        padding-top: 1rem;
         text-align: center;
         flex-direction: column;
     }
 
     header ul {
         margin: auto;
-        margin-bottom: 1.4rem;
+        margin-bottom: 1rem;
     }
 
     main { 
