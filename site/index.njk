@@ -16,13 +16,51 @@ headerLink: home
 <div id="homeSquares"></div>
 <script src="{{ '/static/scripts/home.js' | url }}" defer></script>
 
+<script>
+    const headeri18n =
+        {
+            by: "{{ i18n[langKey].by | safe }}",
+            options: "{{ i18n[langKey].options | safe }}",
+            hideBackground: "{{ i18n[langKey].hideBackground | safe }}",
+            back: "{{ i18n[langKey].back | safe }}",
+            permissionIssue: "{{ i18n[langKey].permissionIssue | safe }}",
+            permissionIssueNotificationContent: "{{ i18n[langKey].permissionIssueNotificationContent | safe }}",
+            notificationDefaultHint: "{{ i18n[langKey].notificationDefaultHint | safe }}",
+            disableSoundEffects: "{{ i18n[langKey].disableSoundEffects | safe }}",
+            windsArtAlt: "{{ i18n[langKey].windsArtAlt | safe }}",
+            velkommenArtAlt: "{{ i18n[langKey].velkommenArtAlt | safe }}",
+            pgArtAlt: "{{ i18n[langKey].pgArtAlt | safe }}",
+            gearsAlt: "{{ i18n[langKey].gearsAlt | safe }}",
+            soundOffAlt: "{{ i18n[langKey].soundOffAlt | safe }}",
+            soundOnAlt: "{{ i18n[langKey].soundOnAlt | safe }}",
+            volumeSliderAlt: "{{ i18n[langKey].volumeSliderAlt | safe }}",
+            backgroundCheckAlt: "{{ i18n[langKey].backgroundCheckAlt | safe }}",
+            sfxCheckboxAlt: "{{ i18n[langKey].sfxCheckboxAlt | safe }}",
+            songSelectAlt: "{{ i18n[langKey].songSelectAlt | safe }}",
+            showMore: "{{ i18n[langKey].showMore | safe }}",
+            showLess: "{{ i18n[langKey].showLess | safe }}",
+        }
+</script>
+
 <main id="boxChain">
     <noscript>
         <style>
             .hs {
                 display: unset !important;
             }
+            
             #homeSquares {
+                display: none;
+            }
+
+            #homeWebrings.less {
+                overflow: unset;
+                max-height: unset;
+                -webkit-mask: none; 
+                mask: none;
+            }
+
+            #homeWebringsShowMore {
                 display: none;
             }
         </style>
@@ -189,7 +227,7 @@ headerLink: home
         <p class="end-text"><a href="{{ ('/' ~ langKey ~ '/blog/') | url }}">{{ i18n[langKey].showMore }}</a></p>
     </div>
 
-    <div id="homeWebrings">
+    <div id="homeGuestbook">
         <div>
             <h1 class="nomargin negativeMargin">Guestbook</h1>
             <hr style="margin-bottom: .4em;">
@@ -213,7 +251,7 @@ headerLink: home
         <p style="text-align: center;"><a href="{{ ('/' ~ langKey ~ '/misc/hotlinking') | url }}">{{ i18n[langKey].addMe }}?</a></p>
     </div>
 
-    <div id="homeWebrings">
+    <div id="homeWebrings" class="less">
         <div>
             <h1 class="nomargin negativeMargin">Webrings</h1>
             <hr style="margin-bottom: .4em;">
@@ -264,6 +302,8 @@ headerLink: home
 
         {% include 'widgets/droidring.html' %}
     </div>
+
+    <a id="homeWebringsShowMore">{{ i18n[langKey].showMore }}...</a>
 
     {% include 'widgets/internetometer-aside.html' %}
 

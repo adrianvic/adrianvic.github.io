@@ -49,3 +49,11 @@ function updateSquare() {
     selectedSquareDiv = div.id;
     div.classList.toggle("selected");
 }
+
+const homeWebrings = document.getElementById("homeWebrings");
+const homeWebringsShowMore = document.getElementById("homeWebringsShowMore");
+
+homeWebringsShowMore.addEventListener("click", () => {
+    homeWebrings.classList.toggle("less");
+    homeWebringsShowMore.textContent = homeWebrings.classList.contains("less") ? headeri18n.showMore : headeri18n.showLess;
+});
