@@ -1,16 +1,19 @@
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const body = document.querySelector('body');
-const elements = document.querySelectorAll('[data-tip]');
 const hint = document.querySelector("#headerSubtitle");
-const hintPanelDefaultText = hint.innerHTML;
+const hintPanelDefaultText = hint ? hint.innerHTML : null;
 let fixedHint;
 let currentObserver;
 
-elements.forEach(el => {
-  registerElementHint(el);
-})
+if (hint) {
+  const elements = document.querySelectorAll('[data-tip]');
+  elements.forEach(el => {
+    registerElementHint(el);
+  });
+}
 
 function cleanup() {
+  if (!hint) return;
   hint.innerHTML = hintPanelDefaultText;
   hint.classList.remove('fixed');
   if (fixedHint) {

@@ -9,7 +9,7 @@ let info = [
 ]
 
 info.forEach(square => {
-    let rawHTML = `<div class='headerSquare' id='${square[1]}'><img src='/static/images/${square[2]}' alt='${square[3]}'></div>`;
+    let rawHTML = `<div class='headerSquare' id='${square[1]}'><img src='${rootPrefix}static/images/${square[2]}' alt='${square[3]}'></div>`;
     _homeSquares.innerHTML += rawHTML;
 });
 
@@ -49,3 +49,11 @@ function updateSquare() {
     selectedSquareDiv = div.id;
     div.classList.toggle("selected");
 }
+
+const homeWebrings = document.getElementById("homeWebrings");
+const homeWebringsShowMore = document.getElementById("homeWebringsShowMore");
+
+homeWebringsShowMore.addEventListener("click", () => {
+    homeWebrings.classList.toggle("less");
+    homeWebringsShowMore.textContent = homeWebrings.classList.contains("less") ? headeri18n.showMore : headeri18n.showLess;
+});

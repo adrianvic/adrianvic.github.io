@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="global">
+<head>
+    <meta charset="UTF-8">
+    <title>Adrian Victor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/main.css?fixcache=1">
+    <link href="/static/prism.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <meta property="og:title" content="Adrian Victor">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://adrianvic.github.io/global/iframe/guestbook/">
+    <meta property="og:image" content="https://adrianvic.github.io/static/images/bear.jpg">
+</head>
+<body class="iframe">
+    <script>
+        const rootPrefix = "/";
+    </script>
+
+    <script defer>
+if (localStorage.getItem("autoLoadGuestBook") == "true") {
+  window.location.href = 'https://iframe.chat/embed?chat=17048300';
+}
+
+function loadGuestbook() {
+  const askAgain = document.querySelector("#dontAskAgain").value;
+  if (askAgain) {
+    localStorage.setItem("autoLoadGuestbook", true);
+  }
+  window.location.href = 'https://iframe.chat/embed?chat=17048300';
+}
+</script>
+<main>
+    <p></p>
+    <label><input id="dontAskAgain" type="checkbox" style="margin-right: .4em;"></label>
+    <div style="margin-top: 1em;"><button id="guestbookConfirmButton" style="margin-top: auto;" onclick="loadGuestbook()">Load</button></div>
+</main>
+</body>
+</html>

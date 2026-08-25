@@ -1,4 +1,4 @@
-const images = document.querySelectorAll(".i88x31");
+const images = document.querySelectorAll(".i88x31i");
 
 images.forEach(image => {
     image.addEventListener("click", () => {

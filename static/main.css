@@ -1,9 +1,14 @@
+/* 
+    Adrian Victor's website stylesheet
+    Don't kill me, I'm just a messenger that grew up using Windows Phone...
+*/
+
 /* Raw elements */
 
 :root {
     --theme-color: #4c6d6e;
     --theme-color-lighter: #84b9bb;
-    --theme-color-variation: #22e6ed;
+    --theme-color-variation: #568b8d;
 }
 
 * {
@@ -21,16 +26,21 @@ body {
 
 a {
     transition: 0.2s;
-    color: lightgray;
+    color: var(--theme-color-variation);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--theme-color-lighter);
+    color: lightgray;
+
+    /* I greatly dislike the look of text-decoration: underline but setting this on hover
+       is harmonic with the clicking sound effect (it clicks better)  */
+    text-decoration: underline;
 }
 
 li {
     list-style-type: none;
+    margin-bottom: .4em;
 }
 
 dt::before {
@@ -54,13 +64,29 @@ select {
 
 header {
     display: flex;
+    flex-direction: column;
     border-bottom: thick solid rgba(255, 255, 255, 0.1);
-    width: 100%;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0.15);
 }
 
-header div {
+header .headerContent {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+}
+
+header.tumblr {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    border-top: thick solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    background-color: rgb(0,0,0,0.8);
+}
+
+header #headerTitle, header #linksHelper {
     padding: 1rem;
 }
 
@@ -88,6 +114,12 @@ header ul:hover {
 
 main {
     margin-bottom: 2em;
+}
+
+#boxChain {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
 h1,
@@ -120,6 +152,9 @@ blockquote {
 }
 
 hr {
+    /* DON'T ASK ME HOW THIS LOOKS SO GOOD
+       the browser is probably doing weird stuff
+       to hrs */
     border-bottom: thick solid rgba(255, 255, 255, 0.1);
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
     /* margin: .5em 0; */
@@ -134,10 +169,19 @@ h2 {
 textarea,
 input,
 button {
-    border: medium solid var(--theme-color-lighter);
-    background-color: black;
+    transition: .2s;
+    border: medium solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     padding: 0.6em;
+}
+
+button:hover {
+    border-color: white;
+}
+
+img {
+    max-width: 100%;
 }
 
 hs {
@@ -210,7 +254,63 @@ aside.metromenu #content {
     gap: 1em;
 }
 
+footer a {
+    font-size: small;
+}
+
 /* Global classes and IDs */
+
+.visually-hidden {
+    display: none;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.noDecoration, .noDecoration:hover {
+    text-decoration: none;
+}
+
+.noPadding {
+    padding: 0!important;
+}
+
+.end-text {
+    text-align: end;
+}
+
+.noWrap {
+    text-wrap-mode: nowrap;
+}
+
+.lineHeight {
+    height: 1em;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.singleLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.doubleLine {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.textColored {
+    color: white;
+}
 
 .notificationBox {
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -248,6 +348,28 @@ li.inlineList {
     margin-bottom: 0;
 }
 
+.box.alert {
+    border-color: rgba(255, 0, 0, 0.1);
+    background-color: rgba(100, 0, 0, 0.3);
+}
+
+.box.alert a {
+    color: lightcoral;
+}
+
+.box.alert a:hover {
+    color: lightgray;
+}
+
+.kaoBox {
+    margin-bottom: 1em;
+}
+
+.negativeMargin {
+    /* to make a text container merge to a hr below it */
+    margin-bottom: -.2em;
+}
+
 .pageHeaderBox {
     border-bottom: 0;
 }
@@ -255,10 +377,10 @@ li.inlineList {
 .headerSquare,
 #defaultSquare {
     transition: 0.4s;
-    border: medium solid white;
-    height: 7vh;
+    border: thick solid rgba(255, 255, 255, 0.2);
+    height: 3vw;
     overflow: hidden;
-    width: 10vh;
+    width: 6vw;
     opacity: 0.4;
     padding: 0.4em;
     cursor: pointer;
@@ -279,9 +401,10 @@ li.inlineList {
 .headerSquare.selected,
 #defaultSquare.selected {
     opacity: 1;
-    height: 10vh;
+    height: 6vw;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.4), 0px -4px 10px rgba(0, 0, 0, 0.4);
     background-color: rgba(0, 0, 0, 0.3);
+    border-color: white;
 }
 
 .youtubeCardHolderHelper {
@@ -505,6 +628,11 @@ div.hs.selected {
     opacity: 0 !important;
 }
 
+article {
+    max-width: 70%;
+    margin: auto;
+}
+
 .blogpostYoutubeVideo {
     user-select: none;
     box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(0, 0, 0, 0.3);
@@ -598,6 +726,7 @@ div.hs.selected {
     height: 1.4em;
     margin-top: auto;
     opacity: 0.6;
+    margin: auto;
 }
 
 #music:hover {
@@ -606,6 +735,7 @@ div.hs.selected {
 
 #everythingHelper {
     position: relative;
+    margin-bottom: var(--header-height, 0);
 }
 
 #everythingHelper .bg {
@@ -629,9 +759,68 @@ div.hs.selected {
 
 #mainHelper {
     padding-top: 3rem;
-    max-width: 50vw;
+    max-width: 70vw;
     margin: auto;
     display: flex;
+    gap: 2em;
+}
+
+#mainHelper > aside {
+    max-width: 20%;
+    min-width: 20%;
+}
+
+#mainHelper aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.webringGeneric {
+    background-color: black;
+    padding: .4em;
+    background-position-x: 0;
+    background-size: cover;
+}
+
+.webringGeneric p {
+    margin: 0;
+}
+
+.webringButtons {
+    display: flex;
+    gap: .4em;
+}
+
+.wrongoLink {
+    color: #D5E7B5;
+}
+
+#breakcoreWebring {
+    background-position-x: 0;
+    background-size: cover;
+}
+
+#breakcoreWebring p {
+    margin: 20px;
+}
+
+#breakcoreWebring a {
+    border: thick solid rgba(255, 255, 255, 0.1);
+    border-bottom: 0;
+}
+
+#breakcoreWebring a:first-child, #breakcoreWebring a:last-child {
+    border-left: 0;
+    border-right: 0;
+}
+
+#webring-Wrongos-widget p {
+    border-top-right-radius: 10px;
+}
+
+#webring-Wrongos-widget a:first-child {
+    border-bottom-left-radius: 10px;
 }
 
 #headerSubtitle {
@@ -710,8 +899,6 @@ header div:first-child {
     transition: 0.4s;
     width: fit-content;
     height: fit-content;
-    margin-right: 3vw;
-    margin-bottom: 3rem;
     gap: 10px;
 }
 
@@ -725,6 +912,51 @@ header div:first-child {
 
 #hsCode.selected {
     display: flex;
+}
+
+#homeAside {
+    margin-bottom: 2em;
+}
+
+#homeWebrings {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: fit-content;
+}
+
+#homeWebrings.less {
+    max-height: 30em;
+    overflow: hidden;
+    --mask: linear-gradient(to bottom, 
+        rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 85%, 
+        rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+    ) 100% 50% / 100% 100% repeat-x;
+    -webkit-mask: var(--mask); 
+    mask: var(--mask);
+}
+
+#homeBlog p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+#homeBlog a {
+    color: white;
+}
+
+.hotlinks88x31 {
+    display: grid;
+    width: fit-content;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.internetometerAside img {
+    max-width: 100%;
 }
 
 #telnetSimulation {
@@ -782,10 +1014,11 @@ header div:first-child {
 
 #languageList li a {
     transition: 1s;
+    color: white;
 }
 
 .languagesHighlightedLink {
-    color: var(--theme-color-variation);
+    color: var(--theme-color-variation)!important;
 }
 
 #songDrawer {
@@ -821,12 +1054,21 @@ header div:first-child {
     opacity: 1;
 }
 
+.postLink {
+    color: white;
+}
+
 #postHeader * {
     margin-bottom: 0;
 }
 
 #postHeader {
     margin-bottom: 1em;
+}
+
+#miscList dt {
+    color: var(--theme-color-lighter);
+    font-weight: bolder;
 }
 
 /* Page: misc/favorites */
@@ -870,6 +1112,98 @@ header div:first-child {
     margin-top: .2em;
 }
 
+.mastodonPost {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.mastodonPostContent {
+    padding: 1em;
+}
+
+.mastodonPostContent, .mastodonLink {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mastodonPost p {
+    margin-bottom: .2em;
+}
+
+.mastodonLink {
+    width: fit-content;
+    padding: .4em;
+    opacity: .8;
+    margin-left: auto;
+}
+
+.mastodonMedia {
+    max-height: 5em;
+    border: medium solid rgba(0, 0, 0, 0.2);
+}
+
+.mastodonMediaBox {
+    margin-top: 1em;
+}
+
+.mastodonMediaBox div {
+    display: flex;
+    overflow: scroll;
+}
+
+.mastodonMediaBox img {
+    transition: .2s;
+    opacity: .6;
+}
+
+.mastodonMediaBox img:hover {
+    opacity: 1;
+}
+
+#socialAside img {
+    border: thick solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+}
+
+.fire, .fireHover:hover {
+  animation: fire-animation 1s ease-in-out infinite alternate;
+  -moz-animation: fire-animation 1s ease-in-out infinite alternate;
+  -webkit-animation: fire-animation 1s ease-in-out infinite alternate;
+  -o-animation: fire-animation 1s ease-in-out infinite alternate;
+}
+
+.burn {
+  animation: fire-animation .65s ease-in-out infinite alternate;
+  -moz-animation: fire-animation .65s ease-in-out infinite alternate;
+  -webkit-animation: fire-animation .65s ease-in-out infinite alternate;
+  -o-animation: fire-animation .65s ease-in-out infinite alternate;
+}
+
+.blurred {
+    filter: blur(4px);
+    user-select: none;
+    pointer-events: none;
+}
+
+#socialPosts {
+    transition: .4s;
+}
+
+#chattable {
+    background-color: black;
+    border: medium solid rgb(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.iframe {
+    padding: 1rem;
+    font-size: medium;
+}
+
+.tnkm {
+    font-family: monospace;
+}
+
 /* Animations */
 
 @keyframes ellipsis-loader {
@@ -903,23 +1237,109 @@ header div:first-child {
     to { opacity: 0; }
 }
 
+@keyframes fire-animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-moz-keyframes fire-animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-webkit-keyframes fire-animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
+@-o-keyframes fire-animation
+{
+0% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -40px 50px #ec760c,
+  -20px -60px 60px #cd4606,
+  0 -80px 70px #973716,
+  10px -90px 80px #451b0e;}
+100% {text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #fefcc9,
+  -20px -20px 40px #feec85,
+  22px -42px 60px #ffae34,
+  -22px -58px 50px #ec760c,
+  0 -82px 80px #cd4606,
+  10px -90px 80px  #973716;}
+}
+
 /* Media queries */
+
+@media screen and (max-width: 1400px) {
+    #mainHelper {
+        max-width: 90vw;
+    }
+}
 
 @media screen and (max-width: 1280px) {
     body { font-size: 2vh; }
 
-    header {
-        padding-top: 1.4rem;
+    article {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    .headerContent {
+        padding-top: 1rem;
         text-align: center;
         flex-direction: column;
     }
 
     header ul {
         margin: auto;
-        margin-bottom: 1.4rem;
+        margin-bottom: 1rem;
     }
 
-    main { max-width: 90vw; }
+    main { 
+        max-width: 90vw;
+        margin-bottom: 0px;
+    }
 
     main h1 { font-size: 3vh; }
 
@@ -935,6 +1355,18 @@ header div:first-child {
     #mainHelper {
         flex-direction: column;
         max-width: 90vw;
+    }
+
+    #mainHelper > aside {
+        max-width: unset;
+    }
+
+    #socialAside img {
+        max-width: 50%;
+    }
+
+    #socialAside h1 {
+        text-align: end;
     }
 
     #homeSquares {
