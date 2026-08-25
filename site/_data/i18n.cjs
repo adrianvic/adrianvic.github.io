@@ -32,14 +32,14 @@ module.exports = {
     en: "english",
     home: "home",
     welcome: "welcome",
-    homeWelcomeParagraph: "It seems that you have found my website! Hi, I am <b>Adrian Victor</b> (or <b>tenkuma</b>), a Brazilian guy who likes to mess around with computers, computer programs and <i>enimatpyrtlyhtemids</i>.",
+    homeWelcomeParagraph: "It seems that you have found my website! Hi, I am <b>Adrian Victor</b> (or <b>tenkuma</b>), a Brazilian guy who likes to mess around with computers, computer programs and <i title='do the konami code ;)'>enimatpyrtlyhtemids</i>.",
     socialsAndContact: "socials and contact",
     aboutMe: "about me",
     myMusic: "my music",
     myVideos: "my videos",
     mySoftware: "my software",
     homeAboutMeParagraph: `
-      My name is Adrian Victor, but I go by tenkuma on-line. I'm in high school's last year, also studying computing. My hobbies are music, music production, programming, selfhosting, Linux, and a lot more.
+      I'm tenkuma, the coolest bear to ever exist in this world <span class="tnkm" style="opacity: 0.8">(not really)</span>. I mean, seriously <span class="tnkm" style="opacity: 0.6">(I already said it's not true)</span>. I don't even make jokes, all I said is true <span class="tnkm" style="opacity: 0.4">(DUDE STOP DIMMING MY TEXT UR NOT COOL)</span>. I'm in high school's last year, also studying computing. Sometimes I'm no one, sometimes I'm a programmer, musician (marked as: stretch) or am selfhosting my own stuff. But I'm always against the big-tech oligarchy!
     `,
     homeAboutMeParagraphTwo: `The name tenkuma, or 天くま in japanese, means celestial bear and was given by a friend of mine that I lost contact a long time ago. Sakata is gone, but the name stayed and turned into an integral part of my digital self.`,
     homeSocialsAndContactParagraph: `
@@ -52,14 +52,14 @@ module.exports = {
       Modrinth <a href='${globalValues.modrinth.url}'>(${globalValues.modrinth.username})</a>
       and XMPP <a href='${globalValues.xmpp.url}'>(${globalValues.xmpp.username})</a>.
     `,
-    homeSocialsAndContactParagraphTwo: `You can message me on my E-mail <a href="mailto:${globalValues.email}">(${globalValues.email})</a> or feel free to get in touch through any of the other places mentioned above. For project-specific subjects, check for the project's contact field or if there's no such field add <i>+projectname</i> to my E-mail address (example: adrianvictor+coolproject@disroot.org).</p>
+    homeSocialsAndContactParagraphTwo: `You can message me on my E-mail <a href="mailto:${globalValues.email}">(${globalValues.email})</a>, or feel free to get in touch through any of the other places mentioned above. For project-specific subjects, check for the project's contact field or if there's no such field add <i>+projectname</i> to my E-mail address (example: adrianvictor+coolproject@disroot.org).</p>
         <p><i><b>Please, avoid reaching me through ways not mentioned above :)</b></i>`,
-    homeMyMusicParagraph: `I've always loved music, and lately I've been finding music production very interesting. I publish my songs as <i>tenkuma</i>, and have founded an amateur label called <a href="${globalValues.margarinaRecordsWebsite}">Margarina Records</a> with my friends.`,
-    homeMyMusicParagraphTwo: `You can find my latest on songs <a href="${globalValues.genius.url}">Genius</a>.`,
-    homeMyVideoParagraph: "I make videos for my <a href='${globalValues.youtube.url}'>YouTube channel</a>. Videos do not come regularly, there's no schedule—just a guy wanting to show something.",
+    homeMyMusicParagraph: `I looooove music. Like really. You can find a lot of playlists I made <a href="https://music.youtube.com/@adrianvictor8">here</a>. My songs can be found in any major streaming service.`,
+    homeMyMusicParagraphTwo: `Did you know, that instead of using your subscription money to pay artists, Spotify is massively underpaying artists and instead funding artificial inteligence for war?`,
+    homeMyVideoParagraph: "Sometimes I make videos for my YouTube channel. Videos do not come regularly, there's no schedule, just for fun.",
     homeMyVideoRandomVideoParagraph: "Here's a random video I'm proud of:",
     homeVideoTitle: "Installing FL Studio on linux.",
-    homeMySoftwareParagraph: `I am studying computing at IFC (SC, Brazil) but in my free time I have some projects like computer applications, Minecraft plugins, Minecraft servers, etc... Anything that is public should be in my <a href="${globalValues.github.url}">GitHub profile</a>.`,
+    homeMySoftwareParagraph: `Anything that is public should be in my <a href="${globalValues.github.url}">GitHub profile</a>.`,
     pestoWikiLogoAlt: "A digital drawing of the top of a fork with a black outline, in the right a text in white says 'Pesto Wiki'",
     homeMySoftwareNotableProjects: "These are my most notable projects:",
     blogTitle: "Listing blog posts:",
@@ -124,14 +124,14 @@ module.exports = {
     en: "inglês",
     home: "início",
     welcome: "bem-vindo",
-    homeWelcomeParagraph: "Parece que você encontrou meu website! Olá, sou <b>Adrian Victor</b> (ou <b>tenkuma</b>), um cara brasileiro que gosta de mexer com computadores, programas de computadores e <i>enimatpirtlitemídios</i>.",
+    homeWelcomeParagraph: "Parece que você encontrou meu website! Olá, sou <b>Adrian Victor</b> (ou <b>tenkuma</b>), um cara brasileiro que gosta de mexer com computadores, programas de computadores e <i title='faça o konami code ;-)'>enimatpirtlitemídios</i>.",
     socialsAndContact: "redes sociais e contato",
     aboutMe: "sobre mim",
     myMusic: "música",
     myVideos: "vídeos",
     mySoftware: "software",
     homeAboutMeParagraph: `
-      Meu nome é Adrian Victor, mas on-line eu uso o nickname tenkuma. Estou no último ano do ensino médio e estudo informática. Meus hobbies são escutar e produzir música, programação, selfhosting, Linux, e muito mais.
+      Eu sou tenkuma, o urso mais legal que existiu nesse mundo <span class="tnkm" style="opacity: 0.8">(não mesmo)</span>. Tipo, sério <span class="tnkm" style="opacity: 0.6">(não é não!)</span>. Eu nem gosto de fazer piadas, tudo o que eu disse é verdade <span class="tnkm" style="opacity: 0.4">(CARA PARA DE APAGAR MEU TEXTO VC NÃO É LEGAL)</span>. Estou no último ano do ensino médio, também estudando informática. Às vezes eu não sou ninguém; às vezes eu sou programador, músico (marcado como: forçando a barra) ou estou fazendo selfhosting. Mas sempre estou contra a oligarquía das big-techs.
     `,
     homeAboutMeParagraphTwo: `Tenkuma, ou 天くま em japonês, significa urso celestial e foi um nome dado a mim por um amigo que eu já perdi contato há muito tempo. Sakata se foi, mas o nome ficou e se tornou parte integral da personalidade do meu eu digital até hoje.`,
     homeSocialsAndContactParagraph: `
@@ -145,12 +145,12 @@ module.exports = {
       e XMPP <a href='${globalValues.xmpp.url}'>(${globalValues.xmpp.username})</a>.
     `,
     homeSocialsAndContactParagraphTwo: `Você pode enviar um correio eletrônico para <a href="mailto:${globalValues.email}">(${globalValues.email})</a> ou me contactar por qualquer outro meio citado acima. Para assuntos relativos a projetos específicos, verifique o campo de contato do projeto, caso não haja um adicione <i>+nomedoprojeto</i> ao meu endereço de E-mail (exemplo: adrianvictor+projetolegal@disroot.org).`,
-    homeMyMusicParagraph: `Sempre amei música, e tenho achado produção musical algo muito interessante ultimamente. Publico minhas músicas como <i>tenkuma</i>, junto com meus amigos formei a <a href="${globalValues.margarinaRecordsWebsite}">Margarina Records</a>—uma label amadora.`,
-    homeMyMusicParagraphTwo: `Você pode conferir minhas músicas mais recentes no meu perfil do <a href="${globalValues.genius.url}">Genius</a>.`,
-    homeMyVideoParagraph: "Eu faço vídeos para o <a href='${globalValues.youtube.url}'>meu canal do YouTube</a>. Não posto regularmente; não tem calendário—apenas eu mostrando alguma coisa em vídeo.",
+    homeMyMusicParagraph: `Eu aaaaaamo música. De verdade. Você pode encontrar um monte das minhas playlists <a href="https://music.youtube.com/@adrianvictor8">aqui</a>, junto com o que eu mais escuto recentemente. Minhas músicas podem ser encontradas em qualquer dos streamings mais conhecidos.`,
+    homeMyMusicParagraphTwo: `Você sabia que, ao invés de usar o dinheiro da sua assinatura pra pagar artistas, o Spotify está pagando pouco para os artistas e investindo em inteligência artificial para a guerra?`,
+    homeMyVideoParagraph: "De vez enquando eu faço vídeos para o YouTube. Não tenho nenhum compromisso com constância, os vídeos são feitos por diversão.",
     homeMyVideoRandomVideoParagraph: "Aqui está um vídeo aleatório que eu me orgulho de ter postado:",
     homeVideoTitle: "Como instalar o FL Studio no Linux?",
-    homeMySoftwareParagraph: `Estou estudando informática no IFC (SC, Brazil) mas no meu tempo livre tenho projetos como programas de computador, plugins para Minecraft, servidores Minecraft, etc... Todos meus projetos públicos estão disponíveis no meu <a href="${globalValues.github.url}">perfil do GitHub</a>.`,
+    homeMySoftwareParagraph: `Todos meus projetos públicos estão disponíveis no meu <a href="${globalValues.github.url}">perfil do GitHub</a>.`,
     pestoWikiLogoAlt: "Um desenho digital do topo de um garfo com uma borda preta, à direita um texto branco diz 'Pesto Wiki'",
     homeMySoftwareNotableProjects: "Esses são meus projetos mais notáveis:",
     blogTitle: "Listando postagens do blog:",

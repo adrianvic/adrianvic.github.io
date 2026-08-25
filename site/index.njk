@@ -16,32 +16,6 @@ headerLink: home
 <div id="homeSquares"></div>
 <script src="{{ '/static/scripts/home.js' | url }}" defer></script>
 
-<script>
-    const headeri18n =
-        {
-            by: "{{ i18n[langKey].by | safe }}",
-            options: "{{ i18n[langKey].options | safe }}",
-            hideBackground: "{{ i18n[langKey].hideBackground | safe }}",
-            back: "{{ i18n[langKey].back | safe }}",
-            permissionIssue: "{{ i18n[langKey].permissionIssue | safe }}",
-            permissionIssueNotificationContent: "{{ i18n[langKey].permissionIssueNotificationContent | safe }}",
-            notificationDefaultHint: "{{ i18n[langKey].notificationDefaultHint | safe }}",
-            disableSoundEffects: "{{ i18n[langKey].disableSoundEffects | safe }}",
-            windsArtAlt: "{{ i18n[langKey].windsArtAlt | safe }}",
-            velkommenArtAlt: "{{ i18n[langKey].velkommenArtAlt | safe }}",
-            pgArtAlt: "{{ i18n[langKey].pgArtAlt | safe }}",
-            gearsAlt: "{{ i18n[langKey].gearsAlt | safe }}",
-            soundOffAlt: "{{ i18n[langKey].soundOffAlt | safe }}",
-            soundOnAlt: "{{ i18n[langKey].soundOnAlt | safe }}",
-            volumeSliderAlt: "{{ i18n[langKey].volumeSliderAlt | safe }}",
-            backgroundCheckAlt: "{{ i18n[langKey].backgroundCheckAlt | safe }}",
-            sfxCheckboxAlt: "{{ i18n[langKey].sfxCheckboxAlt | safe }}",
-            songSelectAlt: "{{ i18n[langKey].songSelectAlt | safe }}",
-            showMore: "{{ i18n[langKey].showMore | safe }}",
-            showLess: "{{ i18n[langKey].showLess | safe }}",
-        }
-</script>
-
 <main id="boxChain">
     <noscript>
         <style>
@@ -245,7 +219,7 @@ headerLink: home
             <a href="https://www.youtube.com/@mrnandokk">{{ i88x31("mrnandokk.gif", i18n[langKey].mrnandoChannel, false) }}</a>
             <a href="https://appak.neocities.org/">{{ i88x31("appak.png", "appak", false) }}</a>
             <a href="https://bribribribribri.xyz/" target="_blank">{{ i88x31("brigif.gif", "bribribribribri", false) }}</a>
-            <a href="https://status.cafe/">{{ i88x31("statuscafe.png", "Status Cafe", false) }}</a>
+            <a href="https://status.cafe/users/tenkuma">{{ i88x31("statuscafe.png", "Status Cafe", false) }}</a>
             <a href="https://9larp.net/">{{ i88x31("9larpfinal.png", "9larp", false) }}</a>
         </div>
         <p style="text-align: center;"><a href="{{ ('/' ~ langKey ~ '/misc/hotlinking') | url }}">{{ i18n[langKey].addMe }}?</a></p>
@@ -285,7 +259,28 @@ headerLink: home
         <script type="text/javascript" src="https://cdring.neocities.org/cdring/onionring-variables.js"></script>
         <script type="text/javascript" src="https://cdring.neocities.org/cdring/onionring-widget.js"></script>
             </div>
-        <!-- CDRING END --> 
+        <!-- CDRING END -->
+
+        <div id="nixring" style="display: flex; gap: 8px; align-items: center;">
+            <style type="text/css" scoped>
+        	#nixring {
+        		text-align: center;
+        		color: black;
+                width: fit-content;
+                margin: auto;
+        	}
+        	#nixring a {
+        		color: white;
+        		text-decoration: none;
+        	}
+            </style>
+            <a href="https://softmachine.dev/webring/linuxring/redirect?url=https%3A%2Fadrianvic.github.io%2F&go=prev">←</a>
+            <a href="https://softmachine.dev/webring/linuxring">
+        	    <div>*nixRing<br><img style="height: 25px;" src="https://softmachine.dev/webring/linuxring/icon/tux.png"></div>
+            </a>
+            <a href="https://softmachine.dev/webring/linuxring/redirect?url=https%3A%2Fadrianvic.github.io%2F&go=next">→</a>
+        </div>
+	     
 
         <div style="display:grid;place-items:center">
         <a href="https://nanacore.net/cliques/brs">
