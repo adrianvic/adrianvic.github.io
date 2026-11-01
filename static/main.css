@@ -90,6 +90,10 @@ header #headerTitle, header #linksHelper {
     padding: 1rem;
 }
 
+#headerTitle h1:before {
+    content: "𐔌՞. .՞𐦯 ";
+}
+
 header ul {
     transition: 0.2s;
     font-size: larger;
@@ -746,7 +750,7 @@ article {
     opacity: 0.5;
     width: 100%;
     height: auto;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
