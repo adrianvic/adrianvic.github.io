@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.chair {
+    height: 10em;
+    border: medium solid white;
+    border-bottom: none;
+    margin: 1em;
+}

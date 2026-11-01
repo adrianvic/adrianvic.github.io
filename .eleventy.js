@@ -14,8 +14,6 @@ import pluginCleanUrls from "@inframanufaktur/eleventy-plugin-clean-urls";
 // import githubRepos from 'eleventy-plugin-github-repos';
 import readingTime from 'eleventy-plugin-reading-time';
 
-// import i18n from "./_data/i18n.js";
-
 const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS || process.env.IS_PRODUCTION);
 console.log("Production:", production ? "true" : "false");
 
@@ -26,9 +24,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(safeLinks);
   eleventyConfig.addPlugin(pluginGitCommitDate);
-  eleventyConfig.addPlugin(recentChanges, {
-    commits: 10,
-  });
+  eleventyConfig.addPlugin(recentChanges, { commits: 10 });
   eleventyConfig.addPlugin(pluginInlineLinkFavicon);
   eleventyConfig.addPlugin(poison);
   eleventyConfig.addPlugin(mastoarchive, {
@@ -37,10 +33,6 @@ export default function (eleventyConfig) {
     cacheLocation: ".cache/mastodon.json",
     isProduction: production
   });
-  // eleventyConfig.addPlugin(purgeCssPlugin, {
-  //   config: "./purgecss.config.cjs",
-  //   quiet: false,
-  // });
   eleventyConfig.addPlugin(pluginCleanUrls);
   // eleventyConfig.addPlugin(githubRepos, { userAccount: 'adrianvic' });
   eleventyConfig.addPlugin(readingTime);

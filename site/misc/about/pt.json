@@ -1,7 +1,7 @@
 {
     "pageTitle": "Sobre o website",
     "pageDescription": "Informações, atribuições e créditos sobre esse website.",
-    "introText1": "Esse website e blog é um projeto de Adrian Victor, feito com a tecnologia do gerador de sites estáticos Eleventy. O código fonte está disponível",
+    "introText1": "Esse website e blog é um projeto de tenkuma, feito com a tecnologia do gerador de sites estáticos Eleventy. O código fonte está disponível",
     "introRepoLinkText": "nesse repositório",
     "introText2": "sob",
     "introLicenseLinkText": "a licensa de código aberto Apache",

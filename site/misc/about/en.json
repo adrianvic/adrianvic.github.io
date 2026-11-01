@@ -1,7 +1,7 @@
 {
     "pageTitle": "About this website",
     "pageDescription": "Information, attributions and credits about this website.",
-    "introText1": "This website and blog is a project of Adrian Victor, made using the Eleventy static website generator. It's source code is available ",
+    "introText1": "This website and blog is a project of tenkuma, made using the Eleventy static website generator. It's source code is available ",
     "introRepoLinkText": "on this repository",
     "introText2": " under the ",
     "introLicenseLinkText": "Apache license",
