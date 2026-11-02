@@ -155,7 +155,7 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web",
+    pathPrefix: process.env.GITHUB_ACTIONS ? "" : "/",
     dir: {
       output: "docs",
     },
