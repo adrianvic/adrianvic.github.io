@@ -1,6 +1,49 @@
 {
-  "lastFetched": "2026-07-05T22:01:02.267Z",
+  "lastFetched": "2026-11-02T13:38:44.228Z",
   "posts": [
+    {
+      "date": "2026-07-10T21:19:42.148Z",
+      "id": "116897767892342459",
+      "content": "<p>Someone passed me their old phone, a Galaxy S10+. Having a lot of fun already...<br /><a href=\"https://mstdn.social/tags/LineageOS\" class=\"mention hashtag\" rel=\"tag\">#<span>LineageOS</span></a></p>",
+      "source_url": "https://mstdn.social/@tenkuma/116897767892342459",
+      "site": "Mastodon",
+      "media": [
+        {
+          "image": "https://media.mstdn.social/media_attachments/files/116/897/759/333/982/339/original/14abb0d41a07a783.jpg",
+          "alt": "Notebook showing in LineageOS with a charging phone connected on top, showing LineageOS Recovery.",
+          "width": 471,
+          "height": 490,
+          "aspect": 0.9612244897959183
+        }
+      ],
+      "emojis": []
+    },
+    {
+      "date": "2026-07-07T17:14:32.840Z",
+      "id": "116879816971980231",
+      "content": "<p>Of course Palantir is involved in the 3D printers bill and of course USA senate is full of morons that have never touch a computer advocating for mass surveillance</p><p><a href=\"https://www.youtube.com/watch?v=LKCQbWuAzsM\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://www.</span><span class=\"\">youtube.com/watch?v=LKCQbWuAzsM</span><span class=\"invisible\"></span></a></p>",
+      "source_url": "https://mstdn.social/@tenkuma/116879816971980231",
+      "site": "Mastodon",
+      "media": [],
+      "emojis": []
+    },
+    {
+      "date": "2026-07-06T02:22:56.414Z",
+      "id": "116870648719873077",
+      "content": "<p>Nothing to do so I decided to make a OS/shell/idk what the hell is this in JS. The main process is the &quot;kernel&quot;, by calling the API you can register apps which can be started (spawns a process in the proclist), the API also lets you create and register windows so the manager handles dragging. By window manager I mean 40 lines of JS making a div follow your cursor ^^</p>",
+      "source_url": "https://mstdn.social/@tenkuma/116870648719873077",
+      "site": "Mastodon",
+      "media": [
+        {
+          "image": "https://media.mstdn.social/media_attachments/files/116/870/613/456/665/004/original/420879cf2ecd45fc.png",
+          "alt": "Web browser in a page with multiple windows placed around the page. Each window has a \"Close button\".\n\nFixed to the bottom of the screen is a bar with a text input box and a button that says \"Run\" inside.",
+          "width": 640,
+          "height": 360,
+          "aspect": 1.7777777777777777
+        }
+      ],
+      "emojis": []
+    },
     {
       "date": "2026-07-03T01:51:37.604Z",
       "id": "116853538658966225",

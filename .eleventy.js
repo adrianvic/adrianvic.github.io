@@ -15,7 +15,16 @@ import pluginCleanUrls from "@inframanufaktur/eleventy-plugin-clean-urls";
 import readingTime from 'eleventy-plugin-reading-time';
 
 const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS || process.env.IS_PRODUCTION);
+const prefix = "/";
+console.log(`
+      ▗▞▀▚▖▄▄▄▄  █  ▄ █  ▐▌▄▄▄▄  ▗▞▀▜▌
+▗▄▟▙▄▖▐▛▀▀▘█   █ █▄▀  ▀▄▄▞▘█ █ █ ▝▚▄▟▌
+  ▐▌  ▝▚▄▄▖█   █ █ ▀▄      █   █      
+  ▐▌             █  █                 
+  ▐▌                                                                    
+`)
 console.log("Production:", production ? "true" : "false");
+console.log("Prefix:", prefix);
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory("site");
@@ -88,8 +97,7 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("absoluteUrl", function (url) {
-    const base = "https://adrianvic.github.io";
-    const prefix = process.env.GITHUB_ACTIONS ? "" : "/";
+    const base = "https://adrianvic.github.io"; 
     return base + prefix + url;
   });
 
@@ -155,7 +163,7 @@ export default function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: process.env.GITHUB_ACTIONS ? "" : "/",
+    pathPrefix: prefix,
     dir: {
       output: "docs",
     },
