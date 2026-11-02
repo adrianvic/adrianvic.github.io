@@ -89,7 +89,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("absoluteUrl", function (url) {
     const base = "https://adrianvic.github.io";
-    const prefix = process.env.GITHUB_ACTIONS ? "" : "/tenkuma/web";
+    const prefix = process.env.GITHUB_ACTIONS ? "" : "/";
     return base + prefix + url;
   });
 
