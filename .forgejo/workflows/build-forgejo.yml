@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm ci
-          npm run build
+          FORGEJO_PAGES=1 npm run build
 
       - name: Deploy to forgejo-pages
         run: |

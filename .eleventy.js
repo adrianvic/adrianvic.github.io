@@ -15,7 +15,7 @@ import pluginCleanUrls from "@inframanufaktur/eleventy-plugin-clean-urls";
 import readingTime from 'eleventy-plugin-reading-time';
 
 const production = (process.env.GITHUB_ACTIONS || process.env.FORGEJO_ACTIONS || process.env.IS_PRODUCTION);
-const prefix = "/";
+const prefix = process.env.FORGEJO_PAGES ? "/web/" : "/";
 console.log(`
       ▗▞▀▚▖▄▄▄▄  █  ▄ █  ▐▌▄▄▄▄  ▗▞▀▜▌
 ▗▄▟▙▄▖▐▛▀▀▘█   █ █▄▀  ▀▄▄▞▘█ █ █ ▝▚▄▟▌
