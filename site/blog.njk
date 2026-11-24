@@ -8,9 +8,8 @@ layout: base.njk
 title: tenkuma:Blog
 headerLink: blog
 ---
-
 <main>
-  <p><b>{{ i18n[langKey].blogTitle | smartTitle }}</b></p>
+  <p><b>{{ i18n[langKey].blogTitle }}</b></p>
   <ul>
     {% for post in collections.post %}
       {% if post.data.langKey == langKey %}

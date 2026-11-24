@@ -12,42 +12,6 @@
   >
 {% endmacro %}
 
-{% macro videoCard(videoLink, videoTitle, videoImage, videoWebsite, videoDuration, videoAccent, imageAlt = i18n[langKey].videoArtworkAlt) %}
-<div class="youtubeCardHolderHelper">
-    <div class="youtubeCardHolder">
-        <a href="{{ videoLink }}">
-            <div class="blogpostYoutubeVideo" {% if videoAccent %}style="border-color: {{ videoAccent }};"{% endif %}>
-                <img src="{{ ('/static/images' ~ videoImage) | url }}" alt="{{ imageAlt }}">
-                <div class="videoHeader">
-                    {# <p class="alsoAvailable">{{ i18n[langKey].alsoAvailableAsVideo }}:</p> #}
-                    <h2 class="videoTitle" {% if videoAccent %}style="color: {{ videoAccent }};"{% endif %}>
-                        {{ videoTitle }}
-                    </h2>
-                    <p>{{ videoWebsite }}{% if videoDuration %} ({{ videoDuration }}){% endif %}</p>
-                </div>
-                {# <p class="goLabel">ir</p> #}
-            </div>
-        </a>
-    </div>
-</div>
-{% endmacro %}
-
-{% macro projectCard(projectName, projectDescription, projectLink, projectImage, projectImageAlt) %}
-<div class="hsProject">
-    <div class="hsProjectHeader">
-        <div class="hsProjectImage">
-            <img src="{{ projectImage | url }}" alt="{{ projectImageAlt or projectName }}">
-        </div>
-        <a href="{{ projectLink }}" class="hsProjectHeaderIcon">
-            <img src="{{ '/static/visual/github.svg' | url }}" class="invertedc">
-        </a>
-    </div>
-    <div class="hsProjectContent">
-        <p>{{ projectDescription | safe }}</p>
-    </div>
-</div>
-{% endmacro %}
-
 {% macro webring(opts) %}
 <div class="webringGeneric"
      style="{% if opts.image %}background-image:url('{{ opts.image | url }}');{% endif %}

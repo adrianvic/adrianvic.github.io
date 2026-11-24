@@ -1,63 +1,9 @@
-<!--
-  _             _                                                _                   
- | |_ ___ _ __ | | ___   _ _ __ ___   __ _  __      ____ _ ___  | |__   ___ _ __ ___ 
- | __/ _ \ '_ \| |/ / | | | '_ ` _ \ / _` | \ \ /\ / / _` / __| | '_ \ / _ \ '__/ _ \
- | ||  __/ | | |   <| |_| | | | | | | (_| |  \ V  V / (_| \__ \ | | | |  __/ | |  __/
-  \__\___|_| |_|_|\_\\__,_|_| |_| |_|\__,_|   \_/\_/ \__,_|___/ |_| |_|\___|_|  \___|
-                                                                                     
--->
-
-<!DOCTYPE html>
-<html lang="{{ langKey }}">
-<head>
-    <meta charset="UTF-8">
-    <title>tenkuma{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ '/static/main.css?fixcache=1' | url }}">
-    <link href="{{ '/static/prism.css' | url }}" rel="stylesheet"/>
-    <script type="module" src="{{ '/static/scripts/ccd.js' | url }}"></script>
-    <script type="module" src="{{ '/static/scripts/music.js' | url }}" defer></script>
-    <script type="module" src="{{ '/static/scripts/88x31.js' | url }}" defer></script>
-    <script type="module" src="{{ '/static/scripts/tips.js' | url }}" defer></script>
-    <script type="module" src="{{ '/static/scripts/click.js' | url }}" defer></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png' | url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png' | url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png' | url }}">
-    <link rel="manifest" href="{{ '/static/site.webmanifest' | url }}">
-    <meta property="og:title" content="tenkuma{% if pageTitle or postTitle %} - {{ pageTitle or postTitle }}{% endif %}">
-    <meta property="og:description" content="{{ description or i18n[langKey].websiteDescription }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ page.url | url | absoluteUrl }}">
-    <meta property="og:image" content="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url | absoluteUrl }}">
-</head>
-<body>
-    {% poison %}
-    <script>
-        const rootPrefix = "{{ '/' | url }}";
-    </script>
-
-    <style>
-        .bg {
-            opacity: {{ backgroundOpacity or ".4" }}!important;
-        }
-    </style>
-
-    <noscript>
-        <style>
-            .i88x31:hover {
-                transform: scale(2);
-            }
-        </style>
-    </noscript>
-
-    <div id="everythingHelper">
-        <img src="{{ ('/static/images/' ~ (background or 'bear.jpg')) | url }}" class="bg" alt="{{ i18n[langKey].bearAlt }}">
-
-        {% include "header.njk" %}
-
-        <div id="mainHelper">
-            {{ content | safe }}
-        </div>
-    </div>
-</body>
-</html>
+---
+layout: skel.njk
+---
+<div id="evHelper">
+    {% include 'homeaside.njk' %}
+    <main>
+        {{ content | safe }}
+    </main>
+</div>

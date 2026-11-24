@@ -36,18 +36,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(recentChanges, { commits: 10 });
   eleventyConfig.addPlugin(pluginInlineLinkFavicon);
   eleventyConfig.addPlugin(poison);
-  eleventyConfig.addPlugin(mastoarchive, {
-    host: "https://mstdn.social",
-    userId: "114661188739031987",
-    cacheLocation: ".cache/mastodon.json",
-    isProduction: production
-  });
+  // eleventyConfig.addPlugin(mastoarchive, {
+  //   host: "https://mstdn.social",
+  //   userId: "114661188739031987",
+  //   cacheLocation: ".cache/mastodon.json",
+  //   isProduction: production
+  // });
   eleventyConfig.addPlugin(pluginCleanUrls);
   // eleventyConfig.addPlugin(githubRepos, { userAccount: 'adrianvic' });
   eleventyConfig.addPlugin(readingTime);
 
   eleventyConfig.addWatchTarget("./site");
-
 
   eleventyConfig.addCollection("post", function (collectionApi) {
     return collectionApi
@@ -78,6 +77,7 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy("CNAME");
 
   eleventyConfig.addNunjucksFilter(
     "alternateLanguages",
@@ -97,7 +97,7 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("absoluteUrl", function (url) {
-    const base = "https://adrianvic.github.io"; 
+    const base = "https://tenkuma.org"; 
     return base + prefix + url;
   });
 

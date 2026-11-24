@@ -1,7 +1,7 @@
 {
-  "name": "adrianvictor",
-  "version": "1.0.0",
-  "description": "",
+  "name": "tenkuma",
+  "version": "2.0.0",
+  "description": "Tenkuma's personal website and blog about tech.",
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy",

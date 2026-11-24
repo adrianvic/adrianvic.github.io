@@ -4,28 +4,43 @@ title: tenkuma:Blog
 headerLink: blog
 ---
 {% set altLanguages = collections.post | alternateLanguages(postId, langKey) %}
-{% from "macros.njk" import videoCard with context %}
+{# {% from "macros.njk" import videoCard with context %} #}
 
 <main>
     <article>
         <div id="postHeader">
+            {% if background %}
+            <div id="postImageContainer">
+                <img id="postImage" src="/static/images/posts/{{ background }}" style="{% if backgroundOpacity %}opacity: {{ backgroundOpacity }}{% endif %}">
+                <label for="postImage"><h1>{{ postTitle }}</h1></label>
+            </div>
+            {% endif %}
+
+            {% if not background %}
             <h1>{{ postTitle }}</h1>
+            {% endif %}
+
+            <p>{{ i18n[langKey].by | smartTitle }} {{ authors or "tenkuma" }} - <b>{{ date | postDate }}</b>{% if lastModified | postDate !==  date | postDate %} ({{ i18n[langKey].lastEditedIn }} {{ lastModified | postDate }}){% endif %}</p>
             <p>{{ i18n[langKey].readingTime }}: {{ content | readingTime }}</p>
-            <p>{{ authors or "tenkuma" }} - <b>{{ date | postDate }}</b>{% if lastModified | postDate !==  date | postDate %} ({{ i18n[langKey].lastEditedIn }} {{ lastModified | postDate }}){% endif %}</p>
             {% if altLanguages.length > 0 %}
-            {{ i18n[langKey].availableInOtherLanguages }}:
-            {% for alt in altLanguages %}
-            <li class="inlineList">
-                <a href="{{ alt.url | url }}" hreflang="{{ alt.lang }}">
-                    {{ i18n[alt.lang].language }}
-                </a>
-            </li>
-            {% endfor %}
+            <div style="display: flex">
+                {{ i18n[langKey].availableInOtherLanguages }}:
+                <ul class="inlineList">
+                    {% for alt in altLanguages %}
+                    <li>
+                        <a href="{{ alt.url | url }}" hreflang="{{ alt.lang }}">
+                            {{ i18n[alt.lang].language }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
             {% endif %}
         </div>
-        {% if postVideoLink and postVideoImage and postVideoTitle and postVideoWebsite %}
+
+        {# {% if postVideoLink and postVideoImage and postVideoTitle and postVideoWebsite %}
         {{ videoCard(postVideoLink, postVideoTitle, postVideoImage, postVideoWebsite, postVideoDuration) }}
-        {% endif %}
+        {% endif %} #}
             
         {{ content | safe }}
     </article>
