@@ -1,0 +1,372 @@
+@font-face {
+    font-family: LowerResolution;
+    src: url(/static/font/lowerresolution/LowerResolution.ttf);
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawk.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawksb.ttf) format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawkl.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawksl.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawkl.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Selawik;
+    src: url(/static/font/selawik/selawkb.ttf) format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --bg: #0b0f2b;
+    --text: #D0E7E6;
+    --accent-light: #4BB8FA;
+    --accent-medium: #1591DC;
+    --accent-dark: #0C2C55;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Selawik;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    margin-bottom: 1em;
+    justify-content: space-between;
+    
+    * {
+        user-select: none;
+    }
+    
+    h1 {
+        font-weight: normal;
+        font-size: 5.4rem;
+        margin-bottom: -.2em;
+    }
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 3.4rem;
+    margin-bottom: .1em;
+    text-transform: lowercase;
+}
+
+p {
+    margin-bottom: .4em;
+}
+
+a {
+    color: var(--accent-light);
+    text-decoration: none;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--accent-medium);
+}
+
+li {
+    margin-inline-start: 1em;
+}
+
+article {
+    * {
+        text-transform: none;
+    }
+    
+    h2 {
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 2rem;
+        margin-top: .6em;
+    }
+    
+    h1,
+    h2 {
+        margin-bottom: 0.2em;
+    }
+}
+
+main {
+    p {
+        margin-bottom: 1em;
+        text-align: justify;
+    }
+}
+
+blockquote {
+    position: relative;
+    margin-bottom: 1em;
+    padding-inline-start: 2em;
+}
+
+blockquote::before {
+    position: absolute;
+    left: 0;
+    content: "“";
+    font-size: 4em;
+    opacity: .6;
+}
+
+dl {
+    margin-bottom: 1em;
+    padding-inline-start: 1em;
+}
+
+dd {
+    margin-bottom: .4em;
+    padding-inline-start: 1em;
+}
+
+code {
+    font-family: monospace;
+}
+
+.tile {
+    border: none;
+    padding: .4em;
+    width: 10em;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-dark);
+    color: white;
+    text-align: left;
+    border: medium solid transparent;
+    transition: .1s;
+    
+    div {
+        padding: 16%;
+        flex-grow: 1;
+        min-height: 0;
+        min-width: 0;
+        
+        img {
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.tile:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.box {
+    background-color: black;
+    padding: .4em;
+}
+
+.boxLabel {
+    background-color: var(--accent-dark);
+    padding: 0 .4em;
+    width: 100%;
+    display: inline-block;
+}
+
+.inlineList {
+    li {
+        margin-inline-start: .4em;
+        display: block;
+    }
+}
+
+#evHelper {
+    width: 60vw;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#kuma {
+    font-size: 5rem;
+    opacity: .6;
+    user-select: none;
+    text-wrap-mode: nowrap;
+}
+
+label[for="servicesList"] {
+    margin-top: .4em;
+}
+
+#servicesList {
+    display: flex;
+    gap: .4em;
+}
+
+#homeAside {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 1rem;
+    padding: 1em;
+    isolation: isolate;
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    flex-direction: column;
+    text-align: right; 
+    
+    * {
+        user-select: none;
+        opacity: 0;
+        transition: .2s;
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-bottom: 1em;
+    }
+    
+    li {
+        display: block;
+    }
+    
+    h2 {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        writing-mode: vertical-rl;
+        margin-left: -.42em;
+        font-size: 4rem;
+        opacity: .4;
+        transform: rotate(180deg);
+    }
+    
+    h3 {
+        text-transform: uppercase;
+    }
+
+    div:first-of-type {
+        flex: 1;
+    }
+}
+
+#homeAside:hover {
+    overflow: hidden;
+    background-color: var(--accent-dark);
+    width: 20vw;
+    user-select: none;
+    
+    * {
+        opacity: 1;
+    }
+    
+    h2 {
+        margin-left: -.3em;
+        font-size: 8rem;
+        opacity: .2;
+    }
+}
+
+#postHeader {
+    margin-bottom: 1em;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+#postImageContainer {
+    position: relative;
+    margin-bottom: 2em;
+    
+    img {
+        width: 100%;
+        opacity: 0.6;
+    }
+    
+    label {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+    
+    h1 {
+        text-align: justify;
+        font-size: clamp(4rem, 8cqi, 3rem);
+        line-height: 1.1;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        font-weight: 100;
+        margin-bottom: -.2em;
+        line-height: .8em;
+    }
+}
+
+.cdr-container {
+    text-align: center;
+}
+
+.cdr-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.webringGeneric {
+    background-color: black;
+    padding: .4em;
+    background-position-x: 0;
+    background-size: cover;
+}
+
+.webringGeneric p {
+    margin: 0;
+}
+
+.webringButtons {
+    display: flex;
+    gap: .4em;
+}
+
+#webrings {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
