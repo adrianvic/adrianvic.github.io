@@ -24,6 +24,7 @@ headerLink: blog
             <p>{{ i18n[langKey].readingTime }}: {{ content | readingTime }}</p>
             {% if altLanguages.length > 0 %}
             <div style="display: flex">
+                <p>
                 {{ i18n[langKey].availableInOtherLanguages }}:
                 <ul class="inlineList">
                     {% for alt in altLanguages %}
@@ -34,6 +35,7 @@ headerLink: blog
                     </li>
                     {% endfor %}
                 </ul>
+                </p>
             </div>
             {% endif %}
         </div>
