@@ -10,7 +10,7 @@
     <meta property="og:description" content="{{ description or i18n[langKey].websiteDescription }}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ page.url | url | absoluteUrl }}">
-    <meta property="og:image" content="{% if pageTitle or postTitle %}{{ '/static/images/posts/' + background | url | absoluteUrl }}{% else %}{{ '/static/images/bear.png' | url | absoluteUrl }}{% endif %}">
+    <meta property="og:image" content="{% if pageTitle or postTitle %}{{ 'static/images/posts/' + background | url | absoluteUrl }}{% else %}{{ 'static/images/bear.jpg' | url | absoluteUrl }}{% endif %}">
 </head>
 <body>
     {{ content | safe }}
