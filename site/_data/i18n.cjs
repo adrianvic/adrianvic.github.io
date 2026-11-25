@@ -60,7 +60,10 @@ module.exports = {
     <p>It seems like you found my website... I'm tenkuma, a <s>computer scientist</s> last year highschooler that likes to mess around with anything electronic and artistic.</p>
     <p><b>Tenkuma</b> <i>(styled tenkuma)</i> is a nickname given to me by an old friend; I don't know where Sakata is, but the nickname stuck. It means <b>celestial bear</b>. I'm gender neutral, and I go by they/them. The bear drawing you see at the bottom-left of your screen was made by my dear friend <b>tenyukihyou</b>.</p>
     <p>This website includes a blog, which can be accessed from the <i>links</i> label at the top-right corner of this page. The menu also contains links to other pages, my services, socials and friends. This website will never track you.</p>
-    `
+    `,
+    here: "here",
+    services: "services",
+    external: "external"
   },
   pt: {
     language: "português",
@@ -123,6 +126,9 @@ module.exports = {
     <p>Parece que você encontrou meu website... Me chamo tenkuma, sou um <s>cientista da computação</s> estudante do último ano do ensino médio que gosta de mexer com tudo relacionado a eletrônicos e arte.</p>
     <p><b>Tenkuma</b> <i>(estilizado como tenkuma)</i> é um apelido que me foi dado há muito tempo por um amigo; eu não sei para onde Sakata foi, mas o apelido ficou. Significa <b>urso celestial</b>. Sou gênero neutro. O desenho que você vê no canto inferior esquerdo da tela foi feito pela minha amiga <b>tenyukihyou</b>.</p>
     <p>Esse site inclui um blog, que pode ser acessado pela etiqueta <i>links</i> no canto superior direito da tela. O menu também tem links para outras páginas do site, serviços, redes sociais e amigos. Esse site não te rastreia.</p>
-    `
+    `,
+    here: "aqui",
+    services: "serviços",
+    external: "externo"
   }
 };
