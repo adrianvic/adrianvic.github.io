@@ -110,6 +110,7 @@ a:hover {
 
 li {
     margin-inline-start: 2em;
+    margin-bottom: .4em;
 }
 
 article {
@@ -290,7 +291,7 @@ label[for="servicesList"] {
             flex: 1;
         }
     }
-    
+
     #homeAside:hover {
         overflow: hidden;
         background-color: var(--accent-dark);
