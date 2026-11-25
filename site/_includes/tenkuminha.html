@@ -1,0 +1,23 @@
+<style>
+    #tenkuminha {
+        height: 50vh;
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        overflow: hidden;
+
+        img {
+            max-height: 100%;
+        }
+    }
+</style>
+
+<div id="tenkuminha">
+    <img src="/static/images/fuckingbear/confused.png" alt="">
+</div>
+
+<script>
+    const tenkuminhaImg = document.querySelector('#tenkuminha img');
+    tenkuminhaImg.addEventListener('mouseover', () => tenkuminhaImg.src = "/static/images/fuckingbear/happy.png" );
+    tenkuminhaImg.addEventListener('mouseout', () => tenkuminhaImg.src = "/static/images/fuckingbear/confused.png" );
+</script>

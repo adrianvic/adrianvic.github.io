@@ -1,6 +1,10 @@
 ---
-layout: base.njk
+layout: skel.njk
 ---
-{% include 'header.njk' %}
-
-{{ content | safe }}
+<div id="evHelper">
+    {% include 'header.njk' %}
+    {% include 'homeaside.njk' %}
+    <main>
+        {{ content | safe }}
+    </main>
+</div>

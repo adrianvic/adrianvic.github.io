@@ -1,0 +1,85 @@
+---
+postTitle: "Enviando jogos para o PS2 com OSD-XMB usando UDPDB sem partição dedicada."
+postId: udpdb-osd-xmb
+langKey: pt
+layout: post.njk
+date: 2026-11-24
+background: osd-xmb.jpeg
+backgroundOpacity: .45
+---
+<h2>Prólogo</h2>
+<p>Eu estive usando o OPL para carregar jogos pela internet desde que voltei para o PS2. Entretanto, essa solução não se demonstrou muito conveniente, já que ela me faz hospedar um servidor SMB1 inseguro e a interface não é das melhores.</p>
+
+<p>Então eu decidi procurar algo melhor e achei o OSD-XMB, um projeto de código aberto que tenta trazer a interface XMB para o PS2; interface que veio com alguns consoles (PS3, PSP) e reprodutores de mídia da Sony. Pessoalmente, eu acho ela linda. Por mais que eu só tenha usado em um reprodutor de mídia na infância, eu diria que os desenvolvedores conseguiram capturar a fluidez da coisa, o que eu pensie que não era possível sem uma quantidade enorme de esforço.</p>
+
+<p>E isso é para o crédito do OPL, OSD-XMB usa alguns truques para manter a base de código gerenciável; é feito em JavaScript, mais especificamente em cima do AthenaEnv—um ambiente JS para o PS2. Por exemplo, o OSD-XMB demora muito mais para iniciar em comparação ao OPL. E no fim, essas coisas pequenas ficam para o usuário decidir qual é melhor. Eu também não mencionei que o OSD-XMB não suporta Samba... Foi assim que chegamos aqui.</p>
+
+<h2>O problema</h2>
+<p>Eu tenho um PS2 Slim com um leitor de disco defeituoso, o que significa que eu não posso ler discos nem conectar um HD no console, então eu dependo do meu servidor, digamos... <i>servindo</i> (ba dum tss) arquivos ISO para o console.</p>
+
+<p>Ademais, eu dependo em um único SSD para o funcionamento do meu servidor, então criar uma nova partição só pra servir o UDPDB seria contraprodutivo. Eu teria que reservar um espaço fixo para meus jogos, trocando eles quando o armazenamento encher; Eu também perderia armazenamento máximo do servidor. Por isso eu vou usar um servidor UDPDB específico que consegue servir uma pasta qualquer.</p>
+
+<p>O README do OSD-XMB menciona vagamente suporte ao UDPDB, com instruções apontando para uma issue. Entretanto, seguindo essas instruções eu cheguei nesses problemas, em ordem:</p>
+<ol>
+    <li>Fazer o console encontrar o servidor</li>
+    <li>Congelamento ao abrir a pasta "Playstation 2"</li>
+    <li>Carregar jogos</li>
+</ol>
+
+<h2>A solução</h2>
+<p>Primeiro, precisamos de um servidor. Vou usar o PS2-Servers, mas você pode usar qualquer outro. A versão da página de releases não suportava servir pastas. Mas como ele é feito em Python eu só clonei o repositório e rodei:</p>
+
+{% highlight "bash" %}
+# clonar e entrar no repositório
+git clone https://github.com/NathanNeurotic/PS2-Servers
+cd PS2-Servers
+
+# criar um venv para guardar as dependências e instalar elas
+pyhton -m venv .venv
+source .venv/bin/activate
+pip -r requirements.txt
+
+# rodar o servidor
+# substitua /srv/ps2 com a sua pasta de jogos no formato normal de DVD/, CD/
+python ps2servers.py serve udpbd --virtual-exfat /srv/ps2
+{% endhighlight %}
+
+<p>O próximo passo é habilitar <code>smap_udpdb</code> no arquivo <code>athena.ini</code> (coloque igual <code>true</code>) para carregar o módulo necessário do Neutrino; ele faz o OSD-XMB achar que você não tem acesso a internet, caso contrário eles iriam conflitar. Portanto, você perde as funções on-line do OSD-XMB.</p>
+
+<p>Depois, "edite <code>APPS\neutrino\config\bsd-udpbd.toml</code> com o endereço IP apropriado", que é quando o tutorial oficial cai por terra. Seria esse o endereço do PS2 ou do servidor? Acaba que é do PS2, mas apenas na hora de carregar jogos. Você não deve mudar isso, porque como vamos ver logo, o seu servidor vai ter que aceitar o endereço fixo e imutável do PS2 de qualquer forma.</p>
+
+<p>Quando o console liga, ele sempre vai usar o endereço de IP <i>192.168.1.10</i>. Minha rede usa uma máscara de subrede <i>/24</i>, o que significa que o meu servidor com um endereço no formato <i>192.168.18.XX</i> não consegue acessar o <i>192.168.1.XX</i> do PS2. Para resolver isso, é só dizer que o servidor tem um segundo endereço no formato do PS2:</p>
+
+{% highlight "bash" %}
+# pegue o nome da sua interface de rede ativa
+ip route show default
+
+# dê a si mesmo o endereço 192.168.1.50, que está na subrede do PS2
+sudo ip addr add 192.168.1.50/24 dev <nome_da_interface> # substitua com a sua interface
+{% endhighlight %}
+
+<p>Aí a pasta "Playstation 2" apareceu no menu Jogos. Entretanto, ao abrir o aplicativo congelava. Não tenho experiência com a base de código do OSD-XMB, mas eu achei a solução removendo funções do carregador de jogos até que funcionasse. Acabei com essa alternação no arquivo <code>PLG/gme_999_xPS2.xml</code>:</p>
+
+<p><b>Perto da linha 86, substituindo o bloco <code>init</code> com isso:</b></p>
+{% highlight "xml" %}
+<Init>
+  <![CDATA[
+    function SetPS2Icons(SubMenu) {
+      delete SubMenu.Init;
+    }
+  ]]>
+</Init>
+{% endhighlight %}
+
+<p>É isso. Agora eu consigo carregar jogos pela rede na beldade que é o XMB, e eu espero que você também consiga.</p>
+
+<h2>Fontes</h2>
+
+<ol>
+    <li><a href="https://github.com/HiroTex/OSD-XMB">OSD-XMB no GitHub</a></li>
+    <li><a href="https://psx-place.com/threads/athena-a-performant-javascript-runtime-environment-for-the-ps2.41393/">Athena no PSX Place</a></li>
+    <li><a href="https://github.com/NathanNeurotic/PS2-Servers">PS2-Servers no GitHub</a><br>Eu sei que parece vibecoded pra caramba, mas é o único que funciona pra mim...</li>
+    <li><a href="https://github.com/DanielSant0s/AthenaEnv">Athena no GitHub</a></li>
+    <li><a href="https://github.com/HiroTex/OSD-XMB/discussions/60#discussioncomment-14269195">Discussão/instruções oficiais sobre suporte ao UDPDB, nas issues do OSD-XMB</a></li>
+    <li><a href="https://github.com/HiroTex/OSD-XMB/blob/e9acb0bdb18482a673c9514dea9af82838329377/bin/PLG/gme_999_xPS2.xml">gme_999_xPS2.xml que eu editei, no GitHub</a></li>
+</ol>

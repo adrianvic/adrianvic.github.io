@@ -7,9 +7,7 @@ permalink: "/{{ langKey }}/index.html"
 layout: withheader.njk
 headerLink: home
 ---
+{% include 'tenkuminha.html' %}
 <main>
-    <h2>Hello!</h2>
-    <p>It seems like you found my website... I'm tenkuma, a <s>computer scientist</s> last year highschooler that likes to mess around with anything electronic and artistic.</p>
-    <p><b>Tenkuma</b> <i>(styled tenkuma)</i> is a nickname given to me by an old friend; I don't know where Sakata is, but the nickname stuck. It means <b>celestial bear</b>. I'm gender neutral, and I go by they/them.</p>
-    <p>This website includes a blog, which can be accessed from the <i>links</i> label at the top-right corner of this page. This website will never track you.</p>
+    {{ i18n[langKey].homeContent | safe }}
 </main>

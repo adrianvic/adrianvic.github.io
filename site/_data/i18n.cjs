@@ -9,7 +9,6 @@ module.exports = {
     pt: "portuguese",
     en: "english",
     home: "home",
-    welcome: "welcome",
     homeWelcomeParagraph: "It seems that you have found my website! Hi, I am <b>tenkuma</b>, a Brazilian guy who likes to mess around with computers, computer programs and <i title='do the konami code ;)'>enimatpyrtlyhtemids</i>.",
     socialsAndContact: "socials and contact",
     blogTitle: "Listing blog posts:",
@@ -55,7 +54,13 @@ module.exports = {
     sfxCheckboxAlt: "Sound effects",
     videoArtworkAlt: "Video artwork",
     songSelectAlt: "Song selector",
-    dontAskAgain: "Don't ask again"
+    dontAskAgain: "Don't ask again",
+    homeContent: `
+    <h2>Hello!</h2>
+    <p>It seems like you found my website... I'm tenkuma, a <s>computer scientist</s> last year highschooler that likes to mess around with anything electronic and artistic.</p>
+    <p><b>Tenkuma</b> <i>(styled tenkuma)</i> is a nickname given to me by an old friend; I don't know where Sakata is, but the nickname stuck. It means <b>celestial bear</b>. I'm gender neutral, and I go by they/them. The bear drawing you see at the bottom-left of your screen was made by my dear friend <b>tenyukihyou</b>.</p>
+    <p>This website includes a blog, which can be accessed from the <i>links</i> label at the top-right corner of this page. The menu also contains links to other pages, my services, socials and friends. This website will never track you.</p>
+    `
   },
   pt: {
     language: "português",
@@ -98,7 +103,6 @@ module.exports = {
     readingTime: "Tempo de leitura",
     mastodonPageDescription: "Essa página lista todas as minhas postagens do Mastodon.",
     addMe: "Me adicionar",
-    socialContentNotRated: "Conteúdo das redes sociais não é monitorado e pode conter tópicos não apropriados para todas as idades.",
     clickHereToContinue: "Clique aqui para continuar",
     windsArtAlt: "Capa do album First Winds",
     velkommenArtAlt: "Capa da música Velkommen",
@@ -113,6 +117,12 @@ module.exports = {
     videoArtworkAlt: "Capa do vídeo",
     songSelectAlt: "Seletor de música",
     guestbookWarning: "Carregar o guestbook? Você estará sujeito aos <a href='https://iframe.chat/tos.html'>termos de uso do Chattable</a>.",
-    dontAskAgain: "Não pergunte novamente"
+    dontAskAgain: "Não pergunte novamente",
+    homeContent: `
+    <h2>Olá!</h2>
+    <p>Parece que você encontrou meu website... Me chamo tenkuma, sou um <s>cientista da computação</s> estudante do último ano do ensino médio que gosta de mexer com tudo relacionado a eletrônicos e arte.</p>
+    <p><b>Tenkuma</b> <i>(estilizado como tenkuma)</i> é um apelido que me foi dado há muito tempo por um amigo; eu não sei para onde Sakata foi, mas o apelido ficou. Significa <b>urso celestial</b>. Sou gênero neutro. O desenho que você vê no canto inferior esquerdo da tela foi feito pela minha amiga <b>tenyukihyou</b>.</p>
+    <p>Esse site inclui um blog, que pode ser acessado pela etiqueta <i>links</i> no canto superior direito da tela. O menu também tem links para outras páginas do site, serviços, redes sociais e amigos. Esse site não te rastreia.</p>
+    `
   }
 };
