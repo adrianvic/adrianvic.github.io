@@ -1,9 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="global">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/phone.css">
     <title>tenkuma</title>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 </head>
 <body>
     <div id="evHelper">
@@ -12,7 +14,7 @@
     <div>
         <h3>Here</h3>
         <ul>
-            <li><a href="/global">home</a></li>
+            <li><a href="/global"></a></li>
             <li><a href="/global/blog">blog</a></li>
             <li><a href="/global/webrings">webrings</a></li>
         </ul>
@@ -29,9 +31,37 @@
     </div>
 </aside>
     <main>
-        <main>
+        <style>
+    #tenkuminha {
+        height: 50vh;
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        overflow: hidden;
+
+        img {
+            max-height: 100%;
+        }
+    }
+</style>
+
+<div id="tenkuminha">
+    <img src="/static/images/fuckingbear/confused.png" alt="">
+</div>
+
+<script>
+    const tenkuminhaImg = document.querySelector('#tenkuminha img');
+    tenkuminhaImg.addEventListener('mouseover', () => tenkuminhaImg.src = "/static/images/fuckingbear/happy.png" );
+    tenkuminhaImg.addEventListener('mouseout', () => tenkuminhaImg.src = "/static/images/fuckingbear/confused.png" );
+</script>
+
+<main>
   <p><b></b></p>
   <ul>
+    
+      
+    
+      
     
       
     

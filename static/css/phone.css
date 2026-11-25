@@ -1,0 +1,50 @@
+@media screen and (max-width: 1280px) {
+    #evHelper {
+        width: 90vw;
+        margin: 0 2rem;
+    }
+
+    #homeAside {
+        display: flex;
+        overflow: scroll;
+        margin-bottom: 1rem;
+        font-size: 2em;
+
+        div, ul {
+            gap: .4em;
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            margin-inline-start: 0;
+        }
+
+        h2, h3 {
+            display: none;
+        }
+    }
+
+    #tenkuminha {
+        display: none;
+    }
+
+    #postImageContainer {
+        label {
+            position: unset;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    header {
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}

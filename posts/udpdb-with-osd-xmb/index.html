@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/phone.css">
+    <title>tenkuma</title>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+</head>
+<body>
+    <div id="evHelper">
+    <aside id="homeAside">
+    <h2>Links</h2>
+    <div>
+        <h3>Here</h3>
+        <ul>
+            <li><a href="/en">home</a></li>
+            <li><a href="/en/blog">blog</a></li>
+            <li><a href="/en/webrings">webrings</a></li>
+        </ul>
+        <h3>Services</h3>
+        <ul>
+            <li><a rel="noreferrer" target="_blank" href="https://git.tenkuma.org/">git</a></li>
+        </ul>
+        <h3>External</h3>
+        <ul>
+            <li><a rel="noreferrer" target="_blank" href="https://youtube.com/@adrianvic8">YouTube</a></li>
+            <li><a rel="noreferrer" target="_blank" href="https://github.com/adrianvic">GitHub</a></li>
+            <li><a rel="noreferrer" target="_blank" href="https://x.com/tenkumabear">Twitter</a></li>
+        </ul>
+    </div>
+</aside>
+    <main>
+        
+
+
+<main>
+    <article>
+        <div id="postHeader">
+            
+            <div id="postImageContainer">
+                <img id="postImage" src="/static/images/posts/osd-xmb.jpeg" style="opacity: 0.45">
+                <label for="postImage"><h1>Streaming games to a PS2 with OSD-XMB using UDPDB without a dedicated partition.</h1></label>
+            </div>
+            
+
+            
+
+            <p>By tenkuma - <b>11/23/2026</b> (last edited in 11/25/2026)</p>
+            <p>Reading time: 3 min</p>
+            
+            <div style="display: flex">
+                Also available in other languages:
+                <ul class="inlineList">
+                    
+                    <li>
+                        <a href="/posts/udpdb-no-osd-xmb/" hreflang="pt">
+                            português
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+
+        
+            
+        <h2>Prologue</h2>
+<p>I've been using OPL to stream games from my home server since I returned to the PS2. However, this solution didn't prove to be very convenient, since it required me to host an insecure SMB1 server, and the loader UI isn't the best.</p>
+
+<p>I then decided to search for something better, and found OSD-XMB, an open-source project aiming to give PS2 players the look and feel of Sony's XMB design language, shipped with some of their consoles (PS3, PSP) and media players. Personally, I think it's gorgeous; although I've only experienced XMB in a media player as a kid, I would say that the devs managed to capture the snappyness of the thing, which I didn't think was possible on the PS2 without a crazy level of coding.</p>
+
+<p>And that's to the credit of OPL, OSD-XMB uses some tricks to maintain itself alive without crazy amounts of work; it's written in JavaScript, more specifically on top of AthenaEnv—a JS environment for the PS2. For instance, OSD-XMB takes much more time to load in comparison to OPL, and in the end these little things are up to you to decide which one is worth. Ah, and I didn't mention that OSD-XMB does not support Samba... So that's how we got here.</p>
+
+<h2>The problem</h2>
+<p>I have a PS2 slim with a faulty disk drive, meaning that I cannot play disks nor attach a hard drive to my console, so I rely on my home server, let's say... <i>serving</i> (ba doom tss) ISO files to the console.</p>
+
+<p>Furthermore, I rely on a single SSD for my server operations, so making a new partition just to serve UDPDB would be a pain in the ass. That would mean I have to not only reserve a fixed amount of storage for my games—and delete games when it fills up; I would also lose maximum storage in my data partition. That's why I'll be using a specific UDPDB server that can serve a folder instead of a partition.</p>
+
+<p>OSD-XMB vaguely mentions to support UDPDB in their README, with instructions pointing to an issue. However while following these instructions I could not get it to, in order:</p>
+<ol>
+    <li>Find my server</li>
+    <li>Not crash when loading the "Playstation 2"</li>
+    <li>Boot games</li>
+</ol>
+
+<h2>The solution</h2>
+<p>First, we have to find a suitable server. I'll go with PS2-Servers, but you can use anything that works for you. The binary from the release page did't have support for serving a folder. However, since the thing is written in Python I just cloned it's repo and ran:</p>
+
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># clone and enter the repo</span>
+<span class="token function">git</span> clone https://github.com/NathanNeurotic/<span class="token environment constant">PS2</span>-Servers
+<span class="token builtin class-name">cd</span> <span class="token environment constant">PS2</span>-Servers
+
+<span class="token comment"># make a venv to hold dependencies and install them</span>
+pyhton <span class="token parameter variable">-m</span> venv .venv
+<span class="token builtin class-name">source</span> .venv/bin/activate
+pip <span class="token parameter variable">-r</span> requirements.txt
+
+<span class="token comment"># run the server</span>
+<span class="token comment"># replace /srv/ps2 with your games folder in the usual DVD/, CD/ format</span>
+python ps2servers.py serve udpbd --virtual-exfat /srv/ps2</code></pre>
+
+<p>The next step is to enable <code>smap_udpdb</code> in <code>athena.ini</code> (set it to <code>true</code>) as that will load the required Neutrino module; the module intentionally lies about network being unavailable to OSD-XMB network stack, or else they would conflict—so you will lose OSD-XMB online features.</p>
+
+<p>Then you should "edit <code>APPS\neutrino\config\bsd-udpbd.toml</code> with the appropriate IP address for your environment", which is where the tutorial kinda falls apart. Is this meant to be the PS2 or server address? Turns out it's the PS2 address, but only for launching games. You shouldn't need to change this, as you'll see next, you'll have to adapt your server to PS2's hardcoded IP address anyway.</p>
+
+<p>When booting the console will always use <i>192.168.1.10</i> as it's address. My network uses a <i>/24</i> subnet mask, meaning my server that has an address in the <i>192.168.18.XX</i> format could not access the PS2's <i>192.168.1.XX</i>. To fix that I just had to tell the server it should have an address in the other subnet, without erasing the current one:</p>
+
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># get your active interface name</span>
+<span class="token function">ip</span> route show default
+
+<span class="token comment"># give yourself the address 192.168.1.50, which is in the PS2 subnet</span>
+<span class="token function">sudo</span> <span class="token function">ip</span> addr <span class="token function">add</span> <span class="token number">192.168</span>.1.50/24 dev <span class="token operator">&lt;</span>interface_name<span class="token operator">&gt;</span> <span class="token comment"># replace with your interface</span></code></pre>
+
+<p>Then the "Playstation 2" folder showed on Games menu. However upon opening it would freeze the UI. I have no experience on OSD-XMB codebase, but I found the solution to this by removing features of the game list until it worked. Ended up with this patch to <code>PLG/gme_999_xPS2.xml</code>:</p>
+
+<p><b>Near line 86, replacing the <code>init</code> block with this one:</b></p>
+<pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Init</span><span class="token punctuation">&gt;</span></span>
+  <span class="token cdata">&lt;![CDATA[
+    function SetPS2Icons(SubMenu) {
+      delete SubMenu.Init;
+    }
+  ]]&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Init</span><span class="token punctuation">&gt;</span></span></code></pre>
+
+<p>And that's it. I can now launch PS2 games from my server with the gorgeous XMB interface, and hope you can too.</p>
+
+<h2>Sources</h2>
+
+<ol>
+    <li><a rel="noreferrer" target="_blank" href="https://github.com/HiroTex/OSD-XMB">OSD-XMB on GitHub</a></li>
+    <li><a rel="noreferrer" target="_blank" href="https://psx-place.com/threads/athena-a-performant-javascript-runtime-environment-for-the-ps2.41393/">Athena on PSX Place</a></li>
+    <li><a rel="noreferrer" target="_blank" href="https://github.com/NathanNeurotic/PS2-Servers">PS2-Servers on GitHub</a><br>I know it looks like vibecoded BS, but that's the only thing that worked for me...</li>
+    <li><a rel="noreferrer" target="_blank" href="https://github.com/DanielSant0s/AthenaEnv">Athena on GitHub</a></li>
+    <li><a rel="noreferrer" target="_blank" href="https://github.com/HiroTex/OSD-XMB/discussions/60#discussioncomment-14269195">Discussion/official instructions about UDPDB support on OSD-XMB issues</a></li>
+    <li><a rel="noreferrer" target="_blank" href="https://github.com/HiroTex/OSD-XMB/blob/e9acb0bdb18482a673c9514dea9af82838329377/bin/PLG/gme_999_xPS2.xml">gme_999_xPS2.xml as I edited on GitHub</a></li>
+</ol>
+    </article>
+</main>
+
+    </main>
+</div>
+</body></html>

@@ -3,10 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/phone.css">
     <title>tenkuma</title>
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 </head>
 <body>
     <div id="evHelper">
+    <header>
+    <div>
+        <h1>tenkuma</h1>
+        <p><i>“Fantasy is not a crime, find your castle in the sky”</i></p>
+    </div>
+    <div id="kuma">𐔌՞. .՞𐦯</div>
+</header>
     <aside id="homeAside">
     <h2>Links</h2>
     <div>
@@ -29,19 +38,36 @@
     </div>
 </aside>
     <main>
-        <header>
-    <div>
-        <h1>tenkuma</h1>
-        <p><i>“Fantasy is not a crime, find your castle in the sky”</i></p>
-    </div>
-    <div id="kuma">𐔌՞. .՞𐦯</div>
-</header>
+        <style>
+    #tenkuminha {
+        height: 50vh;
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        overflow: hidden;
 
+        img {
+            max-height: 100%;
+        }
+    }
+</style>
+
+<div id="tenkuminha">
+    <img src="/static/images/fuckingbear/confused.png" alt="">
+</div>
+
+<script>
+    const tenkuminhaImg = document.querySelector('#tenkuminha img');
+    tenkuminhaImg.addEventListener('mouseover', () => tenkuminhaImg.src = "/static/images/fuckingbear/happy.png" );
+    tenkuminhaImg.addEventListener('mouseout', () => tenkuminhaImg.src = "/static/images/fuckingbear/confused.png" );
+</script>
 <main>
+    
     <h2>Hello!</h2>
     <p>It seems like you found my website... I'm tenkuma, a <s>computer scientist</s> last year highschooler that likes to mess around with anything electronic and artistic.</p>
-    <p><b>Tenkuma</b> <i>(styled tenkuma)</i> is a nickname given to me by an old friend; I don't know where Sakata is, but the nickname stuck. It means <b>celestial bear</b>. I'm gender neutral, and I go by they/them.</p>
-    <p>This website includes a blog, which can be accessed from the <i>links</i> label at the top-right corner of this page. This website will never track you.</p>
+    <p><b>Tenkuma</b> <i>(styled tenkuma)</i> is a nickname given to me by an old friend; I don't know where Sakata is, but the nickname stuck. It means <b>celestial bear</b>. I'm gender neutral, and I go by they/them. The bear drawing you see at the bottom-left of your screen was made by my dear friend <b>tenyukihyou</b>.</p>
+    <p>This website includes a blog, which can be accessed from the <i>links</i> label at the top-right corner of this page. The menu also contains links to other pages, my services, socials and friends. This website will never track you.</p>
+    
 </main>
     </main>
 </div>
