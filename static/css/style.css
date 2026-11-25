@@ -269,6 +269,7 @@ label[for="servicesList"] {
         
         li {
             display: block;
+            margin-bottom: 0;
         }
         
         h2 {
@@ -324,6 +325,7 @@ label[for="servicesList"] {
     img {
         width: 100%;
         opacity: 0.6;
+        transition: .2s;
     }
     
     label {
@@ -342,6 +344,20 @@ label[for="servicesList"] {
         font-weight: normal;
         margin-bottom: -.02em;
         line-height: 1em;
+        transition: .2s;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #postImageContainer:hover {
+        h1 {
+            opacity: 0.2;
+            mix-blend-mode: luminosity;
+        }
+
+        img {
+            opacity: 1!important;
+        }
     }
 }
 

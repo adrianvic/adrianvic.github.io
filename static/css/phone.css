@@ -43,6 +43,11 @@
         h1 {
             font-size: 2rem;
         }
+
+        img {
+            opacity: 1!important;
+            margin-bottom: 1em;
+        }
     }
 
     #postHeader {
